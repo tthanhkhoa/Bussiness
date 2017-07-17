@@ -144,7 +144,8 @@
 </header><!--/header-->
 
 
-@include('client.compoment.slider')
+{{--@include('client.compoment.slider')--}}
+@yield('slider')
 <!--/slider-->
 
 <section>
@@ -158,6 +159,8 @@
 
             <div class="col-sm-9 padding-right">
                 @yield('home')
+                @yield('product-details')
+                @yield('recommended')
                 <!--features_items-->
             </div>
 
