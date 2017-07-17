@@ -16,5 +16,14 @@
 //});
 Route::get('/', function () {
    // return 1;
+    //return view('admin.dashboash');
+    return view('client.home');
+});
+
+Route::get('/admin', function () {
     return view('admin.dashboash');
+});
+
+Route::get('a', function(){
+    return view('client.compoment.header');
 });
