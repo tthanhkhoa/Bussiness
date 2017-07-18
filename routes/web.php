@@ -24,7 +24,13 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin.dashboash');
 });
+Route::get('/cart', function () {
+    return view('client.cart');
+});
 
-//Route::get('a', function(){
-//    return view('client.compoment.header');
-//});
+Route::get('/product', function(){
+    return view('client.product');
+});
+Route::get('/about', function(){
+    return view('client.about');
+});

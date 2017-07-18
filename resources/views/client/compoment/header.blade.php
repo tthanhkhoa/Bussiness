@@ -13,6 +13,26 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <!-- Animate -->
+    <link rel="stylesheet" href="css/css2/animate.css">
+    <!-- Flexslider -->
+    <link rel="stylesheet" href="css/css2/flexslider.css">
+    <!-- Icomoon -->
+    <link rel="stylesheet" href="css/css2/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/css2/bootstrap.css">
+
+    <link rel="stylesheet" href="css/css2/style.css">
+
+
+    <!-- Modernizr JS -->
+    <script src="js/js2/modernizr-2.6.2.min.js"></script>
+
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -57,7 +77,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+                        <a href="{{ url('home') }}"><img src="images/home/logo.png" alt="" /></a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
@@ -89,7 +109,7 @@
                             <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                             <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                             <li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                            <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                             <li><a href="#"><i class="fa fa-lock"></i> Login</a></li>
                         </ul>
                     </div>
@@ -112,13 +132,13 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="#" class="active">Home</a></li>
+                            <li><a href="{{ url('home') }}" class="active">Home</a></li>
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="#">Products</a></li>
                                     <li><a href="#">Product Details</a></li>
                                     <li><a href="#">Checkout</a></li>
-                                    <li><a href="#">Cart</a></li>
+                                    <li><a href="{{ url('cart') }}">Cart</a></li>
                                     <li><a href="#">Login</a></li>
                                 </ul>
                             </li>
@@ -129,7 +149,7 @@
                                 </ul>
                             </li>
                             <li><a href="#">404</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{ url('about') }}">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -151,16 +171,21 @@
 <section>
     <div class="container">
         <div class="row">
+            @yield('about')
+            @yield('cart')
             <div class="col-sm-3">
                 <div class="left-sidebar">
-                    @include('client.compoment.slidebar')
+                    @yield('slidebar')
+                    {{--@include('client.compoment.slidebar')--}}
                 </div>
             </div>
 
             <div class="col-sm-9 padding-right">
                 @yield('home')
+                @yield('product')
                 @yield('product-details')
                 @yield('recommended')
+
                 <!--features_items-->
             </div>
 
@@ -178,5 +203,19 @@
 <script src="js/price-range.js"></script>
 <script src="js/jquery.prettyPhoto.js"></script>
 <script src="js/main.js"></script>
+<!-- jQuery -->
+<script src="js/js2/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="js/js2/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="js/js2/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="js/js2/jquery.waypoints.min.js"></script>
+<!-- Stellar Parallax -->
+<script src="js/js2/jquery.stellar.min.js"></script>
+<!-- Flexslider -->
+<script src="js/js2/jquery.flexslider-min.js"></script>
+<!-- Main JS -->
+<script src="js/js2/main.js"></script>
 </body>
 </html>

@@ -455,4 +455,8 @@
 
 
 </div>
+@section('slidebar')
+    @include('client.compoment.slidebar')
+@endsection
+
 @endsection

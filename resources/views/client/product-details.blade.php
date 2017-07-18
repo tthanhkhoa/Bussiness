@@ -250,6 +250,9 @@
 
     </div>
 </div><!--/category-tab-->
+@section('slidebar')
+    @include('client.compoment.slidebar')
+@endsection
 @section('recommended')
     @include('client.compoment.recommended')
 @endsection
