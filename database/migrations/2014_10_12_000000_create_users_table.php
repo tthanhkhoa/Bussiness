@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Constant;
 
 class CreateUsersTable extends Migration
 {
@@ -13,12 +14,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create(Constant::TBL_User, function (Blueprint $table) {
+            $table->increments(Constant::TBL_idUser);
+            $table->string(Constant::TBL_username)->nullable();
+           // $table->string('email')->unique();
+            $table->string(Constant::TBL_password)->nullable();
+            //$table->rememberToken();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists(Constant::TBL_User);
     }
 }

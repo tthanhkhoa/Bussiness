@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Constant;
 
 class CreateTheloaiTable extends Migration
 {
@@ -14,18 +15,12 @@ class CreateTheloaiTable extends Migration
     public function up()
     {
         //
-        Schema::create(C::TBL_AGENT, function (Blueprint $table) {
-            $table->increments(C::CL_ID);
-            $table->unsignedInteger(C::CL_HOSPITAL_ID)->nullable();
-            $table->foreign(C::CL_HOSPITAL_ID)->references(C::CL_ID)->on(App\C::TBL_HOSPITAL)->onDelete('cascade');
-            $table->string(C::CL_NAME)->nullable();
-            $table->string(C::CL_MAJOR)->nullable();
-            $table->string(C::CL_POSITION)->nullable();
-            $table->string(C::CL_PHONE)->nullable();
-            $table->tinyInteger(C::CL_EMERGENCY_TYPE)->nullable();
-            $table->integer(C::CL_ORDER)->nullable();
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::create(Constant::TBL_TheLoai, function (Blueprint $table) {
+            $table->increments(Constant::TBL_MaTheLoai);
+            $table->string(Constant::TBL_tenTheLoai)->nullable();
+            $table->integer(Constant::TBL_Active)->nullable();
+//            $table->timestamps();
+         //   $table->softDeletes();
         });
     }
 
@@ -37,5 +32,6 @@ class CreateTheloaiTable extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists(Constant::TBL_TheLoai);
     }
 }
