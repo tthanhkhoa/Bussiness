@@ -8,4 +8,12 @@ class HoaDon extends Model
 {
     //
     protected $table = Constant::TBL_HoaDon;
+
+    public function KhachHang(){
+        return $this->belongsTo(Constant::TBL_KhachHang, Constant::TBL_maKhachHang, Constant::TBL_maKhachHang);
+    }
+
+    public function ChiTietHD(){
+        return $this->hasMany(Constant::TBL_ChiTietHoaDon);
+    }
 }

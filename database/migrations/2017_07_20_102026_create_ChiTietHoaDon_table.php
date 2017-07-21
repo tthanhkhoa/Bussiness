@@ -16,9 +16,11 @@ class CreateChiTietHoaDonTable extends Migration
         //
         Schema::create(Constant::TBL_ChiTietHoaDon, function (Blueprint $table) {
             $table->increments(Constant::TBL_maChiTietHD);
-            $table->integer(Constant::TBL_maSanPham)->nullable();
+            $table->foreign(Constant::TBL_maSanPham)->references(Constant::TBL_maSanPham)->on(App\Constant::TBL_SanPham)->onDelete('cascade');
+           // $table->integer(Constant::TBL_maSanPham)->nullable();
             $table->string(Constant::TBL_tenSanPham)->nullable();
-            $table->date(Constant::TBL_soLuong)->nullable();
+            $table->integer(Constant::TBL_soLuong)->nullable();
+            $table->integer(Constant::TBL_maHoaDon)->nullable();
           //  $table->timestamps();
             //   $table->softDeletes();
         });
