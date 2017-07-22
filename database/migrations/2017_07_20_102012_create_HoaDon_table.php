@@ -17,7 +17,8 @@ class CreateHoaDonTable extends Migration
         //
         Schema::create(Constant::TBL_HoaDon, function (Blueprint $table) {
             $table->increments(Constant::TBL_maHoaDon);
-            $table->integer(Constant::TBL_maKhachHang)->nullable();
+            $table->foreign(Constant::TBL_maKhachHang)->references(Constant::TBL_maKhachHang)->on(App\Constant::TBL_KhachHang)->onDelete('cascade');
+            //$table->integer(Constant::TBL_maKhachHang)->nullable();
             $table->double(Constant::TBL_tongTien)->nullable();
             $table->date(Constant::TBL_Ngaylap)->nullable();
 //            $table->timestamps();
