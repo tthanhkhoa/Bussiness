@@ -17,6 +17,7 @@ class CreateKhachhangTable extends Migration
         //
         Schema::create(Constant::TBL_KhachHang, function (Blueprint $table) {
             $table->increments(Constant::TBL_maKhachHang);
+            $table->integer(Constant::TBL_idUser)->unsigned();
             $table->foreign(Constant::TBL_idUser)->references(Constant::TBL_idUser)->on(App\Constant::TBL_User)->onDelete('cascade');
            // $table->integer(Constant::TBL_idUser)->nullable();
             $table->string(Constant::TBL_tenKhachHang)->nullable();

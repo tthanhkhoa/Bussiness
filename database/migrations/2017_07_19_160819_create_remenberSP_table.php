@@ -17,6 +17,7 @@ class CreateRemenberSPTable extends Migration
         //
         Schema::create(Constant::TBL_RemenberSP, function (Blueprint $table) {
             $table->increments(Constant::TBL_idremenber);
+            $table->integer(Constant::TBL_maKhachHang)->unsigned();
             $table->foreign(Constant::TBL_maKhachHang)->references(Constant::TBL_maKhachHang)->on(App\Constant::TBL_KhachHang)->onDelete('cascade');
           //  $table->integer(Constant::TBL_maKhachHang)->nullable();
             $table->string(Constant::TBL_maSanPham)->nullable();
