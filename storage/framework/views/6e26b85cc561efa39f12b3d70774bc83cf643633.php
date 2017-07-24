@@ -428,7 +428,7 @@
 						<ul class="submenu">
 
 							<li class="">
-								<a href="{{ url('danhsachtheloai') }}">
+								<a href="<?php echo e(url('danhsachtheloai')); ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Thể Loại
 								</a>
@@ -437,7 +437,7 @@
 							</li>
 
 							<li class="">
-								<a href="{{url('danhsachsanpham')}}">
+								<a href="<?php echo e(url('danhsachsanpham')); ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Sản Phẩm
 								</a>
@@ -564,34 +564,6 @@
 						</ul>
 					</li>
 
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-desktop"></i>
-							<span class="menu-text">
-								Thông Tin Cá Nhân
-							</span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="#">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Thông tin người dùng
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-
-
-
-						</ul>
-					</li>
-
 
 				</ul><!-- /.nav-list -->
 
@@ -600,10 +572,9 @@
 				</div>
 			</div>
 			<div class="main-content">
-				@yield('content')
-				@yield('theloai')
-				@yield('sanpham')
-				@yield('profile-user')
+				<?php echo $__env->yieldContent('content'); ?>
+				<?php echo $__env->yieldContent('theloai'); ?>
+				<?php echo $__env->yieldContent('sanpham'); ?>
 
 			</div>
 

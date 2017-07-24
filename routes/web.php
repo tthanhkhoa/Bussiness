@@ -18,6 +18,8 @@ Route::get('/', function () {
    // return 1;
     //return view('admin.dashboash');
    // return view('client.home');
+    return view('client.home');
+
     return view('client.product-details');
 });
 
@@ -33,4 +35,21 @@ Route::get('/product', function(){
 });
 Route::get('/about', function(){
     return view('client.about');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+
+Route::get('/danhsachtheloai', function () {
+    return view('admin.SanPham.theloai');
+});
+
+Route::get('/danhsachsanpham', function () {
+    return view('admin.SanPham.sanpham');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
 });
