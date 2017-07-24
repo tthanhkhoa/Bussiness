@@ -1,9 +1,9 @@
-<?php $__env->startSection('sanpham'); ?>
+<?php $__env->startSection('hoadon'); ?>
     
     <div class="col-xs-12">
 
         <div class="table-header">
-            Danh sách Sản phẩm
+                Hoá Đơn
         </div>
 
         <!-- div.table-responsive -->

@@ -1,9 +1,9 @@
-<?php $__env->startSection('sanpham'); ?>
+<?php $__env->startSection('nhacungcap'); ?>
     
     <div class="col-xs-12">
 
         <div class="table-header">
-            Danh sách Sản phẩm
+            Danh sách Nhà cung cấp
         </div>
 
         <!-- div.table-responsive -->

@@ -53,3 +53,14 @@ Route::get('/danhsachsanpham', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+Route::get('/nhacungcap', function () {
+    return view('admin.SanPham.nhacungcap');
+});
+
+Route::get('/danhsachkhachhang', function () {
+    return view('admin.KhachHang.khachhang');
+});
+
+Route::get('/hoadon', function () {
+    return view('admin.KhachHang.hoadon');
+});

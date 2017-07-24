@@ -1,9 +1,11 @@
-<?php $__env->startSection('sanpham'); ?>
-    
+@extends('admin.header')
+
+@section('khachhang')
+    {{--<div class="row">--}}
     <div class="col-xs-12">
 
         <div class="table-header">
-            Danh sách Sản phẩm
+            Danh sách Khách hàng
         </div>
 
         <!-- div.table-responsive -->
@@ -1647,6 +1649,5 @@
             </table>
         </div>
     </div>
-    
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('admin.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    {{--</div>--}}
+@endsection
