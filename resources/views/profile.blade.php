@@ -1,5 +1,7 @@
 @extends('admin.header')
-
+@section('menuThongTinCaNhan')
+    open
+@endsection
 @section('profile-user')
 
 <div>

@@ -389,7 +389,7 @@
 
 				<ul class="nav nav-list">
 					<li class="active">
-						<a href="index.html">
+						<a href="{{url('admin')}}">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> Dashboard </span>
 						</a>
@@ -397,7 +397,7 @@
 						<b class="arrow"></b>
 					</li>
 
-					<li class="">
+					<li class= @yield('menusanpham')>
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text">
@@ -420,14 +420,37 @@
 								<b class="arrow"></b>
 							</li>
 
-							<li class="">
-								<a href="{{url('danhsachsanpham')}}">
+							<li class= @yield('componentsanpham')>
+								<a href="#" class="dropdown-toggle">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Sản Phẩm
+									<b class="arrow fa fa-angle-down"></b>
 								</a>
 
 								<b class="arrow"></b>
+
+								<ul class="submenu">
+									<li class="">
+										<a href="{{url('danhsachsanpham')}}">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Tất cả
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="{{url('danhsachsanpham')}}">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Sản phẩm 1
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+								</ul>
 							</li>
+
 
 							<li class="">
 								<a href="{{url('nhacungcap')}}">
@@ -442,7 +465,7 @@
 
 
 
-					<li class="">
+					<li class=@yield('menukhachhang')>
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text">
@@ -495,7 +518,7 @@
 						</ul>
 					</li>
 
-					<li class="">
+					<li class=@yield('menudoanhthu')>
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text">
@@ -548,7 +571,7 @@
 						</ul>
 					</li>
 
-					<li class="">
+					<li class=@yield('menuThongTinCaNhan')>
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text">

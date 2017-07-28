@@ -1,3 +1,6 @@
+<?php $__env->startSection('menuThongTinCaNhan'); ?>
+    open
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('profile-user'); ?>
 
 <div>

@@ -2,16 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85c50f52-2061-4a9e-a697-479e497899cf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/KhachHang/hoadon.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/KhachHang/hoadon.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/KhachHang/khachhang.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/KhachHang/khachhang.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/SanPham/nhacungcap.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/SanPham/nhacungcap.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/header.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/36e4cdd5abbb2b9c3afdce657d7b822f736f8a5f.php" afterPath="$PROJECT_DIR$/storage/framework/views/36e4cdd5abbb2b9c3afdce657d7b822f736f8a5f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/3a27fa03797e8c11ce942853d0a470439251912e.php" afterPath="$PROJECT_DIR$/storage/framework/views/3a27fa03797e8c11ce942853d0a470439251912e.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/6e26b85cc561efa39f12b3d70774bc83cf643633.php" afterPath="$PROJECT_DIR$/storage/framework/views/6e26b85cc561efa39f12b3d70774bc83cf643633.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/a62b81924b7017c0ea323718f7293ffe1a52b315.php" afterPath="$PROJECT_DIR$/storage/framework/views/a62b81924b7017c0ea323718f7293ffe1a52b315.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/c2625dee1da81b9ddc3d2806e8a10611acac4077.php" afterPath="$PROJECT_DIR$/storage/framework/views/c2625dee1da81b9ddc3d2806e8a10611acac4077.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/8425f88eafff2ad89f66971603aa9cf7b9112e97.php" afterPath="$PROJECT_DIR$/storage/framework/views/8425f88eafff2ad89f66971603aa9cf7b9112e97.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/91472dc0b70d5190cd635b9de01b14fa4f85fe09.php" afterPath="$PROJECT_DIR$/storage/framework/views/91472dc0b70d5190cd635b9de01b14fa4f85fe09.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/d4631a2984a66ec7aced99c695f21ef688c03865.php" afterPath="$PROJECT_DIR$/storage/framework/views/d4631a2984a66ec7aced99c695f21ef688c03865.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/daf6bcb3413fdca185edceada0a901a52116623c.php" afterPath="$PROJECT_DIR$/storage/framework/views/daf6bcb3413fdca185edceada0a901a52116623c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/eb11974bf302636a1e16ff04742c4924c8838650.php" afterPath="$PROJECT_DIR$/storage/framework/views/eb11974bf302636a1e16ff04742c4924c8838650.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/d7086432d4836cb9545a500115b58b4617320a61.php" afterPath="$PROJECT_DIR$/storage/framework/views/d7086432d4836cb9545a500115b58b4617320a61.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/eaa91f73c21a406d736d4d5e02306ad681d2bc50.php" afterPath="$PROJECT_DIR$/storage/framework/views/eaa91f73c21a406d736d4d5e02306ad681d2bc50.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,12 +27,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <file leaf-file-name="sanpham.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="64" column="39" lean-forward="false" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
-              <folding />
+            <state relative-caret-position="280">
+              <caret line="104" column="25" lean-forward="true" selection-start-line="56" selection-start-column="20" selection-end-line="104" selection-end-column="25" />
+              <folding>
+                <element signature="e#1790#4216#0#HTML" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -35,8 +42,8 @@
       <file leaf-file-name="nhacungcap.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/nhacungcap.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1652" selection-end-column="11" />
+            <state relative-caret-position="1245">
+              <caret line="83" column="25" lean-forward="false" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -45,39 +52,22 @@
       <file leaf-file-name="khachhang.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/KhachHang/khachhang.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1652" selection-end-column="11" />
+            <state relative-caret-position="234">
+              <caret line="47" column="28" lean-forward="false" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hoadon.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hoadon.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/KhachHang/hoadon.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sanpham.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6080">
-              <caret line="2" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1652" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/header.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="615" column="86" lean-forward="false" selection-start-line="615" selection-start-column="86" selection-end-line="615" selection-end-column="86" />
-              <folding />
+            <state relative-caret-position="430">
+              <caret line="96" column="21" lean-forward="false" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
+              <folding>
+                <element signature="e#1129#1211#0#HTML" expanded="false" />
+                <element signature="e#1233#3659#0#HTML" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,14 +118,14 @@
         <option value="$PROJECT_DIR$/database/migrations/2017_07_20_102026_create_ChiTietHoaDon_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_07_20_102012_create_HoaDon_table.php" />
         <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/profile.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/SanPham/nhacungcap.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/KhachHang/khachhang.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/KhachHang/hoadon.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/header.blade.php" />
       </list>
     </option>
   </component>
@@ -171,8 +161,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,12 +197,22 @@
             <path>
               <item name="Bussiness" type="b2602c69:ProjectViewProjectNode" />
               <item name="Bussiness" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="SanPham" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Bussiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Bussiness" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -327,11 +325,14 @@
       <workItem from="1500602452211" duration="8921000" />
       <workItem from="1500862977338" duration="7136000" />
       <workItem from="1500902700895" duration="2024000" />
+      <workItem from="1500989318888" duration="556000" />
+      <workItem from="1501003928333" duration="535000" />
+      <workItem from="1501253581185" duration="5664000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41167000" />
+    <option name="totallyTimeSpent" value="47922000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="732" extended-state="0" />
@@ -579,7 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3120">
           <caret line="208" column="56" lean-forward="false" selection-start-line="202" selection-start-column="48" selection-end-line="208" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -597,65 +597,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboash.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6080">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1652" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/nhacungcap.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1652" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/KhachHang/khachhang.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1652" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/KhachHang/hoadon.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
+        <state relative-caret-position="613">
           <caret line="64" column="39" lean-forward="false" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
           <folding />
         </state>
@@ -663,9 +614,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="615" column="86" lean-forward="false" selection-start-line="615" selection-start-column="86" selection-end-line="615" selection-end-column="86" />
+        <state relative-caret-position="519">
+          <caret line="573" column="56" lean-forward="false" selection-start-line="573" selection-start-column="56" selection-end-line="573" selection-end-column="56" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/profile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="110" column="11" lean-forward="false" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="104" column="25" lean-forward="true" selection-start-line="56" selection-start-column="20" selection-end-line="104" selection-end-column="25" />
+          <folding>
+            <element signature="e#1790#4216#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/nhacungcap.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="83" column="25" lean-forward="false" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/KhachHang/khachhang.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="47" column="28" lean-forward="false" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/KhachHang/hoadon.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="96" column="21" lean-forward="false" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
+          <folding>
+            <element signature="e#1129#1211#0#HTML" expanded="false" />
+            <element signature="e#1233#3659#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
