@@ -42,9 +42,13 @@ Route::get('/login', function () {
 });
 
 
-Route::get('/danhsachtheloai', function () {
-    return view('admin.SanPham.theloai');
-});
+Route::get('/danhsachtheloai', 'Admin\TheLoaiController@getTheLoai')->name('danhsachtheloai');
+Route::post('/addtheloai', 'Admin\TheLoaiController@addTheLoai')->name('addtheloai');
+
+//Route::get('/danhsachtheloai', function () {
+//
+//  //  return view('admin.SanPham.theloai');
+//});
 
 Route::get('/danhsachsanpham', function () {
     return view('admin.SanPham.sanpham');
@@ -63,4 +67,20 @@ Route::get('/danhsachkhachhang', function () {
 
 Route::get('/hoadon', function () {
     return view('admin.KhachHang.hoadon');
+});
+
+Route::get('/danhsachnhaphang', function () {
+    return view('admin.DoanhThu.danhsach_nhaphang');
+});
+
+Route::get('/danhsachbanhang', function () {
+    return view('admin.DoanhThu.danhsach_banhang');
+});
+
+Route::get('/danhsachhangton', function () {
+    return view('admin.DoanhThu.danhsach_hangton');
+});
+
+Route::get('/lichsubanhang', function () {
+    return view('admin.DoanhThu.lichsu_banhang');
 });

@@ -7,7 +7,7 @@ class Constant
     //Table The Loai
     const TBL_TheLoai           = "TheLoai";
     const TBL_MaTheLoai         = "maTheLoai";
-    const TBL_tenTheLoai        = "TenTheLoai";
+    const TBL_tenTheLoai        = "tenTheLoai";
     const TBL_Active            = "Active";
     //Table San Pham
     const TBL_SanPham           = "SanPham";

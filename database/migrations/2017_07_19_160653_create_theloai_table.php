@@ -19,8 +19,7 @@ class CreateTheloaiTable extends Migration
             $table->increments(Constant::TBL_MaTheLoai);
             $table->string(Constant::TBL_tenTheLoai)->nullable();
             $table->integer(Constant::TBL_Active)->nullable();
-//            $table->timestamps();
-         //   $table->softDeletes();
+
         });
     }
 

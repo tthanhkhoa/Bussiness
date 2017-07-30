@@ -532,7 +532,7 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="#">
+								<a href="{{url('danhsachnhaphang')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Danh Sách Nhập hàng
 								</a>
@@ -541,7 +541,7 @@
 							</li>
 
 							<li class="">
-								<a href="#">
+								<a href="{{url('danhsachbanhang')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Danh sách hàng đã bán
 								</a>
@@ -550,16 +550,16 @@
 							</li>
 
 							<li class="">
-								<a href="#">
+								<a href="{{url('danhsachhangton')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Doanh thu bán hàng
+									Danh sách hàng tồn
 								</a>
 
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a href="#">
+								<a href="{{url('lichsubanhang')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Lịch sử bán hàng
 								</a>
@@ -657,8 +657,8 @@
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
+		<script src="assets/js/jquery-1.11.3.min.js"></script>
+		<![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
