@@ -1,9 +1,12 @@
-<?php $__env->startSection('sanpham'); ?>
+<?php $__env->startSection('menukhachhang'); ?>
+   open
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('hoadon'); ?>
     
     <div class="col-xs-12">
 
         <div class="table-header">
-            Danh sách Sản phẩm
+                Hoá Đơn
         </div>
 
         <!-- div.table-responsive -->
@@ -13,19 +16,15 @@
             <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th class="center">
-                        <label class="pos-rel">
-                            <input type="checkbox" class="ace" />
-                            <span class="lbl"></span>
-                        </label>
-                    </th>
-                    <th>Mã sản phẩm </th>
-                    <th>Tên sản phẩm </th>
-                    <th class="hidden-480">Số lượng </th>
 
-                    <th>Nhãn hiệu</th>
-                    <th>Giá tiền</th>
-                    <th class="hidden-480">Status</th>
+                    <th>Mã hoá đơn </th>
+                    <th>Tên khách hàng </th>
+                    <th class="hidden-480">Thời gian đặt hàng</th>
+
+                    <th>
+                        Tổng tiền
+                    </th>
+                    <th class="hidden-480">Số điện thoại</th>
 
                     <th></th>
                 </tr>
@@ -33,12 +32,6 @@
 
                 <tbody>
                 <tr>
-                    <td class="center">
-                        <label class="pos-rel">
-                            <input type="checkbox" class="ace" />
-                            <span class="lbl"></span>
-                        </label>
-                    </td>
 
                     <td>
                         <a href="#">app.com</a>
@@ -46,10 +39,9 @@
                     <td>$45</td>
                     <td class="hidden-480">3,330</td>
                     <td>Feb 12</td>
-                    <td>Feb 12</td>
 
                     <td class="hidden-480">
-                        <span class="label label-sm label-warning">Expiring</span>
+                        Expiring
                     </td>
 
                     <td>
@@ -107,14 +99,5 @@
         </div>
     </div>
     
-<?php $__env->stopSection(); ?>
-
-
-<?php $__env->startSection('menusanpham'); ?>
-    open
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('componentsanpham'); ?>
-    open
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('admin.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

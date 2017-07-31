@@ -374,23 +374,7 @@
 				</script>
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-						<button class="btn btn-success">
-							<i class="ace-icon fa fa-signal"></i>
-						</button>
 
-						<button class="btn btn-info">
-							<i class="ace-icon fa fa-pencil"></i>
-						</button>
-
-						<button class="btn btn-warning">
-							<i class="ace-icon fa fa-users"></i>
-						</button>
-
-						<button class="btn btn-danger">
-							<i class="ace-icon fa fa-cogs"></i>
-						</button>
-					</div>
 
 					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
 						<span class="btn btn-success"></span>
@@ -405,7 +389,7 @@
 
 				<ul class="nav nav-list">
 					<li class="active">
-						<a href="index.html">
+						<a href="{{url('admin')}}">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> Dashboard </span>
 						</a>
@@ -413,7 +397,7 @@
 						<b class="arrow"></b>
 					</li>
 
-					<li class="">
+					<li class= @yield('menusanpham')>
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text">
@@ -436,17 +420,40 @@
 								<b class="arrow"></b>
 							</li>
 
-							<li class="">
-								<a href="{{url('danhsachsanpham')}}">
+							<li class= @yield('componentsanpham')>
+								<a href="#" class="dropdown-toggle">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Sản Phẩm
+									<b class="arrow fa fa-angle-down"></b>
 								</a>
 
 								<b class="arrow"></b>
+
+								<ul class="submenu">
+									<li class="">
+										<a href="{{url('danhsachsanpham')}}">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Tất cả
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a href="{{url('danhsachsanpham')}}">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Sản phẩm 1
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+								</ul>
 							</li>
 
+
 							<li class="">
-								<a href="#">
+								<a href="{{url('nhacungcap')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Nhãn Hiệu & Nhà Cung Cấp
 								</a>
@@ -458,7 +465,7 @@
 
 
 
-					<li class="">
+					<li class=@yield('menukhachhang')>
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text">
@@ -472,7 +479,7 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="#">
+								<a href="{{url('danhsachkhachhang')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Danh Sách Khách Hàng
 								</a>
@@ -481,7 +488,7 @@
 							</li>
 
 							<li class="">
-								<a href="#">
+								<a href="{{url('hoadon')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Danh sách hóa đơn chưa duyệt
 								</a>
@@ -490,7 +497,7 @@
 							</li>
 
 							<li class="">
-								<a href="#">
+								<a href="{{url('hoadon')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Danh sách hóa đơn đã duyệt
 								</a>
@@ -499,7 +506,7 @@
 							</li>
 
 							<li class="">
-								<a href="#">
+								<a href="{{url('hoadon')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Tất cả Hóa đơn
 								</a>
@@ -511,7 +518,7 @@
 						</ul>
 					</li>
 
-					<li class="">
+					<li class=@yield('menudoanhthu')>
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text">
@@ -525,7 +532,7 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="#">
+								<a href="{{url('danhsachnhaphang')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Danh Sách Nhập hàng
 								</a>
@@ -534,7 +541,7 @@
 							</li>
 
 							<li class="">
-								<a href="#">
+								<a href="{{url('danhsachbanhang')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Danh sách hàng đã bán
 								</a>
@@ -543,16 +550,16 @@
 							</li>
 
 							<li class="">
-								<a href="#">
+								<a href="{{url('danhsachhangton')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Doanh thu bán hàng
+									Danh sách hàng tồn
 								</a>
 
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a href="#">
+								<a href="{{url('lichsubanhang')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Lịch sử bán hàng
 								</a>
@@ -564,7 +571,7 @@
 						</ul>
 					</li>
 
-					<li class="">
+					<li class=@yield('menuThongTinCaNhan')>
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text">
@@ -578,7 +585,7 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="#">
+								<a href="{{url("profile")}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Thông tin người dùng
 								</a>
@@ -603,6 +610,9 @@
 				@yield('content')
 				@yield('theloai')
 				@yield('sanpham')
+				@yield('khachhang')
+				@yield('nhacungcap')
+				@yield('hoadon')
 				@yield('profile-user')
 
 			</div>
@@ -612,22 +622,22 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Ace</span>
-							Application &copy; 2013-2014
+							<span class="blue bolder">Thanh Khoa</span>
+							Application &copy; 2017
 						</span>
 
 						&nbsp; &nbsp;
 						<span class="action-buttons">
-							<a href="#">
+							<a href="https://twitter.com/tthanhkhoa">
 								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
 							</a>
 
-							<a href="#">
+							<a href="https://www.facebook.com/ThanhKhoa.UTE">
 								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
 							</a>
 
-							<a href="#">
-								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+							<a href="https://www.linkedin.com/in/thanh-khoa-478b41147/">
+								<i class="ace-icon fa fa-linkedin-square orange bigger-150"></i>
 							</a>
 						</span>
 					</div>
@@ -647,8 +657,8 @@
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
+		<script src="assets/js/jquery-1.11.3.min.js"></script>
+		<![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>

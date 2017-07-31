@@ -1,9 +1,12 @@
-<?php $__env->startSection('sanpham'); ?>
+<?php $__env->startSection('menukhachhang'); ?>
+    open
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('khachhang'); ?>
     
     <div class="col-xs-12">
 
         <div class="table-header">
-            Danh sách Sản phẩm
+            Danh sách Khách hàng
         </div>
 
         <!-- div.table-responsive -->
@@ -13,43 +16,35 @@
             <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th class="center">
-                        <label class="pos-rel">
-                            <input type="checkbox" class="ace" />
-                            <span class="lbl"></span>
-                        </label>
-                    </th>
-                    <th>Mã sản phẩm </th>
-                    <th>Tên sản phẩm </th>
-                    <th class="hidden-480">Số lượng </th>
 
-                    <th>Nhãn hiệu</th>
-                    <th>Giá tiền</th>
-                    <th class="hidden-480">Status</th>
+                    <th>Mã khách hàng</th>
+                    <th>Tên khách hàng</th>
+                <th class="hidden-480">Ngày sinh </th>
+
+                    <th>Địa chỉ</th>
+                    <th>Số điện thoại </th>
+                    <th>Email </th>
+
 
                     <th></th>
                 </tr>
                 </thead>
 
                 <tbody>
+
+
                 <tr>
-                    <td class="center">
-                        <label class="pos-rel">
-                            <input type="checkbox" class="ace" />
-                            <span class="lbl"></span>
-                        </label>
-                    </td>
+
 
                     <td>
-                        <a href="#">app.com</a>
+                        <a href="#">rise.com</a>
                     </td>
-                    <td>$45</td>
-                    <td class="hidden-480">3,330</td>
-                    <td>Feb 12</td>
-                    <td>Feb 12</td>
-
+                    <td>$42</td>
+                    <td class="hidden-480">3,900</td>
+                    <td>Feb 01</td>
+                    <td>Feb 01</td>
                     <td class="hidden-480">
-                        <span class="label label-sm label-warning">Expiring</span>
+                        Sold
                     </td>
 
                     <td>
@@ -102,19 +97,11 @@
                         </div>
                     </td>
                 </tr>
+
                 </tbody>
             </table>
         </div>
     </div>
     
-<?php $__env->stopSection(); ?>
-
-
-<?php $__env->startSection('menusanpham'); ?>
-    open
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('componentsanpham'); ?>
-    open
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('admin.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,8 +1,7 @@
-@extends('admin.header')
-@section('menuThongTinCaNhan')
+<?php $__env->startSection('menuThongTinCaNhan'); ?>
     open
-@endsection
-@section('profile-user')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('profile-user'); ?>
 
 <div>
     <div id="user-profile-1" class="user-profile row">
@@ -487,4 +486,5 @@
         </div>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

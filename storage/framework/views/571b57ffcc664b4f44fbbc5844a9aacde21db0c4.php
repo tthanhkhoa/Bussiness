@@ -3,7 +3,7 @@
     <div class="col-xs-12">
 
         <div class="table-header">
-            Danh sách Sản phẩm
+            Danh sách hàng tồn
         </div>
 
         <!-- div.table-responsive -->
@@ -22,10 +22,10 @@
                     <th>Mã sản phẩm </th>
                     <th>Tên sản phẩm </th>
                     <th class="hidden-480">Số lượng </th>
-
-                    <th>Nhãn hiệu</th>
                     <th>Giá tiền</th>
-                    <th class="hidden-480">Status</th>
+                    <th>Nhãn hiệu</th>
+                    <th>Ngày nhập</th>
+
 
                     <th></th>
                 </tr>
@@ -47,7 +47,6 @@
                     <td class="hidden-480">3,330</td>
                     <td>Feb 12</td>
                     <td>Feb 12</td>
-
                     <td class="hidden-480">
                         <span class="label label-sm label-warning">Expiring</span>
                     </td>
@@ -110,11 +109,9 @@
 <?php $__env->stopSection(); ?>
 
 
-<?php $__env->startSection('menusanpham'); ?>
+<?php $__env->startSection('menudoanhthu'); ?>
     open
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('componentsanpham'); ?>
-    open
-<?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('admin.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

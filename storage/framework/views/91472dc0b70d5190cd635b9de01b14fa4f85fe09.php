@@ -1,9 +1,12 @@
-<?php $__env->startSection('sanpham'); ?>
+<?php $__env->startSection('menusanpham'); ?>
+    open
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('nhacungcap'); ?>
     
     <div class="col-xs-12">
 
         <div class="table-header">
-            Danh sách Sản phẩm
+            Danh sách Nhà cung cấp
         </div>
 
         <!-- div.table-responsive -->
@@ -13,45 +16,22 @@
             <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th class="center">
-                        <label class="pos-rel">
-                            <input type="checkbox" class="ace" />
-                            <span class="lbl"></span>
-                        </label>
-                    </th>
-                    <th>Mã sản phẩm </th>
-                    <th>Tên sản phẩm </th>
-                    <th class="hidden-480">Số lượng </th>
 
-                    <th>Nhãn hiệu</th>
-                    <th>Giá tiền</th>
-                    <th class="hidden-480">Status</th>
-
-                    <th></th>
+                    <th>Mã nhà cung cấp</th>
+                    <th>Tên nhà cung cấp </th>
+                    <th class="hidden-480">Địa chỉ</th>
+                    <th class="hidden-480">Số điện thoại</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
-                    <td class="center">
-                        <label class="pos-rel">
-                            <input type="checkbox" class="ace" />
-                            <span class="lbl"></span>
-                        </label>
-                    </td>
-
                     <td>
                         <a href="#">app.com</a>
                     </td>
                     <td>$45</td>
                     <td class="hidden-480">3,330</td>
                     <td>Feb 12</td>
-                    <td>Feb 12</td>
-
-                    <td class="hidden-480">
-                        <span class="label label-sm label-warning">Expiring</span>
-                    </td>
-
                     <td>
                         <div class="hidden-sm hidden-xs action-buttons">
                             <a class="blue" href="#">
@@ -107,14 +87,5 @@
         </div>
     </div>
     
-<?php $__env->stopSection(); ?>
-
-
-<?php $__env->startSection('menusanpham'); ?>
-    open
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('componentsanpham'); ?>
-    open
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('admin.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
