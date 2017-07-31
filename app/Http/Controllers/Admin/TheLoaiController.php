@@ -33,7 +33,9 @@ class TheLoaiController extends Controller
     }
 
     function deleteTheLoai(Request $request){
-
+        $id = $request->{Constant::TBL_MaTheLoai};
+        $deleteTheLoai = theloai::where('maTheLoai', $id)->delete();
+        return response()->json(['result'=>1]);
     }
 
 

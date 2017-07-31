@@ -35,17 +35,18 @@
 
                     <td>{{$item->maTheLoai}}</td>
                     <td>{{$item->TenTheLoai}}</td>
-                    <td class="hidden-480">{{$item->Active = 1 ?"YES" : "NO"}}</td>
+                    <td class="hidden-480">{{$item->Active == 1 ?"YES" : "NO"}}</td>
 
                     <td>
                         <div class="hidden-sm hidden-xs action-buttons">
 
 
-                            <a class="edit_theloai green" id="edit_theloai" href="#">
+                            <a class="edit_theloai green" id="edit_theloai" data-target="#AddModel" data-toggle="modal"
+                               data-id="{{$item->maTheLoai}}" data-tenTheLoai="{{$item->TenTheLoai}}" data-active="{{$item->Active}}" href="#">
                                 <i class="ace-icon fa fa-pencil bigger-130"></i>
                             </a>
 
-                            <a class="delete_theloai red" id="delete_theloai" data-target="#confirm_delete" data-toggle="modal" data-id="1"  href="#">
+                            <a class="delete_theloai red" id="delete_theloai" data-target="#confirm_delete" data-toggle="modal" data-id="{{$item->maTheLoai}}"  href="#">
                                 <i class="ace-icon fa fa-trash-o bigger-130"></i>
                             </a>
                         </div>
@@ -57,16 +58,12 @@
                                 </button>
 
                                 <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                    <li>
-                                        <a href="#" class="add_theloai tooltip-info" data-rel="tooltip" title="View">
-																				<span class="blue">
-																					<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																				</span>
-                                        </a>
-                                    </li>
+
 
                                     <li>
-                                        <a href="#" class="edit_theloai tooltip-success" data-rel="tooltip" title="Edit">
+                                        <a href="#" class="edit_theloai tooltip-success" data-rel="tooltip" title="Edit"
+                                           id="edit_theloai" data-target="#AddModel" data-toggle="modal"
+                                           data-id="{{$item->maTheLoai}}" data-tenTheLoai="{{$item->TenTheLoai}}" data-active="{{$item->Active}}">
 																				<span class="green">
 																					<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
 																				</span>
@@ -74,8 +71,8 @@
                                     </li>
 
                                     <li>
-                                        <a href="#" class="delete_theloai tooltip-error" data-rel="tooltip"
-                                           data-target="confirm_delete" data-toggle="modal" title="Delete">
+                                        <a href="#" id="delete_theloai" class="delete_theloai tooltip-error" data-rel="tooltip"
+                                           data-target="#confirm_delete" data-toggle="modal" data-id="{{$item->maTheLoai}}" title="Delete">
 																				<span class="red">
 																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
 																				</span>
@@ -100,7 +97,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="false">×</span></button>
-                    <h4 class="modal-title">Agent's Infomation</h4>
+                    <h4 class="modal-title">Thêm Thể Loại</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -146,7 +143,7 @@
     </div>
 {{--Model confirm--}}
 
-    <div class="modal" id="confirm_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="confirm_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -173,12 +170,72 @@
 
 <script>
     {{--Model event--}}
-//    $( ".add_theloai" ).click(function() {
-//        $('#AddModel').modal('show');
-//    });
-//    $('tbody#rowTheLoai').on('click','.edit_theloai',function(){
-//        $('#AddModel').modal('toggle', $(this));
-//    });
+    $( ".add_theloai" ).click(function() {
+        $('#add-theloai').show();
+        $('#edit-theloai').hide();
+    });
+    $( ".edit_theloai" ).click(function() {
+        $('#edit-theloai').show();
+        $('#add-theloai').hide();
+    });
+
+
+    $('tbody#rowTheLoai').on('click','.edit_theloai',function(){
+        var maTheLoai = $(this).data('id');
+        var tenTheLoai = $(this).data('tentheloai');
+        var Active = $(this).data('active');
+        console.log(Active);
+        if(Active == 1){
+                var $radios = $('input:radio[name=Active]');
+                    $radios.filter('[value=1]').prop('checked', true);
+
+        }
+        else{
+            var $radios = $('input:radio[name=Active]');
+                $radios.filter('[value=0]').prop('checked', true);
+        }
+        //$("#Active").prop("checked", true)
+
+        console.log(tenTheLoai + Active);
+        var modal = $('#AddModel');
+        modal.find("#maTheLoai").val(maTheLoai);
+        modal.find("#tenTheLoai").val(tenTheLoai);
+
+//        modal.find("#Active").val(Active);
+    });
+
+    $('tbody#rowTheLoai').on('click','.delete_theloai',function(){
+        var maTheLoai = $(this).data('id');
+        $("#row_id_del").val( maTheLoai );
+        // $(".modal-body #bookId").val( myBookId );
+    });
+
+
+    $('#delete_').click(function(e){
+        var _token = $("input[name='_token']").val();
+        var maTheLoai = $('#row_id_del').val();
+        console.log(maTheLoai);
+        $.ajax({
+            'url':'deletetheloai',
+            'data':{
+                '_token': _token,
+                'maTheLoai': maTheLoai
+            },
+            'type':'POST',
+            success: function(data){
+                $('#confirm_delete').modal('hide');
+                if(data.result == 1){
+                    $("#" + maTheLoai).remove();
+                }
+                else{
+
+                }
+
+
+            }
+        })
+    });
+
 //    $('tbody#rowTheLoai').on('click','.delete_theloai',function(event){
 //        $('#confirm_delete').modal('toggle', $(this));
 ////        $('#confirm_delete').modal('show');
@@ -190,9 +247,11 @@
 //    });
 
 
-    $('#confirm_delete').on('shown.bs.modal', function () {
-        alert('show event fired!');
-    });
+//    $('#confirm_delete').on('shown.bs.modal', function () {
+//        alert('show event fired!');
+//    });
+//    $("#confirm_delete").modal('show');
+
     $('#add-theloai').click(function(e){
         e.preventDefault();
         var _token = $("input[name='_token']").val();
@@ -224,10 +283,12 @@
                     result += "<td>"+active+"</td>";
                     result += "<td>";
                     result += "<div class=\"hidden-sm hidden-xs action-buttons\">";
-                    result += "<a class=\"edit_theloai green\" id=\"edit_theloai\" href=\"#\">";
+                    result += "<a class=\"edit_theloai green\" id=\"edit_theloai\" data-target=\"#AddModel\" data-toggle=\"modal\"\n" +
+                        "                               data-id="+data.result.id+" data-tenTheLoai="+data.result.tenTheLoai+" data-active="+data.result.Active+" href=\"#\">";
                     result += "<i class=\"ace-icon fa fa-pencil bigger-130\"></i>";
                     result += "</a>";
-                    result += "<a class=\"delete_theloai red\" id=\"delete_theloai\" href=\"#\">";
+                    result += "<a class=\"delete_theloai red\" id=\"delete_theloai\" data-target=\"#confirm_delete\" " +
+                        "data-toggle=\"modal\" data-id="+data.result.id+" href=\"#\">";
                     result += "<i class=\"ace-icon fa fa-trash-o bigger-130\"></i>";
                     result += "</a>";
                     result += "</div>";
@@ -238,14 +299,15 @@
                     result += "</button>";
                     result += "<ul class=\"dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close\">";
                     result += "<li>";
-                    result += "<a href=\"#\" class=\"edit_theloai tooltip-success\" data-rel=\"tooltip\" title=\"Edit\">";
+                    result += "<a href=\"#\" class=\"edit_theloai tooltip-success\" id=\"edit_theloai\" data-target=\"#AddModel\" data-toggle=\"modal\"\n" +
+                        " data-rel=\"tooltip\" title=\"Edit\" data-id=\"+data.result.id+\" data-tenTheLoai=\"+data.result.tenTheLoai+\" data-active=\"+data.result.Active+\" >";
                     result += "<span class=\"green\">";
                     result += "<i class=\"ace-icon fa fa-pencil-square-o bigger-120\"></i>";
                     result += "</span>";
                     result += "</a>";
                     result += "</li>";
                     result += "<li>";
-                    result += "<a href=\"#\" class=\"delete_theloai tooltip-error\" data-rel=\"tooltip\" data-target=\"confirm_delete\" data-toggle=\"modal\" title=\"Delete\">";
+                    result += "<a href=\"#\" class=\"delete_theloai tooltip-error\" data-rel=\"tooltip\" data-target=\"confirm_delete\" data-id=\"+data.result.id+\" data-toggle=\"modal\" title=\"Delete\">";
                     result += "<span class=\"red\">";
                     result += "<i class=\"ace-icon fa fa-trash-o bigger-120\"></i>";
                     result += "</span>";
@@ -256,7 +318,7 @@
                     result += "</div>";
                     result += "</td>";
                     result += "</tr>";
-                    $("tbody#rowTheLoai").prependChild(result);
+                    $("#rowTheLoai").prepend(result);
 //                    $("tbody#rowTheLoai").appendChild(result);
                 }else{
                     location.reload();
