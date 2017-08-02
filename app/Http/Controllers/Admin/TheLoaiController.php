@@ -29,7 +29,13 @@ class TheLoaiController extends Controller
     }
 
     function editTheLoai(Request $request){
-
+        $editTheLoai = theloai::find($request ->{Constant::TBL_MaTheLoai});
+        return $editTheLoai;
+        return $request ->{Constant::TBL_MaTheLoai};
+        $editTheLoai->{Constant::TBL_tenTheLoai} = $request->{Constant::TBL_tenTheLoai};
+        $editTheLoai->{Constant::TBL_Active} = $request->{Constant::TBL_Active};
+        $editTheLoai->save();
+        return response()->json(['result'=>$editTheLoai]);
     }
 
     function deleteTheLoai(Request $request){

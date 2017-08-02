@@ -45,6 +45,8 @@ Route::get('/login', function () {
 Route::get('/danhsachtheloai', 'Admin\TheLoaiController@getTheLoai')->name('danhsachtheloai');
 Route::post('/addtheloai', 'Admin\TheLoaiController@addTheLoai')->name('addtheloai');
 Route::post('/deletetheloai', 'Admin\TheLoaiController@deleteTheLoai')->name('deletetheloai');
+Route::post('/updatetheloai', 'Admin\TheLoaiController@editTheLoai')->name('updatetheloai');
+
 //Route::get('/danhsachtheloai', function () {
 //
 //  //  return view('admin.SanPham.theloai');
