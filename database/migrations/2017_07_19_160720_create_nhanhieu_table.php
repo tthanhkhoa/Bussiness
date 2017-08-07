@@ -17,7 +17,7 @@ class CreateNhanhieuTable extends Migration
         //
         Schema::create(Constant::TBL_NhanHieu, function (Blueprint $table) {
             $table->increments(Constant::TBL_idNhanHieu);
-            $table->integer(Constant::TBL_tenNhanHieu)->nullable();
+            $table->string(Constant::TBL_tenNhanHieu)->nullable();
             $table->string(Constant::TBL_DiaChi)->nullable();
             $table->string(Constant::TBL_SoDienThoai)->nullable();
             $table->integer(Constant::TBL_Active)->nullable();

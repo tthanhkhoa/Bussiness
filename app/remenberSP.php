@@ -8,6 +8,7 @@ class remenberSP extends Model
 {
     //
     protected $table = Constant::TBL_RemenberSP;
+    protected $primaryKey = Constant::TBL_idremenber;
 
     public function KhachHang(){
         return $this->belongsTo(Constant::TBL_KhachHang,Constant::TBL_maKhachHang,Constant::TBL_maKhachHang);

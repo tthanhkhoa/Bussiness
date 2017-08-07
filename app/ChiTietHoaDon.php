@@ -8,6 +8,7 @@ class ChiTietHoaDon extends Model
 {
     //
     protected $table = Constant::TBL_ChiTietHoaDon;
+    protected $primaryKey = Constant::TBL_maChiTietHD;
 
     public function SanPham()
     {

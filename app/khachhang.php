@@ -8,6 +8,7 @@ class khachhang extends Model
 {
     //
     protected $table = Constant::TBL_KhachHang;
+    protected $primaryKey = Constant::TBL_maKhachHang;
 
     public function User(){
         return $this->belongsTo(Constant::TBL_User, Constant::TBL_idUser, Constant::TBL_idUser);
