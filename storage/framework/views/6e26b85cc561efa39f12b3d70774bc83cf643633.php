@@ -57,7 +57,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="<?php echo e(url('admin')); ?>" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							DashBoash Admin
@@ -421,7 +421,7 @@
 							</li>
 
 							<li class= <?php echo $__env->yieldContent('componentsanpham'); ?>>
-								<a href="#" class="dropdown-toggle">
+								<a id="sanpham" href="#" class="dropdown-toggle">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Sản Phẩm
 									<b class="arrow fa fa-angle-down"></b>
@@ -429,9 +429,9 @@
 
 								<b class="arrow"></b>
 
-								<ul class="submenu">
+								<ul id="sub_id_sanpham" class="submenu">
 									<li class="">
-										<a href="<?php echo e(url('danhsachsanpham')); ?>">
+										<a href="<?php echo e(url('tatcasanpham')); ?>">
 											<i class="menu-icon fa fa-caret-right"></i>
 											Tất cả
 										</a>
@@ -439,14 +439,14 @@
 										<b class="arrow"></b>
 									</li>
 
-									<li class="">
-										<a href="<?php echo e(url('danhsachsanpham')); ?>">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Sản phẩm 1
-										</a>
+									
+										
+											
+											
+										
 
-										<b class="arrow"></b>
-									</li>
+										
+									
 
 								</ul>
 							</li>
@@ -673,13 +673,101 @@
 		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
 		<script src="assets/js/jquery.easypiechart.min.js"></script>
 		<script src="assets/js/jquery.sparkline.index.min.js"></script>
-		<script src="assets/js/jquery.flot.min.js"></script>
-		<script src="assets/js/jquery.flot.pie.min.js"></script>
-		<script src="assets/js/jquery.flot.resize.min.js"></script>
+		
+		
+		
 
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>
+            $('#sanpham').click(function(e){
+              //  console.log(1);
+                $.ajax({
+                    'url':'/api/danhsachtheloai_api',
+                    'type':'GET',
+                    success: function(data){
+                        var t;
+                        for(var key in data){
+                            t = data[key];
+                            console.log(t)
+						}
+						var routes = "tatcasanpham";
+                        t.forEach(function(entry) {
+                           // console.log(entry);
+							var codeTheLoai = entry.maTheLoai;
+									
+							
+							var temp = json_encode(url('/'));
+							console.log(temp);
+
+							var result = "<li class=\"\">";
+							result += "<a href="+temp+">";
+							result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
+							result += ""+entry.TenTheLoai+"";
+							result += "</a>";
+							result += "<b class=\"arrow\"></b>";
+							result += "</li>";
+							$("#sub_id_sanpham").append(result);
+                        });
+//						for(var key in t){
+//                            console.log(key);
+//						}
+
+                        
+                           
+							
+                            
+
+							
+							
+							
+							
+							
+							
+							
+							
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                        
+
+
+
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+//                        $("tbody#rowTheLoai").appendChild(result);
+						
+						
+						
+						
+						
+
+						
+						
+
+
+                    }
+                })
+            });
+		</script>
+
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
@@ -715,7 +803,7 @@
 			
 			  //flot chart resize plugin, somehow manipulates default browser resize event to optimize it!
 			  //but sometimes it brings up errors with normal resize event handlers
-			  $.resize.throttleWindow = false;
+//			  $.resize.throttleWindow = false;
 			
 			  var placeholder = $('#piechart-placeholder').css({'width':'90%' , 'min-height':'150px'});
 			  var data = [
@@ -725,43 +813,43 @@
 				{ label: "direct traffic",  data: 18.6, color: "#DA5430"},
 				{ label: "other",  data: 10, color: "#FEE074"}
 			  ]
-			  function drawPieChart(placeholder, data, position) {
-			 	  $.plot(placeholder, data, {
-					series: {
-						pie: {
-							show: true,
-							tilt:0.8,
-							highlight: {
-								opacity: 0.25
-							},
-							stroke: {
-								color: '#fff',
-								width: 2
-							},
-							startAngle: 2
-						}
-					},
-					legend: {
-						show: true,
-						position: position || "ne", 
-						labelBoxBorderColor: null,
-						margin:[-30,15]
-					}
-					,
-					grid: {
-						hoverable: true,
-						clickable: true
-					}
-				 })
-			 }
-			 drawPieChart(placeholder, data);
+//			  function drawPieChart(placeholder, data, position) {
+//			 	  $.plot(placeholder, data, {
+//					series: {
+//						pie: {
+//							show: true,
+//							tilt:0.8,
+//							highlight: {
+//								opacity: 0.25
+//							},
+//							stroke: {
+//								color: '#fff',
+//								width: 2
+//							},
+//							startAngle: 2
+//						}
+//					},
+//					legend: {
+//						show: true,
+//						position: position || "ne",
+//						labelBoxBorderColor: null,
+//						margin:[-30,15]
+//					}
+//					,
+//					grid: {
+//						hoverable: true,
+//						clickable: true
+//					}
+//				 })
+//			 }
+//			 drawPieChart(placeholder, data);
 			
 			 /**
 			 we saved the drawing function and the data to redraw with different position later when switching to RTL mode dynamically
 			 so that's not needed actually.
 			 */
 			 placeholder.data('chart', data);
-			 placeholder.data('draw', drawPieChart);
+//			 placeholder.data('draw', drawPieChart);
 			
 			
 			  //pie chart tooltip example
@@ -808,33 +896,34 @@
 				
 			
 				var sales_charts = $('#sales-charts').css({'width':'100%' , 'height':'220px'});
-				$.plot("#sales-charts", [
-					{ label: "Domains", data: d1 },
-					{ label: "Hosting", data: d2 },
-					{ label: "Services", data: d3 }
-				], {
-					hoverable: true,
-					shadowSize: 0,
-					series: {
-						lines: { show: true },
-						points: { show: true }
-					},
-					xaxis: {
-						tickLength: 0
-					},
-					yaxis: {
-						ticks: 10,
-						min: -2,
-						max: 2,
-						tickDecimals: 3
-					},
-					grid: {
-						backgroundColor: { colors: [ "#fff", "#fff" ] },
-						borderWidth: 1,
-						borderColor:'#555'
-					}
-				});
-			
+//				$.plot("#sales-charts", [
+//					{ label: "Domains", data: d1 },
+//					{ label: "Hosting", data: d2 },
+//					{ label: "Services", data: d3 }
+//				],
+// 					{
+//					hoverable: true,
+//					shadowSize: 0,
+//					series: {
+//						lines: { show: true },
+//						points: { show: true }
+//					},
+//					xaxis: {
+//						tickLength: 0
+//					},
+//					yaxis: {
+//						ticks: 10,
+//						min: -2,
+//						max: 2,
+//						tickDecimals: 3
+//					},
+//					grid: {
+//						backgroundColor: { colors: [ "#fff", "#fff" ] },
+//						borderWidth: 1,
+//						borderColor:'#555'
+//					}
+//				});
+//
 			
 				$('#recent-box [data-rel="tooltip"]').tooltip({placement: tooltip_placement});
 				function tooltip_placement(context, source) {

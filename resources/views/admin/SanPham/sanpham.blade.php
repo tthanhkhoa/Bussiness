@@ -15,12 +15,7 @@
             <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th class="center">
-                        <label class="pos-rel">
-                            <input type="checkbox" class="ace" />
-                            <span class="lbl"></span>
-                        </label>
-                    </th>
+
                     <th>Mã sản phẩm </th>
                     <th>Tên sản phẩm </th>
                     <th class="hidden-480">Số lượng </th>
@@ -32,28 +27,15 @@
                     <th></th>
                 </tr>
                 </thead>
-
+                @foreach($sanpham as $item)
                 <tbody>
                 <tr>
-                    <td class="center">
-                        <label class="pos-rel">
-                            <input type="checkbox" class="ace" />
-                            <span class="lbl"></span>
-                        </label>
-                    </td>
-
-                    <td>
-                        <a href="#">app.com</a>
-                    </td>
-                    <td>$45</td>
-                    <td class="hidden-480">3,330</td>
-                    <td>Feb 12</td>
-                    <td>Feb 12</td>
-
-                    <td class="hidden-480">
-                        <span class="label label-sm label-warning">Expiring</span>
-                    </td>
-
+                    <td>{{$item->maSanPham}}</td>
+                    <td>{{$item->tenSanPham}}</td>
+                    <td>{{$item->soLuong}}</td>
+                    <td>{{$item->NhanHieu->tenNhanHieu}}</td>
+                    <td>{{number_format($item->GiaTien)}}</td>
+                    <td>{{$item->Active == 1 ? 'Yes' : 'No'}}</td>
                     <td>
                         <div class="hidden-sm hidden-xs action-buttons">
                             <a class="blue" href="#">
@@ -105,7 +87,9 @@
                     </td>
                 </tr>
                 </tbody>
+                @endforeach
             </table>
+            <div class="pull-right" > {!! $sanpham->links() !!} </div>
         </div>
     </div>
     {{--</div>--}}

@@ -133,8 +133,8 @@
                                 {{--</div>--}}
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button id="add_" type="button " style="display: none;" class="btn btn-primary" >Save changes</button>
-                                    <button id="edit_" type="submit " style="display: none;"  class="btn btn-primary" >Save changes</button>
+                                    <button id="add_" type="button "  class="btn btn-primary" >Save changes</button>
+                                    <button id="edit" type="button "   class="edit btn btn-primary" >Save changes</button>
                                 </div>
                             </form>
                         </div><!-- /.modal-content -->
@@ -197,20 +197,15 @@
             var $radios = $('input:radio[name=Active]');
                 $radios.filter('[value=0]').prop('checked', true);
         }
-        //$("#Active").prop("checked", true)
-
         console.log(tenTheLoai + Active);
         var modal = $('#AddModel');
         modal.find("#maTheLoai").val(maTheLoai);
         modal.find("#tenTheLoai").val(tenTheLoai);
-
-//        modal.find("#Active").val(Active);
     });
 
     $('tbody#rowTheLoai').on('click','.delete_theloai',function(){
         var maTheLoai = $(this).data('id');
         $("#row_id_del").val( maTheLoai );
-        // $(".modal-body #bookId").val( myBookId );
     });
 
 
@@ -240,11 +235,17 @@
     });
 
 
-    $('#edit_').click(function(e){
+
+    $('.edit').click(function(e){
+        e.preventDefault();
+
         var _token = $("input[name='_token']").val();
         var maTheLoai = $('#maTheLoai').val();
         var tenTheLoai = $('#tenTheLoai').val();
         var Active = $('#Active:checked').val();
+//        console.log(tenTheLoai);
+//        console.log(Active);
+        //return 1;
         $.ajax({
             'url':'updatetheloai',
             'data':{
@@ -256,22 +257,20 @@
             'type':'POST',
             success: function(data){
                 console.log(data);
+//                return 1;
                 $('#AddModel').modal('hide');
                 if(data != null){
-                   // $('#mtl' + maTheLoai).html(hospital_id);
-                    $('#ttl' + maTheLoai).html(tenTheLoai);
-                  //  $('#at' + maTheLoai).html(tenTheLoai);
+                    $('#td_ttl' + maTheLoai).html(tenTheLoai);
                     if(Active == 1){
-                        $('#at' + maTheLoai).html("YES");
-
+                        $('#td_at' + maTheLoai).html("YES");
                     }
                     else{
-                        $('#at' + maTheLoai).html("NO");
+                        $('#td_at' + maTheLoai).html("NO");
                     }
                     var id_edit = 'edit_theloai' + maTheLoai;
                     var temp = document.getElementById(id_edit);
                 //    temp.setAttribute("data-id", "EnSureModal");
-                    temp.setAttribute("data-tenTheLoai", tenTheLoai);
+                    temp.setAttribute("data-tentheloai", tenTheLoai);
                     temp.setAttribute("data-active", Active);
                     var content = temp.outerHTML;
                     temp.outerHTML = content;
@@ -306,6 +305,7 @@
             success: function(data){
 
                 if(data != null){
+//                    console.log(data);
                     $('#AddModel').modal('hide');
                     var active;
                     if(data.result.Active == 1)
@@ -313,18 +313,18 @@
                     else
                         active = "No";
 
-                    var result = "<tr id='" + data.result.id + "'>";
-                    result += "<td id=\"td_mtl'"+data.result.id+"'\">"+data.result.id+"</td>";
-                    result += "<td id= \"td_ttl'"+data.result.id+"'\">"+data.result.tenTheLoai+"</td>";
-                    result += "<td id= \"td_at'"+data.result.id+"'\">"+active+"</td>";
+                    var result = "<tr id='" + data.result.maTheLoai + "'>";
+                    result += "<td id=\"td_mtl"+data.result.maTheLoai+"\">"+data.result.maTheLoai+"</td>";
+                    result += "<td id= \"td_ttl"+data.result.maTheLoai+"\">"+data.result.tenTheLoai+"</td>";
+                    result += "<td id= \"td_at"+data.result.maTheLoai+"\">"+active+"</td>";
                     result += "<td>";
                     result += "<div class=\"hidden-sm hidden-xs action-buttons\">";
-                    result += "<a class='"+"edit_theloai green"+"' id=\"edit_theloai'"+data.result.id+"'\" data-target=\"#AddModel\" data-toggle=\"modal\"\n" +
-                        "                               data-id="+data.result.id+" data-tenTheLoai='"+data.result.tenTheLoai+"' data-active="+data.result.Active+" href=\"#\">";
+                    result += "<a class='"+"edit_theloai green"+"' id=\"edit_theloai"+data.result.maTheLoai+"\" data-target=\"#AddModel\" data-toggle=\"modal\"\n" +
+                        "                               data-id="+data.result.maTheLoai+" data-tenTheLoai='" +data.result.tenTheLoai+ "' data-active="+data.result.Active+" href=\"#\">";
                     result += "<i class=\"ace-icon fa fa-pencil bigger-130\"></i>";
                     result += "</a>";
                     result += "<a class=\"delete_theloai red\" id=\"delete_theloai\" data-target=\"#confirm_delete\" " +
-                        "data-toggle=\"modal\" data-id="+data.result.id+" href=\"#\">";
+                        "data-toggle=\"modal\" data-id="+data.result.maTheLoai+" href=\"#\">";
                     result += "<i class=\"ace-icon fa fa-trash-o bigger-130\"></i>";
                     result += "</a>";
                     result += "</div>";
@@ -335,15 +335,15 @@
                     result += "</button>";
                     result += "<ul class=\"dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close\">";
                     result += "<li>";
-                    result += "<a href=\"#\" class='"+"edit_theloai tooltip-success"+"' id=\"edit_theloai'"+data.result.id+"'\" data-target=\"#AddModel\" data-toggle=\"modal\"\n" +
-                        " data-rel=\"tooltip\" title=\"Edit\" data-id="+data.result.id+" data-tenTheLoai="+data.result.tenTheLoai+" data-active="+data.result.Active+" >";
+                    result += "<a href=\"#\" class='"+"edit_theloai tooltip-success"+"' id=\"edit_theloai"+data.result.maTheLoai+"\" data-target=\"#AddModel\" data-toggle=\"modal\"\n" +
+                        " data-rel=\"tooltip\" title=\"Edit\" data-id="+data.result.maTheLoai+" data-tenTheLoai="+data.result.tenTheLoai+" data-active="+data.result.Active+" >";
                     result += "<span class=\"green\">";
                     result += "<i class=\"ace-icon fa fa-pencil-square-o bigger-120\"></i>";
                     result += "</span>";
                     result += "</a>";
                     result += "</li>";
                     result += "<li>";
-                    result += "<a href=\"#\" class=\"delete_theloai tooltip-error\" data-rel=\"tooltip\" data-target=\"confirm_delete\" data-id="+data.result.id+" data-toggle=\"modal\" title=\"Delete\">";
+                    result += "<a href=\"#\" class=\"delete_theloai tooltip-error\" data-rel=\"tooltip\" data-target=\"confirm_delete\" data-id="+data.result.maTheLoai+" data-toggle=\"modal\" title=\"Delete\">";
                     result += "<span class=\"red\">";
                     result += "<i class=\"ace-icon fa fa-trash-o bigger-120\"></i>";
                     result += "</span>";

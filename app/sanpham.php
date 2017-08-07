@@ -3,11 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\nhanhieu;
 
 class sanpham extends Model
 {
     //
     protected $table = Constant::TBL_SanPham;
+    protected $primaryKey = Constant::TBL_maSanPham;
 
     public function ChiTietHD(){
         return $this->belongsTo(Constant::TBL_ChiTietHoaDon, Constant::TBL_maSanPham, Constant::TBL_maSanPham);
@@ -18,6 +20,6 @@ class sanpham extends Model
     }
 
     public function NhanHieu(){
-        return $this->belongsTo(Constant::TBL_NhanHieu, Constant::TBL_idNhanHieu, Constant::TBL_idNhanHieu);
+        return $this->belongsTo('App\nhanhieu', Constant::TBL_idNhanHieu, Constant::TBL_idNhanHieu);
     }
 }

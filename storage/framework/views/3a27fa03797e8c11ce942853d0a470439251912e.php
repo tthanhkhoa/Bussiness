@@ -13,12 +13,7 @@
             <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th class="center">
-                        <label class="pos-rel">
-                            <input type="checkbox" class="ace" />
-                            <span class="lbl"></span>
-                        </label>
-                    </th>
+
                     <th>Mã sản phẩm </th>
                     <th>Tên sản phẩm </th>
                     <th class="hidden-480">Số lượng </th>
@@ -30,28 +25,15 @@
                     <th></th>
                 </tr>
                 </thead>
-
+                <?php $__currentLoopData = $sanpham; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tbody>
                 <tr>
-                    <td class="center">
-                        <label class="pos-rel">
-                            <input type="checkbox" class="ace" />
-                            <span class="lbl"></span>
-                        </label>
-                    </td>
-
-                    <td>
-                        <a href="#">app.com</a>
-                    </td>
-                    <td>$45</td>
-                    <td class="hidden-480">3,330</td>
-                    <td>Feb 12</td>
-                    <td>Feb 12</td>
-
-                    <td class="hidden-480">
-                        <span class="label label-sm label-warning">Expiring</span>
-                    </td>
-
+                    <td><?php echo e($item->maSanPham); ?></td>
+                    <td><?php echo e($item->tenSanPham); ?></td>
+                    <td><?php echo e($item->soLuong); ?></td>
+                    <td><?php echo e($item->NhanHieu->tenNhanHieu); ?></td>
+                    <td><?php echo e(number_format($item->GiaTien)); ?></td>
+                    <td><?php echo e($item->Active == 1 ? 'Yes' : 'No'); ?></td>
                     <td>
                         <div class="hidden-sm hidden-xs action-buttons">
                             <a class="blue" href="#">
@@ -103,7 +85,9 @@
                     </td>
                 </tr>
                 </tbody>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </table>
+            <div class="pull-right" > <?php echo $sanpham->links(); ?> </div>
         </div>
     </div>
     

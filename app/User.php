@@ -17,7 +17,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-
+    protected $primaryKey = Constant::TBL_idUser;
     /**
      * The attributes that should be hidden for arrays.
      *
