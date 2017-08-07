@@ -28,8 +28,9 @@
                 </tr>
                 </thead>
 
-                @foreach($TheLoai as $item)
+
                 <tbody id="rowTheLoai" align="center">
+                @foreach($TheLoai as $item)
                 <tr id="{{$item->maTheLoai}}">
 
 
@@ -176,13 +177,13 @@
         $radios.filter('[value=1]').prop('checked', false);
         $radios.filter('[value=0]').prop('checked', false);
         $('#add_').show();
-        $('#edit_').hide();
+        $('#edit').hide();
     });
 
 
 
     $('tbody#rowTheLoai').on('click','.edit_theloai',function(){
-        $('#edit_').show();
+        $('#edit').show();
         $('#add_').hide();
         var maTheLoai = $(this).data('id');
         var tenTheLoai = $(this).data('tentheloai');
@@ -355,8 +356,8 @@
                     result += "</td>";
                     result += "</tr>";
                     $("#rowTheLoai").prepend(result);
-                    $('#add_').hide();
-                    $('#edit_').hide();
+//                    $('#add_').hide();
+//                    $('#edit_').hide();
 //                    $("tbody#rowTheLoai").appendChild(result);
                 }else{
                     location.reload();

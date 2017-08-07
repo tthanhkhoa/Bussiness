@@ -27,8 +27,9 @@
                 </tr>
                 </thead>
 
-                <?php $__currentLoopData = $TheLoai; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
                 <tbody id="rowTheLoai" align="center">
+                <?php $__currentLoopData = $TheLoai; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr id="<?php echo e($item->maTheLoai); ?>">
 
 
@@ -176,13 +177,13 @@
         $radios.filter('[value=1]').prop('checked', false);
         $radios.filter('[value=0]').prop('checked', false);
         $('#add_').show();
-        $('#edit_').hide();
+        $('#edit').hide();
     });
 
 
 
     $('tbody#rowTheLoai').on('click','.edit_theloai',function(){
-        $('#edit_').show();
+        $('#edit').show();
         $('#add_').hide();
         var maTheLoai = $(this).data('id');
         var tenTheLoai = $(this).data('tentheloai');
@@ -355,8 +356,8 @@
                     result += "</td>";
                     result += "</tr>";
                     $("#rowTheLoai").prepend(result);
-                    $('#add_').hide();
-                    $('#edit_').hide();
+//                    $('#add_').hide();
+//                    $('#edit_').hide();
 //                    $("tbody#rowTheLoai").appendChild(result);
                 }else{
                     location.reload();

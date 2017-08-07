@@ -698,11 +698,11 @@
 							var codeTheLoai = entry.maTheLoai;
 									{{--{!! json_encode(url('/')) !!}--}}
 							{{--var temp = {!! json_encode(url('/'+'tatcasanpham//'+codeTheLoai))  !!};--}}
-							var temp = json_encode(url('/'));
-							console.log(temp);
+//							var temp = json_encode(url('/'));
+//							console.log(temp);
 
 							var result = "<li class=\"\">";
-							result += "<a href="+temp+">";
+							result += "<a href='#' >";
 							result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
 							result += ""+entry.TenTheLoai+"";
 							result += "</a>";

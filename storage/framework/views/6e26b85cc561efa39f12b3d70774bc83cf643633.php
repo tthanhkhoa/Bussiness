@@ -680,7 +680,6 @@
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script>
             $('#sanpham').click(function(e){
               //  console.log(1);
@@ -699,11 +698,11 @@
 							var codeTheLoai = entry.maTheLoai;
 									
 							
-							var temp = json_encode(url('/'));
-							console.log(temp);
+//							var temp = json_encode(url('/'));
+//							console.log(temp);
 
 							var result = "<li class=\"\">";
-							result += "<a href="+temp+">";
+							result += "<a href='#' >";
 							result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
 							result += ""+entry.TenTheLoai+"";
 							result += "</a>";
