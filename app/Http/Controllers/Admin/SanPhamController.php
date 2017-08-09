@@ -13,13 +13,11 @@ class SanPhamController extends Controller
     //
     function getSanPham(){
         $sanpham = sanpham::orderBy(Constant::TBL_maSanPham,'desc')->paginate(15);
-//        return $sanpham;
         return view('admin.SanPham.sanpham',compact('sanpham'));
     }
 
     function getSanPhamById($id){
-        return $id;
-        $sanpham = sanpham::orderBy(Constant::TBL_maSanPham,'desc')->paginate(15);
+        $sanpham = sanpham::where(Constant::TBL_MaTheLoai,'=',$id)->orderBy(Constant::TBL_maSanPham,'desc')->paginate(15);
 //        return $sanpham;
         return view('admin.SanPham.sanpham',compact('sanpham'));
     }
