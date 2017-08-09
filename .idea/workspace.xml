@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85c50f52-2061-4a9e-a697-479e497899cf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +18,7 @@
       <file leaf-file-name="TheLoaiController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/TheLoaiController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
+            <state relative-caret-position="645">
               <caret line="46" column="73" lean-forward="false" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
               <folding>
                 <element signature="e#46#74#0#PHP" expanded="true" />
@@ -51,7 +50,7 @@
       <file leaf-file-name="sanpham.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2418">
+            <state relative-caret-position="2760">
               <caret line="184" column="8" lean-forward="false" selection-start-line="184" selection-start-column="8" selection-end-line="184" selection-end-column="8" />
               <folding />
             </state>
@@ -71,7 +70,7 @@
       <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="903">
+            <state relative-caret-position="856">
               <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
               <folding />
             </state>
@@ -81,7 +80,7 @@
       <file leaf-file-name="theloai.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-895">
+            <state relative-caret-position="2910">
               <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
               <folding />
             </state>
@@ -91,8 +90,8 @@
       <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="391" column="39" lean-forward="true" selection-start-line="391" selection-start-column="39" selection-end-line="391" selection-end-column="39" />
+            <state relative-caret-position="5865">
+              <caret line="391" column="39" lean-forward="false" selection-start-line="391" selection-start-column="39" selection-end-line="391" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -198,7 +197,6 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="76" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1007" />
@@ -403,8 +401,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -535,15 +533,15 @@
       <workItem from="1502099300408" duration="1762000" />
       <workItem from="1502157731410" duration="15645000" />
       <workItem from="1502243373026" duration="3799000" />
+      <workItem from="1502278936207" duration="142000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135780000" />
+    <option name="totallyTimeSpent" value="135922000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="76" y="23" width="1920" height="1007" extended-state="1" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1920" height="1007" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23333333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -761,7 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,7 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="36" column="15" lean-forward="false" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -777,9 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
           <caret line="38" column="15" lean-forward="false" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
-          <folding>
-            <element signature="e#46#74#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -795,9 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#46#74#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -821,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -843,7 +832,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2418">
+        <state relative-caret-position="2760">
           <caret line="184" column="8" lean-forward="false" selection-start-line="184" selection-start-column="8" selection-end-line="184" selection-end-column="8" />
           <folding />
         </state>
@@ -851,7 +840,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/TheLoaiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
+        <state relative-caret-position="645">
           <caret line="46" column="73" lean-forward="false" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
           <folding>
             <element signature="e#46#74#0#PHP" expanded="true" />
@@ -861,7 +850,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-895">
+        <state relative-caret-position="2910">
           <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
           <folding />
         </state>
@@ -869,8 +858,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="391" column="39" lean-forward="true" selection-start-line="391" selection-start-column="39" selection-end-line="391" selection-end-column="39" />
+        <state relative-caret-position="5865">
+          <caret line="391" column="39" lean-forward="false" selection-start-line="391" selection-start-column="39" selection-end-line="391" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -885,7 +874,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
+        <state relative-caret-position="856">
           <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
           <folding />
         </state>
