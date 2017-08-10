@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85c50f52-2061-4a9e-a697-479e497899cf" name="Default" comment="" />
+    <list default="true" id="85c50f52-2061-4a9e-a697-479e497899cf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/header.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/3a27fa03797e8c11ce942853d0a470439251912e.php" afterPath="$PROJECT_DIR$/storage/framework/views/3a27fa03797e8c11ce942853d0a470439251912e.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/493f5fcbf8c9e16aac18593a35e293cbde8da581.php" afterPath="$PROJECT_DIR$/storage/framework/views/493f5fcbf8c9e16aac18593a35e293cbde8da581.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/6e26b85cc561efa39f12b3d70774bc83cf643633.php" afterPath="$PROJECT_DIR$/storage/framework/views/6e26b85cc561efa39f12b3d70774bc83cf643633.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/d4631a2984a66ec7aced99c695f21ef688c03865.php" afterPath="$PROJECT_DIR$/storage/framework/views/d4631a2984a66ec7aced99c695f21ef688c03865.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/f85264ed941eb109355e693a8b28213082ff8467.php" afterPath="$PROJECT_DIR$/storage/framework/views/f85264ed941eb109355e693a8b28213082ff8467.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +42,27 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="735">
               <caret line="58" column="17" lean-forward="false" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
-              <folding />
+              <folding>
+                <marker date="1502347753000" expanded="true" signature="1850:1951" ph="//..." />
+                <marker date="1502347753000" expanded="true" signature="1964:2041" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="1997:2040" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2056:2111" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2081:2110" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2125:2200" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2153:2199" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2215:2298" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2250:2297" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2313:2382" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2337:2381" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2397:2486" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2431:2485" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2501:2588" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2534:2587" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2603:2690" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2636:2689" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2705:2788" ph="..." />
+                <marker date="1502347753000" expanded="true" signature="2736:2787" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,21 +77,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sanpham.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sanpham.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2760">
-              <caret line="184" column="8" lean-forward="false" selection-start-line="184" selection-start-column="8" selection-end-line="184" selection-end-column="8" />
+            <state relative-caret-position="606">
+              <caret line="239" column="56" lean-forward="false" selection-start-line="239" selection-start-column="56" selection-end-line="239" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="51" lean-forward="true" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+            <state relative-caret-position="180">
+              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -68,8 +100,8 @@
       <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="856">
-              <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+            <state relative-caret-position="240">
+              <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -78,8 +110,8 @@
       <file leaf-file-name="theloai.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2910">
-              <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+            <state relative-caret-position="-3028">
+              <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -88,8 +120,8 @@
       <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5865">
-              <caret line="391" column="39" lean-forward="false" selection-start-line="391" selection-start-column="39" selection-end-line="391" selection-end-column="39" />
+            <state relative-caret-position="669">
+              <caret line="699" column="60" lean-forward="false" selection-start-line="699" selection-start-column="60" selection-end-line="699" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -168,13 +200,13 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/TheLoaiController.php" />
         <option value="$PROJECT_DIR$/app/sanpham.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_07_19_160720_create_nhanhieu_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SanPhamController.php" />
+        <option value="$PROJECT_DIR$/config/database.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/config/database.php" />
       </list>
     </option>
   </component>
@@ -536,10 +568,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135982000" />
+    <option name="totallyTimeSpent" value="139031000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1007" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1007" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23333333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -828,7 +860,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="58" column="17" lean-forward="false" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
-          <folding />
+          <folding>
+            <marker date="1502347753000" expanded="true" signature="1850:1951" ph="//..." />
+            <marker date="1502347753000" expanded="true" signature="1964:2041" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="1997:2040" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2056:2111" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2081:2110" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2125:2200" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2153:2199" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2215:2298" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2250:2297" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2313:2382" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2337:2381" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2397:2486" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2431:2485" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2501:2588" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2534:2587" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2603:2690" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2636:2689" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2705:2788" ph="..." />
+            <marker date="1502347753000" expanded="true" signature="2736:2787" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -836,14 +888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="103" lean-forward="false" selection-start-line="18" selection-start-column="103" selection-end-line="18" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2760">
-          <caret line="184" column="8" lean-forward="false" selection-start-line="184" selection-start-column="8" selection-end-line="184" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -858,34 +902,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2910">
-          <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5865">
-          <caret line="391" column="39" lean-forward="false" selection-start-line="391" selection-start-column="39" selection-end-line="391" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="856">
-          <caret line="68" column="31" lean-forward="false" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+        <state relative-caret-position="240">
+          <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="51" lean-forward="true" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+        <state relative-caret-position="180">
+          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/theloai.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3028">
+          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="699" column="60" lean-forward="false" selection-start-line="699" selection-start-column="60" selection-end-line="699" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="239" column="56" lean-forward="false" selection-start-line="239" selection-start-column="56" selection-end-line="239" selection-end-column="56" />
           <folding />
         </state>
       </provider>

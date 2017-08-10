@@ -209,7 +209,7 @@
 
 
         window.onload = function(){
-            $('#sub_id_sanpham').empty();
+            $("#sub_id_sanpham").empty();
             $.ajax({
                 'url':'/api/danhsachtheloai_api',
                 'type':'GET',
@@ -235,8 +235,9 @@
                         result += "</a>";
                         result += "<b class=\"arrow\"></b>";
                         result += "</li>";
-                        $("#sub_id_sanpham").append(result);
+
                     });
+                    $("#sub_id_sanpham").append(result);
                 }
             })
         };
