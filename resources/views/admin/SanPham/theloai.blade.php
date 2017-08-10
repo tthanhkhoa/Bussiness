@@ -29,7 +29,7 @@
                 </thead>
 
 
-                <tbody id="rowTheLoai" align="center">
+                <tbody id="rowTheLoai">
                 @foreach($TheLoai as $item)
                 <tr id="{{$item->maTheLoai}}">
 

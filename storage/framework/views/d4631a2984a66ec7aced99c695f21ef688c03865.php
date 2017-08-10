@@ -28,7 +28,7 @@
                 </thead>
 
 
-                <tbody id="rowTheLoai" align="center">
+                <tbody id="rowTheLoai">
                 <?php $__currentLoopData = $TheLoai; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr id="<?php echo e($item->maTheLoai); ?>">
 

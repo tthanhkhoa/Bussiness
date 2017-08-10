@@ -9,31 +9,31 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<!-- bootstrap & fontawesome -->
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="<?php echo e(asset('assets/css/bootstrap.min.css')); ?>" />
+		<link rel="stylesheet" href="<?php echo e(asset('assets/font-awesome/4.5.0/css/font-awesome.min.css')); ?>" />
 
 		<!-- page specific plugin styles -->
 
 		<!-- text fonts -->
-		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
+		<link rel="stylesheet" href="<?php echo e(asset('assets/css/fonts.googleapis.com.css')); ?>" />
 
 		<!-- ace styles -->
-		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+		<link rel="stylesheet" href="<?php echo e(asset('assets/css/ace.min.css')); ?>" class="ace-main-stylesheet" id="main-ace-style" />
 
 		<!--[if lte IE 9]>
-			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css')}}" class="ace-main-stylesheet" />
 		<![endif]-->
-		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="<?php echo e(asset('assets/css/ace-skins.min.css')); ?>" />
+		<link rel="stylesheet" href="<?php echo e(asset('assets/css/ace-rtl.min.css')); ?>" />
 
 		<!--[if lte IE 9]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		  <link rel="stylesheet" href="<?php echo e(asset('assets/css/ace-ie.min.css')); ?>" />
 		<![endif]-->
 
 		<!-- inline styles related to this page -->
 
 		<!-- ace settings handler -->
-		<script src="assets/js/ace-extra.min.js"></script>
+		<script src="<?php echo e(asset('assets/js/ace-extra.min.js')); ?>"></script>
 
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
@@ -228,7 +228,7 @@
 									<ul class="dropdown-menu dropdown-navbar">
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+												<img src="<?php echo e(asset('assets/images/avatars/avatar.png')); ?>" class="msg-photo" alt="Alex's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Alex:</span>
@@ -245,7 +245,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+												<img src="<?php echo e(asset('assets/images/avatars/avatar3.png')); ?>" class="msg-photo" alt="Susan's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Susan:</span>
@@ -262,7 +262,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+												<img src="<?php echo e(asset('assets/images/avatars/avatar4.png')); ?>" class="msg-photo" alt="Bob's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Bob:</span>
@@ -279,7 +279,7 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+												<img src="<?php echo e(asset('assets/images/avatars/avatar2.png')); ?>" class="msg-photo" alt="Kate's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Kate:</span>
@@ -296,7 +296,8 @@
 
 										<li>
 											<a href="#" class="clearfix">
-												<img src="assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+												
+												<img src="<?php echo e(asset('assets/images/avatars/avatar5.png')); ?>" class="msg-photo" alt="Fred's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Fred:</span>
@@ -324,7 +325,7 @@
 
 						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="<?php echo e(asset('assets/images/avatars/user.jpg')); ?>" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Xin Chào,</small>
 									Thành Khoa
@@ -421,7 +422,7 @@
 							</li>
 
 							<li class= <?php echo $__env->yieldContent('componentsanpham'); ?>>
-								<a id="sanpham" href="#" class="dropdown-toggle">
+								<a id="sanpham" href="#" class=" dropdown-toggle">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Sản Phẩm
 									<b class="arrow fa fa-angle-down"></b>
@@ -430,23 +431,6 @@
 								<b class="arrow"></b>
 
 								<ul id="sub_id_sanpham" class="submenu">
-									<li class="">
-										<a href="<?php echo e(url('tatcasanpham')); ?>">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Tất cả
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									
-										
-											
-											
-										
-
-										
-									
 
 								</ul>
 							</li>
@@ -652,116 +636,68 @@
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
-		<script src="assets/js/jquery-2.1.4.min.js"></script>
+		<script src="<?php echo e(asset('assets/js/jquery-2.1.4.min.js')); ?>"></script>
 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-		<script src="assets/js/jquery-1.11.3.min.js"></script>
+		<script src="assets/js/jquery-1.11.3.min.js')"></script>
 		<![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
-		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="<?php echo e(asset('assets/js/bootstrap.min.js')); ?>"></script>
 
 		<!-- page specific plugin scripts -->
 
 		<!--[if lte IE 8]>
-		  <script src="assets/js/excanvas.min.js"></script>
+		  <script src="assets/js/excanvas.min.js')"></script>
 		<![endif]-->
-		<script src="assets/js/jquery-ui.custom.min.js"></script>
-		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-		<script src="assets/js/jquery.easypiechart.min.js"></script>
-		<script src="assets/js/jquery.sparkline.index.min.js"></script>
+		<script src="<?php echo e(asset('assets/js/jquery-ui.custom.min.js')); ?>"></script>
+		<script src="<?php echo e(asset('assets/js/jquery.ui.touch-punch.min.js')); ?>"></script>
+		<script src="<?php echo e(asset('assets/js/jquery.easypiechart.min.js')); ?>"></script>
+		<script src="<?php echo e(asset('assets/js/jquery.sparkline.index.min.js')); ?>"></script>
 		
 		
 		
 
 		<!-- ace scripts -->
-		<script src="assets/js/ace-elements.min.js"></script>
-		<script src="assets/js/ace.min.js"></script>
+		<script src="<?php echo e(asset('assets/js/ace-elements.min.js')); ?>"></script>
+		<script src="<?php echo e(asset('assets/js/ace.min.js')); ?>"></script>
 		<script>
             $('#sanpham').click(function(e){
-              //  console.log(1);
+                $("#sub_id_sanpham").empty();
+				var flag = 1;
+				console.log(flag)
+
                 $.ajax({
                     'url':'/api/danhsachtheloai_api',
                     'type':'GET',
                     success: function(data){
+                        var result = "<li class=>";
+                        result += "<a href=\"\\tatcasanpham\">";
+                        result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
+                        result += "Tất cả";
+                        result += "</a>";
+                        result += "<b class=\"arrow\"></b>";
+                        result += "</li>";
                         var t;
                         for(var key in data){
                             t = data[key];
-                            console.log(t)
 						}
-						var routes = "tatcasanpham";
                         t.forEach(function(entry) {
-                           // console.log(entry);
 							var codeTheLoai = entry.maTheLoai;
-									
-							
-//							var temp = json_encode(url('/'));
-//							console.log(temp);
-
-							var result = "<li class=\"\">";
-							result += "<a href='#' >";
+							var temp = '\\getSanPhamById\\'+codeTheLoai;
+							result += "<li class=>";
+							result += "<a href= "+temp+" >";
 							result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
 							result += ""+entry.TenTheLoai+"";
 							result += "</a>";
 							result += "<b class=\"arrow\"></b>";
 							result += "</li>";
-							$("#sub_id_sanpham").append(result);
+
                         });
-//						for(var key in t){
-//                            console.log(key);
-//						}
-
-                        
-                           
-							
-                            
-
-							
-							
-							
-							
-							
-							
-							
-							
-                        
-                        
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                        
-
-
-
-
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-//                        $("tbody#rowTheLoai").appendChild(result);
-						
-						
-						
-						
-						
-
-						
-						
-
-
+                        $("#sub_id_sanpham").append(result);
                     }
                 })
             });

@@ -666,7 +666,7 @@
 		<script src="{{asset('assets/js/ace.min.js')}}"></script>
 		<script>
             $('#sanpham').click(function(e){
-                $('#sub_id_sanpham').empty();
+                $("#sub_id_sanpham").empty();
 				var flag = 1;
 				console.log(flag)
 
@@ -695,8 +695,9 @@
 							result += "</a>";
 							result += "<b class=\"arrow\"></b>";
 							result += "</li>";
-							$("#sub_id_sanpham").append(result);
+
                         });
+                        $("#sub_id_sanpham").append(result);
                     }
                 })
             });
