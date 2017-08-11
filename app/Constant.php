@@ -4,46 +4,48 @@ namespace App;
 
 class Constant
 {
+    //Sumary
+    const CL_ID                = "id";
     //Table The Loai
-    const TBL_TheLoai           = "TheLoai";
-    const TBL_MaTheLoai         = "maTheLoai";
-    const TBL_tenTheLoai        = "tenTheLoai";
-    const TBL_Active            = "Active";
+    const TBL_THELOAI          = "theloai";
+    const CL_MATHELOAI         = "maheloai";
+    const CL_TENTHELOAI        = "tentheloai";
+    const CL_ACTIVE            = "active";
     //Table San Pham
-    const TBL_SanPham           = "SanPham";
-    const TBL_maSanPham         = "maSanPham";
-    const TBL_tenSanPham        = "tenSanPham";
-    const TBL_soLuong           = "soLuong";
-    const TBL_nhaCungCap        = "nhaCungCap";
-    const TBL_GiaTien           = "GiaTien";
+    const TBL_SANPHAM          = "sanpham";
+    const CL_MASANPHAM         = "masanpham";
+    const CL_TENSANPHAM        = "tensanpham";
+    const CL_SOLUONG           = "soluong";
+    const CL_NHACUNGCAP        = "nhacungcap";
+    const CL_GIATIEN           = "giatien";
     //Table KhachHang
-    const TBL_KhachHang         = "KhachHang";
-    const TBL_maKhachHang       = "maKhachHang";
-    const TBL_idUser            = "idUser";
-    const TBL_tenKhachHang      = "tenKhachHang";
-    const TBL_NgaySinh          = "NgaySinh";
-    const TBL_DiaChi            = "DiaChi";
-    const TBL_SoDienThoai       = "SoDienThoai";
-    const TBL_Email             = "Email";
+    const TBL_KHACHHANG        = "khachhang";
+    const CL_MAKHACHHANG       = "makhachhang";
+    const CL_TENKHACHHANG      = "tenkhachang";
+    const CL_NGAYSINH          = "ngaysinh";
+    const CL_DIACHI            = "diachi";
+    const CL_SDT               = "sodienthoai";
+    const CL_EMAIL             = "email";
     //Table NhanHieu
-    const TBL_NhanHieu          = "NhanHieu";
-    const TBL_idNhanHieu        = "idNhanHieu";
-    const TBL_tenNhanHieu       = "tenNhanHieu";
+    const CL_MANHANHIEU        = "manhanhieu";
+    const TBL_NHANHIEU         = "nhanhieu";
+    const CL_TENNHANHIEU       = "tennhanieu";
     //Table User
-    const TBL_User              = "User";
-    const TBL_username          = "username";
-    const TBL_password          = "password";
+    const TBL_USER             = "user";
+    const CL_USER_ID           = "user_id";
+    const CL_USERNAME          = "username";
+    const CL_PASSWORD          = "password";
     //Table RemenberSP
-    const TBL_RemenberSP        = "RemenberSP";
-    const TBL_idremenber        = "tenSanPham";
+    const TBL_REMENBERSP       = "remenbersp";
+    const CL_REMENBER_ID       = "remenber_id";
     //Table HoaDon
-    const TBL_HoaDon            = "HoaDon";
-    const TBL_maHoaDon          = "maHoaDon";
-    const TBL_tongTien          = "tongTien";
-    const TBL_Ngaylap           = "ngayLap";
+    const TBL_HOADON           = "hoadon";
+    const CL_MAHOADON          = "mahoadon";
+    const CL_TONGTIEN          = "tongtien";
+    const CL_NGAYLAP           = "ngaylap";
     //Table HoaDon
-    const TBL_ChiTietHoaDon     = "ChiTietHoaDon";
-    const TBL_maChiTietHD       = "maCTHoaDon";
+    const TBL_CTHOADON         = "chitiethoadon";
+    const CL_MACHITIETHD       = "macthoadon";
 
 }
 ?>

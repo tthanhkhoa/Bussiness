@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\theloai;
 use App\Constant;
+use App\nhanhieu;
 
 class TheLoaiController extends Controller
 {
@@ -46,7 +47,15 @@ class TheLoaiController extends Controller
     function getTheLoai_api(){
         $TheLoai = theloai::orderBy(Constant::TBL_MaTheLoai,'desc')->get();
         return response()->json(['result'=>$TheLoai]);
-//        return view('admin.SanPham.theloai',compact('TheLoai'));
+
+    }
+    function getNhanHieu(){
+        try{
+            $ncc     = nhanhieu::orderBy(Constant::TBL_idNhanHieu,'desc')->get();
+            return response()->json(['result'=>$ncc]);
+        }catch (\Exception $e){
+
+        }
     }
 
 

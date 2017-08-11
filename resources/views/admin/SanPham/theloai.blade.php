@@ -244,9 +244,6 @@
         var maTheLoai = $('#maTheLoai').val();
         var tenTheLoai = $('#tenTheLoai').val();
         var Active = $('#Active:checked').val();
-//        console.log(tenTheLoai);
-//        console.log(Active);
-        //return 1;
         $.ajax({
             'url':'updatetheloai',
             'data':{
@@ -257,8 +254,6 @@
             },
             'type':'POST',
             success: function(data){
-                console.log(data);
-//                return 1;
                 $('#AddModel').modal('hide');
                 if(data != null){
                     $('#td_ttl' + maTheLoai).html(tenTheLoai);

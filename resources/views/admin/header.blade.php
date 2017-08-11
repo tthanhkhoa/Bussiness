@@ -429,7 +429,7 @@
 								</a>
 
 								<b class="arrow"></b>
-
+								<input type="hidden" id="flag" value='0'>
 								<ul id="sub_id_sanpham" class="submenu">
 
 								</ul>
@@ -667,36 +667,43 @@
 		<script>
             $('#sanpham').click(function(e){
                 $("#sub_id_sanpham").empty();
-                $.ajax({
-                    'url':'/api/danhsachtheloai_api',
-                    'type':'GET',
-                    success: function(data){
-                        var result = "<li class=>";
-                        result += "<a href=\"\\tatcasanpham\">";
-                        result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
-                        result += "Tất cả";
-                        result += "</a>";
-                        result += "<b class=\"arrow\"></b>";
-                        result += "</li>";
-                        var t;
-                        for(var key in data){
-                            t = data[key];
-						}
-                        t.forEach(function(entry) {
-							var codeTheLoai = entry.maTheLoai;
-							var temp = '\\getSanPhamById\\'+codeTheLoai;
-							result += "<li class=>";
-							result += "<a href= "+temp+" >";
-							result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
-							result += ""+entry.tenTheLoai+"";
-							result += "</a>";
-							result += "<b class=\"arrow\"></b>";
-							result += "</li>";
+                var check= $("#flag").val();
+                if(check == 0){
+                    $.ajax({
+                        'url':'/api/danhsachtheloai_api',
+                        'type':'GET',
+                        success: function(data){
+                            var result = "<li class=>";
+                            result += "<a href=\"\\tatcasanpham\">";
+                            result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
+                            result += "Tất cả";
+                            result += "</a>";
+                            result += "<b class=\"arrow\"></b>";
+                            result += "</li>";
+                            var t;
+                            for(var key in data){
+                                t = data[key];
+                            }
+                            t.forEach(function(entry) {
+                                var codeTheLoai = entry.maTheLoai;
+                                var temp = '\\getSanPhamById\\'+codeTheLoai;
+                                result += "<li class=>";
+                                result += "<a href= "+temp+" >";
+                                result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
+                                result += ""+entry.tenTheLoai+"";
+                                result += "</a>";
+                                result += "<b class=\"arrow\"></b>";
+                                result += "</li>";
 
-                        });
-                        $("#sub_id_sanpham").append(result);
-                    }
-                })
+                            });
+                            $("#sub_id_sanpham").append(result);
+                            $("#flag").val(1);
+                        }
+                    })
+				}else{
+                    $("#flag").val(0);
+				}
+
             });
 		</script>
 

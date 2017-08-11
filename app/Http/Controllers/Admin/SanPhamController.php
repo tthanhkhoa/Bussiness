@@ -12,8 +12,13 @@ class SanPhamController extends Controller
 {
     //
     function getSanPham(){
-        $sanpham = sanpham::orderBy(Constant::TBL_maSanPham,'desc')->paginate(15);
-        return view('admin.SanPham.sanpham',compact('sanpham'));
+        try{
+            $sanpham = sanpham::orderBy(Constant::TBL_maSanPham,'desc')->paginate(15);
+            return view('admin.SanPham.sanpham',compact('sanpham'));
+        }catch (\Exception $e){
+
+        }
+
     }
 
     function getSanPhamById($id){
@@ -22,16 +27,23 @@ class SanPhamController extends Controller
         return view('admin.SanPham.sanpham',compact('sanpham'));
     }
     function addSanPham(Request $request){
-        return 1;
-        $add = new sanpham;
-        $add->{Constant::TBL_MaTheLoai} = isset($request->{Constant::TBL_MaTheLoai}) ? $request->{Constant::TBL_MaTheLoai} : '';
-        $add->{Constant::TBL_tenSanPham} = isset($request->{Constant::TBL_tenSanPham}) ? $request->{Constant::TBL_tenSanPham} : '';
-        $add->{Constant::TBL_soLuong} = isset($request->{Constant::TBL_soLuong}) ? $request->{Constant::TBL_soLuong} : '';
-        $add->{Constant::TBL_idNhanHieu} = isset($request->{Constant::TBL_idNhanHieu}) ? $request->{Constant::TBL_idNhanHieu} : '';
-        $add->{Constant::TBL_GiaTien} = isset($request->{Constant::TBL_GiaTien}) ? $request->{Constant::TBL_GiaTien} : '';
-        $add->{Constant::TBL_Active} = isset($request->{Constant::TBL_Active}) ? $request->{Constant::TBL_Active} : '';
-        $add->save();
-        return response()->json(['result'=>$add]);
+        try{
+            $add = new sanpham;
+            $add->{Constant::TBL_MaTheLoai} =  $request->{Constant::TBL_MaTheLoai};
+            $add->{Constant::TBL_tenSanPham} =  $request->{Constant::TBL_tenSanPham} ;
+            $add->{Constant::TBL_soLuong} =  $request->{Constant::TBL_soLuong};
+            $add->{Constant::TBL_idNhanHieu} =  $request->{Constant::TBL_idNhanHieu} ;
+            $add->{Constant::TBL_GiaTien} = $request->{Constant::TBL_GiaTien} ;
+            $add->{Constant::TBL_Active} =  $request->{Constant::TBL_Active};
+            $add->save();
+//            $result =  $add->{Constant::TBL_maSanPham};
+            $result = sanpham::with('NhanHieu')
+                ->where([Constant::TBL_maSanPham,'=',$add->{Constant::TBL_maSanPham}])->toSql();
+            return response()->json(['result'=>$result]);
+        }catch (\Exception $e){
+            return response()->json(['result'=>$e]);
+        }
+
 
     }
 

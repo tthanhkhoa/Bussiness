@@ -9,18 +9,27 @@ class sanpham extends Model
 {
     //
     protected $table = Constant::TBL_SanPham;
-    protected $primaryKey = Constant::TBL_maSanPham;
+//    protected $primaryKey = Constant::TBL_maSanPham;
     public $timestamps = false;
 
+
+//    public function getNameNhanHieuAttribute(){
+//        return $this->NhanHieu->tenNhanHieu;
+//    }
+//    public function getIDNhanHieuAttribute(){
+//        return $this->NhanHieu->idNhanHieu;
+//    }
     public function ChiTietHD(){
-        return $this->belongsTo(Constant::TBL_ChiTietHoaDon, Constant::TBL_maSanPham, Constant::TBL_maSanPham);
+        return $this->belongsTo('App\ChiTietHoaDon', Constant::CL_MAHOADON, Constant::CL_ID);
     }
 
     public function TheLoai(){
-        return $this->belongsTo(Constant::TBL_TheLoai, Constant::TBL_MaTheLoai, Constant::TBL_MaTheLoai);
+        return $this->belongsTo('App\theloai', Constant::CL_MATHELOAI, Constant::CL_ID);
     }
 
     public function NhanHieu(){
-        return $this->belongsTo('App\nhanhieu', Constant::TBL_idNhanHieu, Constant::TBL_idNhanHieu);
+        return $this->belongsTo('App\nhanhieu', Constant::CL_MANHANHIEU, Constant::CL_ID);
     }
+
+
 }
