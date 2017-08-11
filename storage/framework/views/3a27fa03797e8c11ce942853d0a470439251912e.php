@@ -27,15 +27,16 @@
                     <th></th>
                 </tr>
                 </thead>
+
+                <tbody id="rowSanPham" >
                 <?php $__currentLoopData = $sanpham; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <tbody>
-                <tr>
-                    <td><?php echo e($item->maSanPham); ?></td>
-                    <td><?php echo e($item->tenSanPham); ?></td>
-                    <td><?php echo e($item->soLuong); ?></td>
-                    <td><?php echo e($item->NhanHieu->tenNhanHieu); ?></td>
-                    <td><?php echo e(number_format($item->GiaTien)); ?></td>
-                    <td><?php echo e($item->Active == 1 ? 'Yes' : 'No'); ?></td>
+                <tr id=<?php echo e($item->maSanPham); ?>>
+                    <td id='msp<?php echo e($item->maSanPham); ?>'><?php echo e($item->maSanPham); ?></td>
+                    <td id='tsp<?php echo e($item->maSanPham); ?>'><?php echo e($item->tenSanPham); ?></td>
+                    <td id='sl<?php echo e($item->maSanPham); ?>'><?php echo e($item->soLuong); ?></td>
+                    <td id='nh<?php echo e($item->maSanPham); ?>'><?php echo e($item->NhanHieu->tenNhanHieu); ?></td>
+                    <td id='gt<?php echo e($item->maSanPham); ?>'><?php echo e(number_format($item->GiaTien)); ?></td>
+                    <td id='at<?php echo e($item->maSanPham); ?>'><?php echo e($item->Active == 1 ? 'Yes' : 'No'); ?></td>
                     <td>
                         <div class="hidden-sm hidden-xs action-buttons">
 
@@ -78,8 +79,9 @@
                         </div>
                     </td>
                 </tr>
-                </tbody>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </tbody>
+
             </table>
             <div class="pull-right" > <?php echo $sanpham->links(); ?> </div>
         </div>
@@ -101,7 +103,6 @@
                             <form id="registrationForm"  class="form-horizontal ng-pristine ng-valid">
                                 <?php echo csrf_field(); ?>
 
-
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label">Mã sản phẩm</label>
                                     <div class="col-lg-10">
@@ -119,10 +120,6 @@
                                     <div class="col-lg-10">
                                         
                                         <select class="form-control ng-pristine ng-untouched ng-valid" id="tenTheLoai" name="<?php echo e(App\Constant::TBL_MaTheLoai); ?>">
-                                            
-                                            
-                                            
-                                            
                                         </select>
 
                                     </div>
@@ -168,44 +165,6 @@
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
 
-        $(document).ready(function () {
-            $( "#add_sanpham" ).click(function() {
-                console.log("add san pham");
-                $(".modal-body").find("#maTheLoai,#tenTheLoai").val('').end();
-                var $radios = $('input:radio[name=Active]');
-                $radios.filter('[value=1]').prop('checked', false);
-                $radios.filter('[value=0]').prop('checked', false);
-                $.ajax({
-                    'url':'/api/danhsachtheloai_api',
-                    'type':'GET',
-                    success: function(data){
-                        var t;
-                        console.log(data);
-                        for(var key in data){
-                            t = data[key];
-                        }
-                        t.forEach(function(entry) {
-                            $('#tenTheLoai')
-                                .append($("<option></option>")
-                                    .attr("value",entry.maTheLoai)
-                                    .text(entry.TenTheLoai));
-//                            var result = "<option value='1'>Test</option>";
-//                            $("#tenTheLoai").append(result);
-                        });
-                    }
-                })
-
-
-
-
-
-                $('#add_').show();
-                $('#edit').hide();
-            });
-        });
-
-
-
 
         window.onload = function(){
             $("#sub_id_sanpham").empty();
@@ -230,7 +189,7 @@
                         result += "<li class=>";
                         result += "<a href= "+temp+" >";
                         result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
-                        result += ""+entry.TenTheLoai+"";
+                        result += ""+entry.tenTheLoai+"";
                         result += "</a>";
                         result += "<b class=\"arrow\"></b>";
                         result += "</li>";
@@ -240,6 +199,117 @@
                 }
             })
         };
+
+
+
+        //        $(document).ready(function () {
+        $( "#add_sanpham" ).click(function() {
+            console.log("add san pham");
+            $(".modal-body").find("#maTheLoai,#tenTheLoai").val('').end();
+            var $radios = $('input:radio[name=Active]');
+            $radios.filter('[value=1]').prop('checked', false);
+            $radios.filter('[value=0]').prop('checked', false);
+            $.ajax({
+                'url':'/api/danhsachtheloai_api',
+                'type':'GET',
+                success: function(data){
+                    var t;
+                    console.log(data);
+                    for(var key in data){
+                        t = data[key];
+                    }
+                    t.forEach(function(entry) {
+                        $('#tenTheLoai')
+                            .append($("<option></option>")
+                                .attr("value",entry.maTheLoai)
+                                .text(entry.tenTheLoai));
+                    });
+                }
+            })
+            $('#add_').show();
+            $('#edit').hide();
+        });
+        //        });
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                
+                
+                    
+
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    
+
+
+
+                
+            
+        
 
 
 

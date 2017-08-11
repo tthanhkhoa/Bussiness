@@ -17,3 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/danhsachtheloai_api', 'Admin\TheLoaiController@getTheLoai_api')->name('danhsachtheloai_api');
+Route::post('/addsanpham_api', 'Admin\SanPhamController@addSanPham')->name('addsanpham_api');

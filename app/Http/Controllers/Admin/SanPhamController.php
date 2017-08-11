@@ -22,6 +22,7 @@ class SanPhamController extends Controller
         return view('admin.SanPham.sanpham',compact('sanpham'));
     }
     function addSanPham(Request $request){
+        return 1;
         $add = new sanpham;
         $add->{Constant::TBL_MaTheLoai} = isset($request->{Constant::TBL_MaTheLoai}) ? $request->{Constant::TBL_MaTheLoai} : '';
         $add->{Constant::TBL_tenSanPham} = isset($request->{Constant::TBL_tenSanPham}) ? $request->{Constant::TBL_tenSanPham} : '';
@@ -30,6 +31,7 @@ class SanPhamController extends Controller
         $add->{Constant::TBL_GiaTien} = isset($request->{Constant::TBL_GiaTien}) ? $request->{Constant::TBL_GiaTien} : '';
         $add->{Constant::TBL_Active} = isset($request->{Constant::TBL_Active}) ? $request->{Constant::TBL_Active} : '';
         $add->save();
+        return response()->json(['result'=>$add]);
 
     }
 

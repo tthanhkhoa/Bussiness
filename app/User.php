@@ -18,6 +18,7 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
     protected $primaryKey = Constant::TBL_idUser;
+    public $timestamps = false;
     /**
      * The attributes that should be hidden for arrays.
      *

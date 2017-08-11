@@ -667,9 +667,6 @@
 		<script>
             $('#sanpham').click(function(e){
                 $("#sub_id_sanpham").empty();
-				var flag = 1;
-				console.log(flag)
-
                 $.ajax({
                     'url':'/api/danhsachtheloai_api',
                     'type':'GET',
@@ -691,7 +688,7 @@
 							result += "<li class=>";
 							result += "<a href= "+temp+" >";
 							result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
-							result += ""+entry.TenTheLoai+"";
+							result += ""+entry.tenTheLoai+"";
 							result += "</a>";
 							result += "<b class=\"arrow\"></b>";
 							result += "</li>";

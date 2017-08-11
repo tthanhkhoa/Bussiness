@@ -29,15 +29,16 @@
                     <th></th>
                 </tr>
                 </thead>
+
+                <tbody id="rowSanPham" >
                 @foreach($sanpham as $item)
-                <tbody>
-                <tr>
-                    <td>{{$item->maSanPham}}</td>
-                    <td>{{$item->tenSanPham}}</td>
-                    <td>{{$item->soLuong}}</td>
-                    <td>{{$item->NhanHieu->tenNhanHieu}}</td>
-                    <td>{{number_format($item->GiaTien)}}</td>
-                    <td>{{$item->Active == 1 ? 'Yes' : 'No'}}</td>
+                <tr id={{$item->maSanPham}}>
+                    <td id='msp{{$item->maSanPham}}'>{{$item->maSanPham}}</td>
+                    <td id='tsp{{$item->maSanPham}}'>{{$item->tenSanPham}}</td>
+                    <td id='sl{{$item->maSanPham}}'>{{$item->soLuong}}</td>
+                    <td id='nh{{$item->maSanPham}}'>{{$item->NhanHieu->tenNhanHieu}}</td>
+                    <td id='gt{{$item->maSanPham}}'>{{number_format($item->GiaTien)}}</td>
+                    <td id='at{{$item->maSanPham}}'>{{$item->Active == 1 ? 'Yes' : 'No'}}</td>
                     <td>
                         <div class="hidden-sm hidden-xs action-buttons">
 
@@ -80,8 +81,9 @@
                         </div>
                     </td>
                 </tr>
-                </tbody>
                 @endforeach
+                </tbody>
+
             </table>
             <div class="pull-right" > {!! $sanpham->links() !!} </div>
         </div>
@@ -102,7 +104,6 @@
 
                             <form id="registrationForm"  class="form-horizontal ng-pristine ng-valid">
                                 {!! csrf_field() !!}
-
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label">Mã sản phẩm</label>
                                     <div class="col-lg-10">
@@ -120,10 +121,6 @@
                                     <div class="col-lg-10">
                                         {{--<input id="tenTheLoai" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="{{App\Constant::TBL_NhanHieu}}" placeholder="Tên thể loại" ng-model="currItem.major">--}}
                                         <select class="form-control ng-pristine ng-untouched ng-valid" id="tenTheLoai" name="{{App\Constant::TBL_MaTheLoai}}">
-                                            {{--<option value="volvo">Volvo</option>--}}
-                                            {{--<option value="saab">Saab</option>--}}
-                                            {{--<option value="vw">VW</option>--}}
-                                            {{--<option value="audi" selected>Audi</option>--}}
                                         </select>
 
                                     </div>
@@ -169,44 +166,6 @@
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
 
-        $(document).ready(function () {
-            $( "#add_sanpham" ).click(function() {
-                console.log("add san pham");
-                $(".modal-body").find("#maTheLoai,#tenTheLoai").val('').end();
-                var $radios = $('input:radio[name=Active]');
-                $radios.filter('[value=1]').prop('checked', false);
-                $radios.filter('[value=0]').prop('checked', false);
-                $.ajax({
-                    'url':'/api/danhsachtheloai_api',
-                    'type':'GET',
-                    success: function(data){
-                        var t;
-                        console.log(data);
-                        for(var key in data){
-                            t = data[key];
-                        }
-                        t.forEach(function(entry) {
-                            $('#tenTheLoai')
-                                .append($("<option></option>")
-                                    .attr("value",entry.maTheLoai)
-                                    .text(entry.TenTheLoai));
-//                            var result = "<option value='1'>Test</option>";
-//                            $("#tenTheLoai").append(result);
-                        });
-                    }
-                })
-
-
-
-
-
-                $('#add_').show();
-                $('#edit').hide();
-            });
-        });
-
-
-
 
         window.onload = function(){
             $("#sub_id_sanpham").empty();
@@ -231,7 +190,7 @@
                         result += "<li class=>";
                         result += "<a href= "+temp+" >";
                         result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
-                        result += ""+entry.TenTheLoai+"";
+                        result += ""+entry.tenTheLoai+"";
                         result += "</a>";
                         result += "<b class=\"arrow\"></b>";
                         result += "</li>";
@@ -241,6 +200,117 @@
                 }
             })
         };
+
+
+
+        //        $(document).ready(function () {
+        $( "#add_sanpham" ).click(function() {
+            console.log("add san pham");
+            $(".modal-body").find("#maTheLoai,#tenTheLoai").val('').end();
+            var $radios = $('input:radio[name=Active]');
+            $radios.filter('[value=1]').prop('checked', false);
+            $radios.filter('[value=0]').prop('checked', false);
+            $.ajax({
+                'url':'/api/danhsachtheloai_api',
+                'type':'GET',
+                success: function(data){
+                    var t;
+                    console.log(data);
+                    for(var key in data){
+                        t = data[key];
+                    }
+                    t.forEach(function(entry) {
+                        $('#tenTheLoai')
+                            .append($("<option></option>")
+                                .attr("value",entry.maTheLoai)
+                                .text(entry.tenTheLoai));
+                    });
+                }
+            })
+            $('#add_').show();
+            $('#edit').hide();
+        });
+        //        });
+
+
+        {{--$('#add_').click(function(e){--}}
+{{--//            console.log("add");--}}
+{{--//            var _token = $("input[name='_token']").val();--}}
+{{--//            var maSanPham = $('#maSanPham').val();--}}
+{{--//            var tenSanPham = $('#tenSanPham').val();--}}
+{{--//            var loaiSanPham = $('#loaiSanPham').val();--}}
+{{--//            var soLuong = $('#soLuong').val();--}}
+{{--//            var nhanHieu = $('#nhanHieu').val();--}}
+{{--//            var giaTien = $('#giaTien').val();--}}
+{{--//            var Active = $('#Active').val();--}}
+{{--//            console.log(_token);--}}
+
+            {{--$.ajax({--}}
+                {{--'url':'addsanpham_api',--}}
+                {{--'data':{--}}
+                    {{--'_token': _token,--}}
+                    {{--'maSanPham': maSanPham,--}}
+                    {{--'tenSanPham': tenSanPham,--}}
+                    {{--'loaiSanPham': loaiSanPham,--}}
+                    {{--'soLuong': soLuong,--}}
+                    {{--'nhanHieu': nhanHieu,--}}
+                    {{--'giaTien': giaTien,--}}
+                    {{--'Active': Active--}}
+                {{--},--}}
+                {{--'type':'POST',--}}
+                {{--success: function(data){--}}
+                    {{--console.log(data);--}}
+{{--//                    $('#AddModel').modal('hide');--}}
+                    {{--if(data){--}}
+                        {{--var result = "<tr id='" + data.result.maTheLoai + "'>";--}}
+                        {{--result += "<td id='msp{{$item->maSanPham}}'>{{$item->maSanPham}}</td>";--}}
+                        {{--result += "<td id='tsp{{$item->maSanPham}}'>{{$item->tenSanPham}}</td>";--}}
+                        {{--result += "<td id='sl{{$item->maSanPham}}'>{{$item->soLuong}}</td>";--}}
+                        {{--result += "<td id='nh{{$item->maSanPham}}'>{{$item->NhanHieu->tenNhanHieu}}</td>";--}}
+                        {{--result += "<td id='gt{{$item->maSanPham}}'>{{number_format($item->GiaTien)}}</td>";--}}
+                        {{--result += "<td id='at{{$item->maSanPham}}'>{{$item->Active == 1 ? 'Yes' : 'No'}}</td>";--}}
+                        {{--result += "<td>";--}}
+                        {{--result += "<div class=\"hidden-sm hidden-xs action-buttons\">";--}}
+                        {{--result += "<a class=\"green\" href=\"#\">";--}}
+                        {{--result += "<i class=\"ace-icon fa fa-pencil bigger-130\"></i>";--}}
+                        {{--result += "</a>";--}}
+                        {{--result += "<a class=\"red\" href=\"#\">";--}}
+                        {{--result += "<i class=\"ace-icon fa fa-trash-o bigger-130\"></i>";--}}
+                        {{--result += "</a>";--}}
+                        {{--result += "</div>";--}}
+                        {{--result += "<div class=\"hidden-md hidden-lg\">";--}}
+                        {{--result += "<div class=\"inline pos-rel\">";--}}
+                        {{--result += "<button class=\"btn btn-minier btn-yellow dropdown-toggle\" data-toggle=\"dropdown\" data-position=\"auto\">";--}}
+                        {{--result += "<i class=\"ace-icon fa fa-caret-down icon-only bigger-120\"></i>";--}}
+                        {{--result += "</button>";--}}
+                        {{--result += "<ul class=\"dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close\">";--}}
+                        {{--result += "<li>";--}}
+                        {{--result += "<a href=\"#\" class=\"tooltip-success\" data-rel=\"tooltip\" title=\"Edit\">";--}}
+                        {{--result += "<span class=\"green\">";--}}
+                        {{--result += "<i class=\"ace-icon fa fa-pencil-square-o bigger-120\"></i>";--}}
+                        {{--result += "</span>";--}}
+                        {{--result += "</a>";--}}
+                        {{--result += "</li>";--}}
+                        {{--result += "<li>";--}}
+                        {{--result += "<a href=\"#\" class=\"tooltip-error\" data-rel=\"tooltip\" title=\"Delete\">";--}}
+                        {{--result += "<span class=\"red\">";--}}
+                        {{--result += "<i class=\"ace-icon fa fa-trash-o bigger-120\"></i>";--}}
+                        {{--result += "</span>";--}}
+                        {{--result += "</a>";--}}
+                        {{--result += "</li>";--}}
+                        {{--result += "</ul>";--}}
+                        {{--result += "</div>";--}}
+                        {{--result += "</div>";--}}
+                        {{--result += "</td>";--}}
+                        {{--result += "</tr>";--}}
+                        {{--$("#rowSanPham").prepend(result);--}}
+                    {{--}--}}
+
+
+
+                {{--}--}}
+            {{--})--}}
+        {{--});--}}
 
 
 

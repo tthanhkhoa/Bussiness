@@ -10,6 +10,7 @@ class sanpham extends Model
     //
     protected $table = Constant::TBL_SanPham;
     protected $primaryKey = Constant::TBL_maSanPham;
+    public $timestamps = false;
 
     public function ChiTietHD(){
         return $this->belongsTo(Constant::TBL_ChiTietHoaDon, Constant::TBL_maSanPham, Constant::TBL_maSanPham);
