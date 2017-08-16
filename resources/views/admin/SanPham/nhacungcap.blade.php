@@ -220,14 +220,14 @@
                         active = "No";
 
                     var result = "<tr id='" + data.result.id + "'>";
-                    result +="<td id=" + data.result.id + "'>"+data.result.id+"</td>";
-                    result +="<td id=" + data.result.id + "'>"+data.result.tennhanhieu+"</td>";
-                    result +="<td id=" + data.result.id + "'>"+data.result.diachi+"</td>";
-                    result +="<td id=" + data.result.id + "'>"+data.result.sodienthoai+"</td>";
-                    result +="<td id=" + data.result.id + "'>"+active+"</td>";
+                    result +="<td id='" + data.result.id + "'>"+data.result.id+"</td>";
+                    result +="<td id=\"tnh" + data.result.id + "\">"+data.result.tennhanhieu+"</td>";
+                    result +="<td id=\"dc" + data.result.id + "\">"+data.result.diachi+"</td>";
+                    result +="<td id=\"sdt" + data.result.id + "\">"+data.result.sodienthoai+"</td>";
+                    result +="<td id=\"at" + data.result.id + "\">"+active+"</td>";
                     result +="<td>";
                     result +="<div class=\"hidden-sm hidden-xs action-buttons\">";
-                    result +="<a class=\"green\" data-target=\"#AddModel\" id=\"edit"+data.result.id+"\" data-id='"+data.result.id+"' " +
+                    result +="<a class=\"edit_ncc green\" data-target=\"#AddModel\" id=\"edit"+data.result.id+"\" data-id='"+data.result.id+"' " +
                         "data-tennhanhieu='"+data.result.tennhanhieu+"' data-diachi='"+data.result.diachi+"' data-sodienthoai='"+data.result.sodienthoai+"' " +
                         "data-active='"+data.result.active+"' data-toggle=\"modal\" href=\"#\">";
                     result +="<i class=\"ace-icon fa fa-pencil bigger-130\"></i>";
@@ -243,7 +243,7 @@
                     result +="</button>";
                     result +="<ul class=\"dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close\">";
                     result +="<li>";
-                    result +="<a href=\"#\" class=\"tooltip-success\" data-target=\"#AddModel\" id=\"edit"+data.result.id+"\" data-toggle=\"modal\" data-rel=\"tooltip\"" +
+                    result +="<a href=\"#\" class=\"edit_ncc tooltip-success\" data-target=\"#AddModel\" id=\"edit"+data.result.id+"\" data-toggle=\"modal\" data-rel=\"tooltip\"" +
                         " data-id='"+data.result.id+"' data-tennhanhieu='"+data.result.tennhanhieu+"' data-active='"+data.result.active+"' " +
                         "data-diachi='"+data.result.diachi+"'data-id='"+data.result.id+"' data-tennhanhieu='"+data.result.tennhanhieu+"' data-diachi='"+data.result.diachi+"' data-sodienthoai='"+data.result.sodienthoai+"' title=\"Edit\">";
 
@@ -362,12 +362,13 @@
             },
             'type':'POST',
             success: function(data){
+                console.log(data);
                 $('#AddModel').modal('hide');
                 if(data != null){
-                    $('#tnh' + manhanhieu).html(tennhanhieu);
-                    $('#dc' + manhanhieu).html(diachi);
-                    $('#sdt' + manhanhieu).html(sodienthoai);
-                    if(active == 1){
+                    $('#tnh' + manhanhieu).html(data.result.tennhanhieu);
+                    $('#dc' + manhanhieu).html(data.result.diachi);
+                    $('#sdt' + manhanhieu).html(data.result.sodienthoai);
+                    if(data.result.active == 1){
                         $('#at' + manhanhieu).html("YES");
                     }
                     else{
