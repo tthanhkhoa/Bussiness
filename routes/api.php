@@ -20,3 +20,8 @@ Route::get('/danhsachtheloai_api', 'Admin\TheLoaiController@getTheLoai_api')->na
 Route::get('/danhsachncc_api', 'Admin\TheLoaiController@getNhanHieu')->name('danhsachncc_api');
 Route::post('/addsanpham_api', 'Admin\SanPhamController@addSanPham')->name('addsanpham_api');
 Route::post('/editsanpham_api', 'Admin\SanPhamController@editSanPham')->name('editsanpham_api');
+
+Route::post('/addnhanhieu_api', 'Admin\NhaCungCapController@addNhaCungCap')->name('addnhanhieu_api');
+Route::post('/editnhanhieu_api', 'Admin\NhaCungCapController@editNhaCungCap')->name('editnhanhieu_api');
+Route::post('/deletenhanhieu_api', 'Admin\NhaCungCapController@deleteNhaCungCap')->name('deletenhanhieu_api');
+

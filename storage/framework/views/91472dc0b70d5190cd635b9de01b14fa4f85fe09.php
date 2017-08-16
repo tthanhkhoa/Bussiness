@@ -1,9 +1,8 @@
-@extends('admin.header')
-@section('menusanpham')
+<?php $__env->startSection('menusanpham'); ?>
     open
-@endsection
-@section('nhacungcap')
-    {{--<div class="row">--}}
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('nhacungcap'); ?>
+    
     <div class="col-xs-12">
 
         <div class="table-header">
@@ -31,22 +30,22 @@
                 </thead>
 
                 <tbody id="rowncc">
-                @foreach($ncc as $item)
-                <tr id="{{$item->id}}">
-                    <td id="{{$item->id}}">{{$item->id}}</td>
-                    <td id="tnh{{$item->id}}">{{$item->tennhanhieu}}</td>
-                    <td id="dc{{$item->id}}">{{$item->diachi}}</td>
-                    <td id="sdt{{$item->id}}">{{$item->sodienthoai}}</td>
-                    <td id="at{{$item->id}}">{{$item->active == 1 ? 'YES': 'NO'}}</td>
+                <?php $__currentLoopData = $ncc; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <tr id="<?php echo e($item->id); ?>">
+                    <td id="<?php echo e($item->id); ?>"><?php echo e($item->id); ?></td>
+                    <td id="tnh<?php echo e($item->id); ?>"><?php echo e($item->tennhanhieu); ?></td>
+                    <td id="dc<?php echo e($item->id); ?>"><?php echo e($item->diachi); ?></td>
+                    <td id="sdt<?php echo e($item->id); ?>"><?php echo e($item->sodienthoai); ?></td>
+                    <td id="at<?php echo e($item->id); ?>"><?php echo e($item->active == 1 ? 'YES': 'NO'); ?></td>
                     <td>
                         <div class="hidden-sm hidden-xs action-buttons">
-                            <a class="edit_ncc green" id="edit{{$item->id}}" data-target="#AddModel" data-toggle="modal"
-                               data-id="{{$item->id}}" data-tennhanhieu="{{$item->tennhanhieu}}" data-diachi="{{$item->diachi}}" data-sodienthoai="{{$item->sodienthoai}}"
-                               data-active="{{$item->active}}" href="#">
+                            <a class="edit_ncc green" id="edit<?php echo e($item->id); ?>" data-target="#AddModel" data-toggle="modal"
+                               data-id="<?php echo e($item->id); ?>" data-tennhanhieu="<?php echo e($item->tennhanhieu); ?>" data-diachi="<?php echo e($item->diachi); ?>" data-sodienthoai="<?php echo e($item->sodienthoai); ?>"
+                               data-active="<?php echo e($item->active); ?>" href="#">
                                 <i class="ace-icon fa fa-pencil bigger-130"></i>
                             </a>
 
-                            <a class="delete_ncc red" data-target="#confirm_delete" data-id="{{$item->id}}" data-toggle="modal" href="#">
+                            <a class="delete_ncc red" data-target="#confirm_delete" data-id="<?php echo e($item->id); ?>" data-toggle="modal" href="#">
                                 <i class="ace-icon fa fa-trash-o bigger-130"></i>
                             </a>
                         </div>
@@ -60,10 +59,10 @@
                                 <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 
                                     <li>
-                                        <a href="#" class="tooltip-success" id="edit{{$item->id}}" data-target="#AddModel" data-toggle="modal"
-                                           data-id="{{$item->id}}" data-tennhanhieu="{{$item->tennhanhieu}}" data-diachi="{{$item->diachi}}"
-                                           data-sodienthoai="{{$item->sodienthoai}}"
-                                           data-active="{{$item->active}}"
+                                        <a href="#" class="tooltip-success" id="edit<?php echo e($item->id); ?>" data-target="#AddModel" data-toggle="modal"
+                                           data-id="<?php echo e($item->id); ?>" data-tennhanhieu="<?php echo e($item->tennhanhieu); ?>" data-diachi="<?php echo e($item->diachi); ?>"
+                                           data-sodienthoai="<?php echo e($item->sodienthoai); ?>"
+                                           data-active="<?php echo e($item->active); ?>"
                                            data-rel="tooltip" title="Edit">
                                             <span class="green">
                                                 <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
@@ -72,7 +71,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="#" class="delete_ncc tooltip-error" data-target="#confirm_delete" data-id="{{$item->id}}" data-toggle="modal"
+                                        <a href="#" class="delete_ncc tooltip-error" data-target="#confirm_delete" data-id="<?php echo e($item->id); ?>" data-toggle="modal"
                                            data-rel="tooltip" title="Delete">
                                             <span class="red">
                                                 <i class="ace-icon fa fa-trash-o bigger-120"></i>
@@ -84,13 +83,13 @@
                         </div>
                     </td>
                 </tr>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
             </table>
-            <div class="pull-right" > {!! $ncc->links() !!} </div>
+            <div class="pull-right" > <?php echo $ncc->links(); ?> </div>
         </div>
     </div>
-    {{--</div>--}}
+    
     <div class="modal fade ng-scope" id="AddModel" role="modal" style="display: none;" aria-hidden="false">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -103,45 +102,46 @@
                         <div class="col-lg-12">
 
                             <form id="registrationForm"  class="form-horizontal ng-pristine ng-valid">
-                                {!! csrf_field() !!}
+                                <?php echo csrf_field(); ?>
+
 
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label">Mã Nhãn Hiệu</label>
                                     <div class="col-lg-10">
-                                        <input id="manhanhieu" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="{{App\Constant::CL_MANHANHIEU}}" placeholder="Mã Nhãn Hiệu" ng-model="currItem.name">
+                                        <input id="manhanhieu" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="<?php echo e(App\Constant::CL_MANHANHIEU); ?>" placeholder="Mã Nhãn Hiệu" ng-model="currItem.name">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label">Tên Nhãn Hiệu</label>
                                     <div class="col-lg-10">
-                                        <input id="tennhanhieu" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="{{App\Constant::CL_TENNHANHIEU}}" placeholder="Tên Nhãn Hiệu" ng-model="currItem.major">
+                                        <input id="tennhanhieu" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="<?php echo e(App\Constant::CL_TENNHANHIEU); ?>" placeholder="Tên Nhãn Hiệu" ng-model="currItem.major">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label">Địa chỉ</label>
                                     <div class="col-lg-10">
-                                        <input id="diachi" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="{{App\Constant::CL_DIACHI}}" placeholder="Địa chỉ" ng-model="currItem.major">
+                                        <input id="diachi" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="<?php echo e(App\Constant::CL_DIACHI); ?>" placeholder="Địa chỉ" ng-model="currItem.major">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label">Số điện thoại</label>
                                     <div class="col-lg-10">
-                                        <input id="sodienthoai" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="{{App\Constant::CL_SDT}}" placeholder="Số điện thoại" ng-model="currItem.major">
+                                        <input id="sodienthoai" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="<?php echo e(App\Constant::CL_SDT); ?>" placeholder="Số điện thoại" ng-model="currItem.major">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label">Active</label>
                                     <div class="col-lg-10">
-                                        <input id="Active" type="radio" name="{{App\Constant::CL_ACTIVE}}" value="1"> Yes<br>
-                                        <input id="Active" type="radio" name="{{App\Constant::CL_ACTIVE}}" value="0"> No<br>
+                                        <input id="Active" type="radio" name="<?php echo e(App\Constant::CL_ACTIVE); ?>" value="1"> Yes<br>
+                                        <input id="Active" type="radio" name="<?php echo e(App\Constant::CL_ACTIVE); ?>" value="0"> No<br>
                                     </div>
                                 </div>
 
 
 
-                                {{--</div>--}}
-                                {{--</div>--}}
+                                
+                                
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     <button id="add_" type="button "  class="btn btn-primary" >Save changes</button>
@@ -152,7 +152,7 @@
                     </div><!-- /.modal-dialog -->
                 </div></div></div>
     </div>
-    {{--Model confirm--}}
+    
 
     <div class="modal fade" id="confirm_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -398,4 +398,5 @@
 </script>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

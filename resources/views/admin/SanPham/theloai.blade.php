@@ -173,7 +173,7 @@
     {{--Model event--}}
     $( "#add_theloai" ).click(function() {
         $(".modal-body").find("#maTheLoai,#tenTheLoai").val('').end();
-        var $radios = $('input:radio[name=Active]');
+        var $radios = $('input:radio[name=active]');
         $radios.filter('[value=1]').prop('checked', false);
         $radios.filter('[value=0]').prop('checked', false);
         $('#add_').show();
@@ -300,7 +300,6 @@
             success: function(data){
 
                 if(data != null){
-//                    console.log(data);
                     $('#AddModel').modal('hide');
                     var active;
                     if(data.result.active == 1)

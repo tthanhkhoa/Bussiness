@@ -437,7 +437,7 @@
 
 
 							<li class="">
-								<a href="{{url('nhacungcap')}}">
+								<a href="{{url('danhsachnhacungcap')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Nhãn Hiệu & Nhà Cung Cấp
 								</a>
