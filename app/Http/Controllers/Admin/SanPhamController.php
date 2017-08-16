@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\sanPham;
+use App\SanPham;
 use App\Constant;
-use App\nhanHieu;
+use App\NhanHieu;
 
 class SanPhamController extends Controller
 {
