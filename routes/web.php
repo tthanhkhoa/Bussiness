@@ -56,9 +56,13 @@ Route::post('/updatetheloai', 'Admin\TheLoaiController@editTheLoai')->name('upda
  * */
 Route::get('/tatcasanpham', 'Admin\SanPhamController@getSanPham')->name('tatcasanpham');
 Route::get('/sanphamid/{id}', 'Admin\SanPhamController@getSanPhamById')->name('sanphamid');
-Route::get('get_info_booking/{id}', ['as' => 'getInfoBooking', 'uses' => 'Admin\JobController@getInfoBooking']);
-//Route::get('/sanhamid', 'Admin\SanPhamController@getSanPhamById')->name('sanhamid');
+Route::post('/deletesanpham', 'Admin\SanPhamController@deleteSanPham')->name('deletesanpham');
 
+
+/*
+ * Admin Nha Cung Cap
+ * */
+Route::get('/danhsachnhacungcap', 'Admin\NhaCungCapController@getNhaCungCap')->name('danhsachnhacungcap');
 
 
 

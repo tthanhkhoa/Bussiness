@@ -437,7 +437,7 @@
 
 
 							<li class="">
-								<a href="<?php echo e(url('nhacungcap')); ?>">
+								<a href="<?php echo e(url('danhsachnhacungcap')); ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Nhãn Hiệu & Nhà Cung Cấp
 								</a>

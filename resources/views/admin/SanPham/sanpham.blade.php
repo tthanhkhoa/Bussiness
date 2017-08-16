@@ -49,7 +49,7 @@
                                 <i class="ace-icon fa fa-pencil bigger-130"></i>
                             </a>
 
-                            <a class="red" id="delete{{$item->id}}" data-target="#confirm_delete" data-toggle="modal" data-id="{{$item->id}}" href="#">
+                            <a class="delete_sanpham red" id="delete" data-target="#confirm_delete" data-toggle="modal" data-id="{{$item->id}}" href="#">
                                 <i class="ace-icon fa fa-trash-o bigger-130"></i>
                             </a>
                         </div>
@@ -76,7 +76,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="#" class="tooltip-error" id="delete{{$item->id}}" data-target="#confirm_delete"
+                                        <a href="#" class="delete_sanpham tooltip-error" id="delete" data-target="#confirm_delete"
                                            data-toggle="modal" data-id="{{$item->id}}"
                                            data-rel="tooltip" title="Delete">
 																				<span class="red">
@@ -127,7 +127,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label">Loại sản phẩm</label>
                                     <div class="col-lg-10">
-                                        <select class="form-control ng-pristine ng-untouched ng-valid" id="matheloai" name="{{App\Constant::CL_MATHELOAI}}">
+                                        <select id="matheloai" class="form-control ng-pristine ng-untouched ng-valid"  name="{{App\Constant::CL_MATHELOAI}}">
                                         </select>
 
                                     </div>
@@ -234,7 +234,7 @@
 
         $( "#add_sanpham" ).click(function() {
             $(".modal-body").find("#maTheLoai,#tenTheLoai").val('').end();
-            var $radios = $('input:radio[name=Active]');
+            var $radios = $('input:radio[name=active]');
             $radios.filter('[value=1]').prop('checked', false);
             $radios.filter('[value=0]').prop('checked', false);
             getdata();
@@ -247,14 +247,16 @@
             e.preventDefault();
 
             var _token = $("input[name='_token']").val();
-            var masanpham = $('#maSanPham').val();
-            var tensanpham = $('#tenSanPham').val();
-            var matheloai = $('#tenTheLoai').val();
-            var soluong = $('#soLuong').val();
-            var nhanhieu = $('#nhanHieu').val();
-            var giatien = $('#giaTien').val();
+            var masanpham = $('#masanpham').val();
+            var tensanpham = $('#tensanpham').val();
+            var matheloai = $('#matheloai').val();
+            var soluong = $('#soluong').val();
+            var nhanhieu = $('#manhanhieu').val();
+            var giatien = $('#giatien').val();
             var active = $('#Active:checked').val();
             var url = "{!! route('addsanpham_api') !!}";
+            console.log(matheloai +" - "+ nhanhieu);
+//            return
             $.ajax({
                 'url':url,
                 'data':{
@@ -269,10 +271,10 @@
                 'type':'POST',
                 success: function(data){
                     console.log(data);
-//                    return
                     $('#AddModel').modal('hide');
                     if(data){
                         var at;
+                        var price = formatNumber(data.result.giatien);
                         if(data.result.active == 1){
                             at = "YES";
                         }
@@ -284,7 +286,7 @@
                         result += "<td id='tsp"+data.result.id+"'>"+data.result.tensanpham+"</td>";
                         result += "<td id='sl"+data.result.id+"'>"+data.result.soluong+"</td>";
                         result += "<td id='nh"+data.result.id+"'>"+data.result.nhan_hieu.tennhanhieu+"</td>";
-                        result += "<td id='gt"+data.result.id+"'>"+data.result.giatien+"</td>";
+                        result += "<td id='gt"+data.result.id+"'>"+price+"</td>";
                         result += "<td id='at"+data.result.id+"'>"+at+"</td>";
                         result += "<td>";
                         result += "<div class=\"hidden-sm hidden-xs action-buttons\">";
@@ -329,6 +331,10 @@
             })
         });
 
+        function formatNumber (num) {
+            return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+        }
+
         $('tbody#rowSanPham').on('click','.edit_sanpham',function(){
             $('#editSanpham').show();
             $('#addSanpham').hide();
@@ -366,22 +372,16 @@
 
         $('#editSanpham').click(function(e){
             e.preventDefault();
-
-            var masanpham = $('#maSanPham').val();
-            var tensanpham = $('#tenSanPham').val();
-            var matheloai = $('#tenTheLoai').val();
-            var soluong = $('#soLuong').val();
-            var nhanhieu = $('#nhanHieu').val();
-            var giatien = $('#giaTien').val();
+            var _token = $("input[name='_token']").val();
+            var masanpham = $('#masanpham').val();
+            var tensanpham = $('#tensanpham').val();
+            var matheloai = $('#matheloai').val();
+            var soluong = $('#soluong').val();
+            var nhanhieu = $('#manhanhieu').val();
+            var giatien = $('#giatien').val();
             var active = $('#Active:checked').val();
+
             var url = "{!! route('editsanpham_api') !!}";
-
-
-
-//            var _token = $("input[name='_token']").val();
-//            var matheloai = $('#maTheLoai').val();
-//            var tentheloai = $('#tenTheLoai').val();
-//            var active = $('#Active:checked').val();
             $.ajax({
                 'url': url,
                 'data':{
@@ -398,24 +398,58 @@
                 success: function(data){
                     $('#AddModel').modal('hide');
                     if(data != null){
-                        $('#tsp' + id).html(tensanpham);
-                        $('#sl' + id).html(soluong);
-                        $('#nh' + id).html(data.result.nhan_hieu.tennhanhieu);
-                        $('#gt' + id).html(tentheloai);
+                        $('#tsp' + masanpham).html(tensanpham);
+                        $('#sl' + masanpham).html(soluong);
+                        $('#nh' + masanpham).html(data.result.nhan_hieu.tennhanhieu);
+                        $('#gt' + masanpham).html(matheloai);
                         if(active == 1){
-                            $('#td_at' + id).html("YES");
+                            $('#td_at' + masanpham).html("YES");
                         }
                         else{
-                            $('#td_at' + id).html("NO");
+                            $('#td_at' + masanpham).html("NO");
                         }
-                        var id_edit = 'edit' + id;
+                        var id_edit = 'edit' + masanpham;
                         var temp = document.getElementById(id_edit);
-                        //    temp.setAttribute("data-id", "EnSureModal");
-                        temp.setAttribute("data-tentheloai", tentheloai);
+                        temp.setAttribute("data-tensanpham", tensanpham);
+                        temp.setAttribute("data-matheloai", matheloai);
+                        temp.setAttribute("data-soluong", soluong);
+                        temp.setAttribute("data-nhanhieu", nhanhieu);
+                        temp.setAttribute("data-giatien", giatien);
                         temp.setAttribute("data-active", active);
                         var content = temp.outerHTML;
                         temp.outerHTML = content;
 
+                    }
+                    else{
+
+                    }
+
+
+                }
+            })
+        });
+
+        $('tbody#rowSanPham').on('click','.delete_sanpham',function(){
+            var masanpham = $(this).data('id');
+            $("#row_id_del").val( masanpham );
+        });
+
+        $('#delete_').click(function(e){
+            var _token = $("input[name='_token']").val();
+            var masanpham = $('#row_id_del').val();
+            var url = "{!! route('deletesanpham') !!}";
+            console.log(masanpham);
+            $.ajax({
+                'url':url,
+                'data':{
+                    '_token': _token,
+                    'id': masanpham
+                },
+                'type':'POST',
+                success: function(data){
+                    $('#confirm_delete').modal('hide');
+                    if(data.result == 1){
+                        $("#" +masanpham).remove();
                     }
                     else{
 
