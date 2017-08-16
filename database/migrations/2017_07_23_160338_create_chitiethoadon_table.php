@@ -15,17 +15,13 @@ class CreateChitiethoadonTable extends Migration
     public function up()
     {
         //
-        Schema::create(Constant::TBL_ChiTietHoaDon, function (Blueprint $table) {
-            $table->increments(Constant::TBL_maChiTietHD);
-            $table->integer(Constant::TBL_maSanPham)->unsigned();
-            $table->foreign(Constant::TBL_maSanPham)->references(Constant::TBL_maSanPham)->on(App\Constant::TBL_SanPham)->onDelete('cascade');
-           // $table->integer(Constant::TBL_maSanPham)->nullable();
-            $table->string(Constant::TBL_tenSanPham)->nullable();
-            $table->integer(Constant::TBL_soLuong)->nullable();
-            $table->integer(Constant::TBL_maHoaDon)->unsigned();
-            $table->foreign(Constant::TBL_maHoaDon)->references(Constant::TBL_maHoaDon)->on(App\Constant::TBL_HoaDon)->onDelete('cascade');
-          //  $table->timestamps();
-            //   $table->softDeletes();
+        Schema::create(Constant::TBL_CTHOADON, function (Blueprint $table) {
+            $table->increments(Constant::CL_ID);
+            $table->integer(Constant::CL_MASANPHAM)->unsigned();
+            $table->foreign(Constant::CL_MASANPHAM)->references(Constant::CL_ID)->on(App\Constant::TBL_SANPHAM)->onDelete('cascade');
+            $table->integer(Constant::CL_SOLUONG)->nullable();
+            $table->integer(Constant::CL_MAHOADON)->unsigned();
+            $table->foreign(Constant::CL_MAHOADON)->references(Constant::CL_ID)->on(App\Constant::TBL_HOADON)->onDelete('cascade');
         });
     }
 
@@ -37,6 +33,6 @@ class CreateChitiethoadonTable extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists(Constant::TBL_HoaDon);
+        Schema::dropIfExists(Constant::TBL_CTHOADON);
     }
 }

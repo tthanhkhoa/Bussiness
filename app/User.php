@@ -29,6 +29,6 @@ class User extends Authenticatable
     ];
 
     public function KhachHang(){
-        return $this->belongsTo('App\khachhang',Constant::CL_MAKHACHHANG,Constant::CL_ID);
+        return $this->belongsTo('App\khachHang',Constant::CL_MAKHACHHANG,Constant::CL_ID);
     }
 }

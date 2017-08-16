@@ -4,14 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class nhanhieu extends Model
+class NhanHieu extends Model
 {
     //
-    protected $table = Constant::TBL_NhanHieu;
-//    protected $primaryKey = Constant::TBL_idNhanHieu;
+    protected $table = Constant::TBL_NHANHIEU;
     public $timestamps = false;
 
     public function SanPham(){
-        return $this->hasMany('App\sanpham',Constant::CL_MASANPHAM,Constant::CL_ID);
+        return $this->hasMany('App\SanPham',Constant::CL_MASANPHAM,Constant::CL_ID);
     }
 }

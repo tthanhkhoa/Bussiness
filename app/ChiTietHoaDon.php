@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class ChiTietHoaDon extends Model
 {
     //
-    protected $table = Constant::TBL_ChiTietHoaDon;
+    protected $table = Constant::TBL_CTHOADON;
 //    protected $primaryKey = Constant::TBL_maChiTietHD;
 
     public function SanPham()
     {
-        return $this->hasMany('App\sanpham', Constant::CL_MASANPHAM, Constant::CL_ID);
+        return $this->hasMany('App\sanPham', Constant::CL_MASANPHAM, Constant::CL_ID);
     }
 
     public function HoaDon(){

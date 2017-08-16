@@ -8,7 +8,7 @@ class Constant
     const CL_ID                = "id";
     //Table The Loai
     const TBL_THELOAI          = "theloai";
-    const CL_MATHELOAI         = "maheloai";
+    const CL_MATHELOAI         = "matheloai";
     const CL_TENTHELOAI        = "tentheloai";
     const CL_ACTIVE            = "active";
     //Table San Pham
@@ -29,9 +29,9 @@ class Constant
     //Table NhanHieu
     const CL_MANHANHIEU        = "manhanhieu";
     const TBL_NHANHIEU         = "nhanhieu";
-    const CL_TENNHANHIEU       = "tennhanieu";
+    const CL_TENNHANHIEU       = "tennhanhieu";
     //Table User
-    const TBL_USER             = "user";
+    const TBL_USER             = "users";
     const CL_USER_ID           = "user_id";
     const CL_USERNAME          = "username";
     const CL_PASSWORD          = "password";

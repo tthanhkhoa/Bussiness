@@ -14,13 +14,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create(Constant::TBL_User, function (Blueprint $table) {
-            $table->increments(Constant::TBL_idUser);
-            // $table->foreign(Constant::TBL_maKhachHang)->references(Constant::TBL_maKhachHang)->on(App\Constant::TBL_KhachHang)->onDelete('cascade');
-            $table->string(Constant::TBL_username)->nullable();
-           // $table->string('email')->unique();
-            $table->string(Constant::TBL_password)->nullable();
-            //$table->rememberToken();
+        Schema::create(Constant::TBL_USER, function (Blueprint $table) {
+            $table->increments(Constant::CL_ID);
+            $table->string(Constant::CL_USERNAME)->nullable();
+            $table->string(Constant::CL_PASSWORD)->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(Constant::TBL_User);
+        Schema::dropIfExists(Constant::TBL_USER);
     }
 }

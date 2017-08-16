@@ -30,23 +30,23 @@
 
                 <tbody id="rowTheLoai">
                 <?php $__currentLoopData = $TheLoai; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <tr id="<?php echo e($item->maTheLoai); ?>">
+                <tr id="<?php echo e($item->id); ?>">
 
 
-                    <td id="td_mtl<?php echo e($item->maTheLoai); ?>"><?php echo e($item->maTheLoai); ?></td>
-                    <td id="td_ttl<?php echo e($item->maTheLoai); ?>"><?php echo e($item->TenTheLoai); ?></td>
-                    <td id="td_at<?php echo e($item->maTheLoai); ?>" class="hidden-480"><?php echo e($item->Active == 1 ?"YES" : "NO"); ?></td>
+                    <td id="td_mtl<?php echo e($item->id); ?>"><?php echo e($item->id); ?></td>
+                    <td id="td_ttl<?php echo e($item->id); ?>"><?php echo e($item->tentheloai); ?></td>
+                    <td id="td_at<?php echo e($item->id); ?>" class="hidden-480"><?php echo e($item->active == 1 ?"YES" : "NO"); ?></td>
 
                     <td>
                         <div class="hidden-sm hidden-xs action-buttons">
 
 
-                            <a class="edit_theloai green" id="edit_theloai<?php echo e($item->maTheLoai); ?>" data-target="#AddModel" data-toggle="modal"
-                               data-id="<?php echo e($item->maTheLoai); ?>" data-tenTheLoai="<?php echo e($item->TenTheLoai); ?>" data-active="<?php echo e($item->Active); ?>" href="#">
+                            <a class="edit_theloai green" id="edit_theloai<?php echo e($item->id); ?>" data-target="#AddModel" data-toggle="modal"
+                               data-id="<?php echo e($item->id); ?>" data-tenTheLoai="<?php echo e($item->tentheloai); ?>" data-active="<?php echo e($item->active); ?>" href="#">
                                 <i class="ace-icon fa fa-pencil bigger-130"></i>
                             </a>
 
-                            <a class="delete_theloai red" id="delete_theloai" data-target="#confirm_delete" data-toggle="modal" data-id="<?php echo e($item->maTheLoai); ?>"  href="#">
+                            <a class="delete_theloai red" id="delete_theloai" data-target="#confirm_delete" data-toggle="modal" data-id="<?php echo e($item->id); ?>"  href="#">
                                 <i class="ace-icon fa fa-trash-o bigger-130"></i>
                             </a>
                         </div>
@@ -62,8 +62,8 @@
 
                                     <li>
                                         <a href="#" class="edit_theloai tooltip-success" data-rel="tooltip" title="Edit"
-                                           id="edit_theloai<?php echo e($item->maTheLoai); ?>" data-target="#AddModel" data-toggle="modal"
-                                           data-id="<?php echo e($item->maTheLoai); ?>" data-tenTheLoai="<?php echo e($item->TenTheLoai); ?>" data-active="<?php echo e($item->Active); ?>">
+                                           id="edit_theloai<?php echo e($item->id); ?>" data-target="#AddModel" data-toggle="modal"
+                                           data-id="<?php echo e($item->id); ?>" data-tenTheLoai="<?php echo e($item->tentheloai); ?>" data-active="<?php echo e($item->active); ?>">
 																				<span class="green">
 																					<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
 																				</span>
@@ -72,7 +72,7 @@
 
                                     <li>
                                         <a href="#" id="delete_theloai" class="delete_theloai tooltip-error" data-rel="tooltip"
-                                           data-target="#confirm_delete" data-toggle="modal" data-id="<?php echo e($item->maTheLoai); ?>" title="Delete">
+                                           data-target="#confirm_delete" data-toggle="modal" data-id="<?php echo e($item->id); ?>" title="Delete">
 																				<span class="red">
 																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
 																				</span>
@@ -110,21 +110,21 @@
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label">Mã Thể Loại</label>
                                     <div class="col-lg-10">
-                                        <input id="maTheLoai" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="<?php echo e(App\Constant::TBL_MaTheLoai); ?>" placeholder="Mã thể loại" ng-model="currItem.name">
+                                        <input id="maTheLoai" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="<?php echo e(App\Constant::CL_MATHELOAI); ?>" placeholder="Mã thể loại" ng-model="currItem.name">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label">Tên Thể Loại</label>
                                     <div class="col-lg-10">
-                                        <input id="tenTheLoai" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="<?php echo e(App\Constant::TBL_tenTheLoai); ?>" placeholder="Tên thể loại" ng-model="currItem.major">
+                                        <input id="tenTheLoai" type="text" class="form-control ng-pristine ng-untouched ng-valid" name="<?php echo e(App\Constant::CL_TENTHELOAI); ?>" placeholder="Tên thể loại" ng-model="currItem.major">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label">Active</label>
                                     <div class="col-lg-10">
-                                        <input id="Active" type="radio" name="<?php echo e(App\Constant::TBL_Active); ?>" value="1"> Yes<br>
-                                        <input id="Active" type="radio" name="<?php echo e(App\Constant::TBL_Active); ?>" value="0"> No<br>
+                                        <input id="Active" type="radio" name="<?php echo e(App\Constant::CL_ACTIVE); ?>" value="1"> Yes<br>
+                                        <input id="Active" type="radio" name="<?php echo e(App\Constant::CL_ACTIVE); ?>" value="0"> No<br>
                                     </div>
                                 </div>
 
@@ -188,14 +188,13 @@
         var maTheLoai = $(this).data('id');
         var tenTheLoai = $(this).data('tentheloai');
         var Active = $(this).data('active');
-        console.log(Active);
         if(Active == 1){
-                var $radios = $('input:radio[name=Active]');
+                var $radios = $('input:radio[name=active]');
                     $radios.filter('[value=1]').prop('checked', true);
 
         }
         else{
-            var $radios = $('input:radio[name=Active]');
+            var $radios = $('input:radio[name=active]');
                 $radios.filter('[value=0]').prop('checked', true);
         }
         console.log(tenTheLoai + Active);
@@ -212,19 +211,19 @@
 
     $('#delete_').click(function(e){
         var _token = $("input[name='_token']").val();
-        var maTheLoai = $('#row_id_del').val();
-        console.log(maTheLoai);
+        var matheloai = $('#row_id_del').val();
+        console.log(matheloai);
         $.ajax({
             'url':'deletetheloai',
             'data':{
                 '_token': _token,
-                'maTheLoai': maTheLoai
+                'id': matheloai
             },
             'type':'POST',
             success: function(data){
                 $('#confirm_delete').modal('hide');
                 if(data.result == 1){
-                    $("#" + maTheLoai).remove();
+                    $("#" +matheloai).remove();
                 }
                 else{
 
@@ -241,38 +240,33 @@
         e.preventDefault();
 
         var _token = $("input[name='_token']").val();
-        var maTheLoai = $('#maTheLoai').val();
-        var tenTheLoai = $('#tenTheLoai').val();
-        var Active = $('#Active:checked').val();
-//        console.log(tenTheLoai);
-//        console.log(Active);
-        //return 1;
+        var matheloai = $('#maTheLoai').val();
+        var tentheloai = $('#tenTheLoai').val();
+        var active = $('#Active:checked').val();
         $.ajax({
             'url':'updatetheloai',
             'data':{
                 '_token': _token,
-                'maTheLoai': maTheLoai,
-                'tenTheLoai': tenTheLoai,
-                'Active': Active
+                'id': matheloai,
+                'tentheloai': tentheloai,
+                'active': active
             },
             'type':'POST',
             success: function(data){
-                console.log(data);
-//                return 1;
                 $('#AddModel').modal('hide');
                 if(data != null){
-                    $('#td_ttl' + maTheLoai).html(tenTheLoai);
-                    if(Active == 1){
-                        $('#td_at' + maTheLoai).html("YES");
+                    $('#td_ttl' + matheloai).html(tentheloai);
+                    if(active == 1){
+                        $('#td_at' + matheloai).html("YES");
                     }
                     else{
-                        $('#td_at' + maTheLoai).html("NO");
+                        $('#td_at' + matheloai).html("NO");
                     }
-                    var id_edit = 'edit_theloai' + maTheLoai;
+                    var id_edit = 'edit_theloai' + matheloai;
                     var temp = document.getElementById(id_edit);
                 //    temp.setAttribute("data-id", "EnSureModal");
-                    temp.setAttribute("data-tentheloai", tenTheLoai);
-                    temp.setAttribute("data-active", Active);
+                    temp.setAttribute("data-tentheloai", tentheloai);
+                    temp.setAttribute("data-active", active);
                     var content = temp.outerHTML;
                     temp.outerHTML = content;
 
@@ -291,16 +285,16 @@
     $('#add_').click(function(e){
         e.preventDefault();
         var _token = $("input[name='_token']").val();
-        var maTheLoai = $('#maTheLoai').val();
-        var tenTheLoai = $('#tenTheLoai').val();
-        var Active = $('#Active:checked').val();
+        var matheloai = $('#maTheLoai').val();
+        var tentheloai = $('#tenTheLoai').val();
+        var active = $('#Active:checked').val();
         $.ajax({
             'url':'addtheloai',
             'data':{
                 '_token': _token,
-                'maTheLoai': maTheLoai,
-                'tenTheLoai': tenTheLoai,
-                'Active': Active
+                'matheloai': matheloai,
+                'tentheloai': tentheloai,
+                'active': active
             },
             'type':'POST',
             success: function(data){
@@ -309,23 +303,23 @@
 //                    console.log(data);
                     $('#AddModel').modal('hide');
                     var active;
-                    if(data.result.Active == 1)
+                    if(data.result.active == 1)
                         active = "Yes";
                     else
                         active = "No";
 
-                    var result = "<tr id='" + data.result.maTheLoai + "'>";
-                    result += "<td id=\"td_mtl"+data.result.maTheLoai+"\">"+data.result.maTheLoai+"</td>";
-                    result += "<td id= \"td_ttl"+data.result.maTheLoai+"\">"+data.result.tenTheLoai+"</td>";
-                    result += "<td id= \"td_at"+data.result.maTheLoai+"\">"+active+"</td>";
+                    var result = "<tr id='" + data.result.id + "'>";
+                    result += "<td id=\"td_mtl"+data.result.id+"\">"+data.result.id+"</td>";
+                    result += "<td id= \"td_ttl"+data.result.id+"\">"+data.result.tentheloai+"</td>";
+                    result += "<td id= \"td_at"+data.result.id+"\">"+active+"</td>";
                     result += "<td>";
                     result += "<div class=\"hidden-sm hidden-xs action-buttons\">";
-                    result += "<a class='"+"edit_theloai green"+"' id=\"edit_theloai"+data.result.maTheLoai+"\" data-target=\"#AddModel\" data-toggle=\"modal\"\n" +
-                        "                               data-id="+data.result.maTheLoai+" data-tenTheLoai='" +data.result.tenTheLoai+ "' data-active="+data.result.Active+" href=\"#\">";
+                    result += "<a class='"+"edit_theloai green"+"' id=\"edit_theloai"+data.result.id+"\" data-target=\"#AddModel\" data-toggle=\"modal\"\n" +
+                        "                               data-id="+data.result.id+" data-tenTheLoai='" +data.result.tentheloai+ "' data-active="+data.result.active+" href=\"#\">";
                     result += "<i class=\"ace-icon fa fa-pencil bigger-130\"></i>";
                     result += "</a>";
                     result += "<a class=\"delete_theloai red\" id=\"delete_theloai\" data-target=\"#confirm_delete\" " +
-                        "data-toggle=\"modal\" data-id="+data.result.maTheLoai+" href=\"#\">";
+                        "data-toggle=\"modal\" data-id="+data.result.id+" href=\"#\">";
                     result += "<i class=\"ace-icon fa fa-trash-o bigger-130\"></i>";
                     result += "</a>";
                     result += "</div>";
@@ -336,15 +330,15 @@
                     result += "</button>";
                     result += "<ul class=\"dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close\">";
                     result += "<li>";
-                    result += "<a href=\"#\" class='"+"edit_theloai tooltip-success"+"' id=\"edit_theloai"+data.result.maTheLoai+"\" data-target=\"#AddModel\" data-toggle=\"modal\"\n" +
-                        " data-rel=\"tooltip\" title=\"Edit\" data-id="+data.result.maTheLoai+" data-tenTheLoai="+data.result.tenTheLoai+" data-active="+data.result.Active+" >";
+                    result += "<a href=\"#\" class='"+"edit_theloai tooltip-success"+"' id=\"edit_theloai"+data.result.id+"\" data-target=\"#AddModel\" data-toggle=\"modal\"\n" +
+                        " data-rel=\"tooltip\" title=\"Edit\" data-id="+data.result.id+" data-tenTheLoai="+data.result.tentheloai+" data-active="+data.result.active+" >";
                     result += "<span class=\"green\">";
                     result += "<i class=\"ace-icon fa fa-pencil-square-o bigger-120\"></i>";
                     result += "</span>";
                     result += "</a>";
                     result += "</li>";
                     result += "<li>";
-                    result += "<a href=\"#\" class=\"delete_theloai tooltip-error\" data-rel=\"tooltip\" data-target=\"confirm_delete\" data-id="+data.result.maTheLoai+" data-toggle=\"modal\" title=\"Delete\">";
+                    result += "<a href=\"#\" class=\"delete_theloai tooltip-error\" data-rel=\"tooltip\" data-target=\"confirm_delete\" data-id="+data.result.id+" data-toggle=\"modal\" title=\"Delete\">";
                     result += "<span class=\"red\">";
                     result += "<i class=\"ace-icon fa fa-trash-o bigger-120\"></i>";
                     result += "</span>";

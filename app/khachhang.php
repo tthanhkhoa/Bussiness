@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class khachhang extends Model
+class khachHang extends Model
 {
     //
-    protected $table = Constant::TBL_KhachHang;
+    protected $table = Constant::TBL_KHACHHANG;
 //    protected $primaryKey = Constant::TBL_maKhachHang;
     public $timestamps = false;
 
@@ -20,6 +20,6 @@ class khachhang extends Model
     }
 
     public function remenberSP(){
-        return $this->hasMany('App\remenberSP',Constant::CL_REMENBER_ID,Constant::CL_ID);
+        return $this->hasMany('App\rememberSP',Constant::CL_REMENBER_ID,Constant::CL_ID);
     }
 }

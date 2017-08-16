@@ -15,16 +15,16 @@ class CreateSanphamTable extends Migration
     public function up()
     {
         //
-        Schema::create(Constant::TBL_SanPham, function (Blueprint $table) {
-            $table->increments(Constant::TBL_maSanPham);
-            $table->integer(Constant::TBL_MaTheLoai)->unsigned();
-            $table->foreign(Constant::TBL_MaTheLoai)->references(Constant::TBL_MaTheLoai)->on(App\Constant::TBL_TheLoai)->onDelete('cascade');
-            $table->string(Constant::TBL_tenSanPham)->nullable();
-            $table->integer(Constant::TBL_soLuong)->nullable();
-            $table->integer(Constant::TBL_idNhanHieu)->unsigned();
-            $table->foreign(Constant::TBL_idNhanHieu)->references(Constant::TBL_idNhanHieu)->on(App\Constant::TBL_NhanHieu)->onDelete('cascade');
-            $table->double(Constant::TBL_GiaTien)->nullable();
-            $table->integer(Constant::TBL_Active)->nullable();
+        Schema::create(Constant::TBL_SANPHAM, function (Blueprint $table) {
+            $table->increments(Constant::CL_ID);
+            $table->integer(Constant::CL_MATHELOAI)->unsigned();
+            $table->foreign(Constant::CL_MATHELOAI)->references(Constant::CL_ID)->on(App\Constant::TBL_THELOAI)->onDelete('cascade');
+            $table->string(Constant::CL_TENSANPHAM)->nullable();
+            $table->integer(Constant::CL_SOLUONG)->nullable();
+            $table->integer(Constant::CL_MANHANHIEU)->unsigned();
+            $table->foreign(Constant::CL_MANHANHIEU)->references(Constant::CL_ID)->on(App\Constant::TBL_NHANHIEU)->onDelete('cascade');
+            $table->double(Constant::CL_GIATIEN)->nullable();
+            $table->integer(Constant::CL_ACTIVE)->nullable();
         });
     }
 
@@ -36,6 +36,6 @@ class CreateSanphamTable extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists(Constant::TBL_SanPham);
+        Schema::dropIfExists(Constant::TBL_SANPHAM);
     }
 }

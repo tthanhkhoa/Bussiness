@@ -11,29 +11,29 @@ class HoaDonController extends Controller
 {
     //
     function getHoaDon(){
-        $getHoaDon = HoaDon::orderBy(Constant::TBL_maHoaDon,'desc')->paginate(15);
+        $getHoaDon = HoaDon::orderBy(Constant::CL_ID,'desc')->paginate(15);
         return view('admin.KhachHang.khachhang',compact('getHoaDon'));
     }
 
     function addHoaDon(Request $request){
         $add = new HoaDon;
-        $add->{Constant::TBL_maKhachHang} = $request ->{Constant::TBL_maKhachHang};
-        $add->{Constant::TBL_tongTien} = $request ->{Constant::TBL_tongTien};
-        $add->{Constant::TBL_Ngaylap} = $request ->{Constant::TBL_Ngaylap};
+        $add->{Constant::CL_MAKHACHHANG} = $request ->{Constant::CL_MAKHACHHANG};
+        $add->{Constant::CL_TONGTIEN} = $request ->{Constant::CL_TONGTIEN};
+        $add->{Constant::CL_NGAYLAP} = $request ->{Constant::CL_NGAYLAP};
         $add->save();
 
     }
 
     function editHoaDon(Request $request){
-        $edit = HoaDon::find($request->{Constant::TBL_maHoaDon});
-        $edit->{Constant::TBL_maKhachHang} = $request ->{Constant::TBL_maKhachHang};
-        $edit->{Constant::TBL_tongTien} = $request ->{Constant::TBL_tongTien};
-        $edit->{Constant::TBL_Ngaylap} = $request ->{Constant::TBL_Ngaylap};
+        $edit = HoaDon::find($request->{Constant::CL_ID});
+        $edit->{Constant::CL_MAKHACHHANG} = $request ->{Constant::CL_MAKHACHHANG};
+        $edit->{Constant::CL_TONGTIEN} = $request ->{Constant::CL_TONGTIEN};
+        $edit->{Constant::CL_NGAYLAP} = $request ->{Constant::CL_NGAYLAP};
         $edit->save();
     }
 
     function deleteHoaDon(Request $request){
-        $id = $request->{Constant::TBL_maHoaDon};
+        $id = $request->{Constant::CL_ID};
         $delete = HoaDon::where('maHoaDon', $id)->delete();
         return response()->json(['result'=>1]);
     }

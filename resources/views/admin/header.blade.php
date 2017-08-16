@@ -685,12 +685,12 @@
                                 t = data[key];
                             }
                             t.forEach(function(entry) {
-                                var codeTheLoai = entry.maTheLoai;
-                                var temp = '\\getSanPhamById\\'+codeTheLoai;
+                                var codeTheLoai = entry.id;
+                                var temp = '\\sanphamid\\'+codeTheLoai;
                                 result += "<li class=>";
                                 result += "<a href= "+temp+" >";
                                 result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
-                                result += ""+entry.tenTheLoai+"";
+                                result += ""+entry.tentheloai+"";
                                 result += "</a>";
                                 result += "<b class=\"arrow\"></b>";
                                 result += "</li>";

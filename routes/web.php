@@ -55,9 +55,9 @@ Route::post('/updatetheloai', 'Admin\TheLoaiController@editTheLoai')->name('upda
  * Admin San Pham
  * */
 Route::get('/tatcasanpham', 'Admin\SanPhamController@getSanPham')->name('tatcasanpham');
-Route::get('/getSanPhamById/{id}', 'Admin\SanPhamController@getSanPhamById')->name('getSanPhamById');
+Route::get('/sanphamid/{id}', 'Admin\SanPhamController@getSanPhamById')->name('sanphamid');
 Route::get('get_info_booking/{id}', ['as' => 'getInfoBooking', 'uses' => 'Admin\JobController@getInfoBooking']);
-Route::get('/getSanPhamById', 'Admin\SanPhamController@getSanPhamById')->name('getSanPhamById');
+//Route::get('/sanhamid', 'Admin\SanPhamController@getSanPhamById')->name('sanhamid');
 
 
 

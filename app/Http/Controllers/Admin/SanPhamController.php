@@ -4,16 +4,16 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\sanpham;
+use App\sanPham;
 use App\Constant;
-use App\nhanhieu;
+use App\nhanHieu;
 
 class SanPhamController extends Controller
 {
     //
     function getSanPham(){
         try{
-            $sanpham = sanpham::orderBy(Constant::TBL_maSanPham,'desc')->paginate(15);
+            $sanpham = sanPham::orderBy(Constant::CL_ID,'desc')->paginate(15);
             return view('admin.SanPham.sanpham',compact('sanpham'));
         }catch (\Exception $e){
 
@@ -22,23 +22,22 @@ class SanPhamController extends Controller
     }
 
     function getSanPhamById($id){
-        $sanpham = sanpham::where(Constant::TBL_MaTheLoai,'=',$id)->orderBy(Constant::TBL_maSanPham,'desc')->paginate(15);
+        $sanpham = sanPham::where(Constant::CL_MATHELOAI,'=',$id)->orderBy(Constant::CL_ID,'desc')->paginate(15);
 //        return $sanpham;
         return view('admin.SanPham.sanpham',compact('sanpham'));
     }
     function addSanPham(Request $request){
         try{
-            $add = new sanpham;
-            $add->{Constant::TBL_MaTheLoai} =  $request->{Constant::TBL_MaTheLoai};
-            $add->{Constant::TBL_tenSanPham} =  $request->{Constant::TBL_tenSanPham} ;
-            $add->{Constant::TBL_soLuong} =  $request->{Constant::TBL_soLuong};
-            $add->{Constant::TBL_idNhanHieu} =  $request->{Constant::TBL_idNhanHieu} ;
-            $add->{Constant::TBL_GiaTien} = $request->{Constant::TBL_GiaTien} ;
-            $add->{Constant::TBL_Active} =  $request->{Constant::TBL_Active};
+            $add = new SanPham;
+            $add->{Constant::CL_MATHELOAI} =  $request->{Constant::CL_MATHELOAI};
+            $add->{Constant::CL_TENSANPHAM} =  $request->{Constant::CL_TENSANPHAM} ;
+            $add->{Constant::CL_SOLUONG} =  $request->{Constant::CL_SOLUONG};
+            $add->{Constant::CL_MANHANHIEU} =  $request->{Constant::CL_MANHANHIEU} ;
+            $add->{Constant::CL_GIATIEN} = $request->{Constant::CL_GIATIEN} ;
+            $add->{Constant::CL_ACTIVE} =  $request->{Constant::CL_ACTIVE};
             $add->save();
-//            $result =  $add->{Constant::TBL_maSanPham};
-            $result = sanpham::with('NhanHieu')
-                ->where([Constant::TBL_maSanPham,'=',$add->{Constant::TBL_maSanPham}])->toSql();
+            $result = SanPham::with('NhanHieu')
+                ->where([[Constant::CL_ID,'=',$add->{Constant::CL_ID}]])->first();
             return response()->json(['result'=>$result]);
         }catch (\Exception $e){
             return response()->json(['result'=>$e]);
@@ -48,20 +47,23 @@ class SanPhamController extends Controller
     }
 
     function editSanPham(Request $request){
-        $edit = sanpham::find($request->{Constant::TBL_maSanPham});
-        $edit->{Constant::TBL_MaTheLoai} = isset($request->{Constant::TBL_MaTheLoai}) ? $request->{Constant::TBL_MaTheLoai} : '';
-        $edit->{Constant::TBL_tenSanPham} = isset($request->{Constant::TBL_tenSanPham}) ? $request->{Constant::TBL_tenSanPham} : '';
-        $edit->{Constant::TBL_soLuong} = isset($request->{Constant::TBL_soLuong}) ? $request->{Constant::TBL_soLuong} : '';
-        $edit->{Constant::TBL_idNhanHieu} = isset($request->{Constant::TBL_idNhanHieu}) ? $request->{Constant::TBL_idNhanHieu} : '';
-        $edit->{Constant::TBL_GiaTien} = isset($request->{Constant::TBL_GiaTien}) ? $request->{Constant::TBL_GiaTien} : '';
-        $edit->{Constant::TBL_Active} = isset($request->{Constant::TBL_Active}) ? $request->{Constant::TBL_Active} : '';
+        $edit = sanPham::find($request->{Constant::CL_ID});
+        $edit->{Constant::CL_MATHELOAI} = isset($request->{Constant::CL_MATHELOAI}) ? $request->{Constant::CL_MATHELOAI} : '';
+        $edit->{Constant::CL_TENSANPHAM} = isset($request->{Constant::CL_TENSANPHAM}) ? $request->{Constant::CL_TENSANPHAM} : '';
+        $edit->{Constant::CL_SOLUONG} = isset($request->{Constant::CL_SOLUONG}) ? $request->{Constant::CL_SOLUONG} : '';
+        $edit->{Constant::CL_MANHANHIEU} = isset($request->{Constant::CL_MANHANHIEU}) ? $request->{Constant::CL_MANHANHIEU} : '';
+        $edit->{Constant::CL_GIATIEN} = isset($request->{Constant::CL_GIATIEN}) ? $request->{Constant::CL_GIATIEN} : '';
+        $edit->{Constant::CL_ACTIVE} = isset($request->{Constant::CL_ACTIVE}) ? $request->{Constant::CL_ACTIVE} : '';
         $edit->save();
+        $result = SanPham::with('NhanHieu')
+            ->where([[Constant::CL_ID,'=',$edit->{Constant::CL_ID}]])->first();
+        return response()->json(['result'=>$result]);
 
     }
 
     function deleteSanPham(Request $request){
-        $id = $request->{Constant::TBL_maSanPham};
-        $delete = sanpham::where('maSanPham', $id)->delete();
+        $id = $request->{Constant::CL_ID};
+        $delete = sanPham::where('maSanPham', $id)->delete();
         return response()->json(['result'=>1]);
     }
 }

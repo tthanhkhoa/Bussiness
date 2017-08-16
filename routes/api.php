@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/danhsachtheloai_api', 'Admin\TheLoaiController@getTheLoai_api')->name('danhsachtheloai_api');
 Route::get('/danhsachncc_api', 'Admin\TheLoaiController@getNhanHieu')->name('danhsachncc_api');
 Route::post('/addsanpham_api', 'Admin\SanPhamController@addSanPham')->name('addsanpham_api');
+Route::post('/editsanpham_api', 'Admin\SanPhamController@editSanPham')->name('editsanpham_api');
