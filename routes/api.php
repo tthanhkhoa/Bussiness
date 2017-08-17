@@ -27,5 +27,9 @@ Route::post('/deletenhanhieu_api', 'Admin\NhaCungCapController@deleteNhaCungCap'
 
 
 Route::post('/addkhachhang_api', 'Admin\KhachHangController@addKhachHang')->name('addkhachhang_api');
+Route::post('/editkhachhang_api', 'Admin\KhachHangController@editKhachHang')->name('editkhachhang_api');
+Route::post('/deletekhachhang_api', 'Admin\KhachHangController@deleteKhachHang')->name('deletekhachhang_api');
+
+
 
 
