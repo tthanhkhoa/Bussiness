@@ -46,13 +46,13 @@
 
                     <td>
                         <div class="hidden-sm hidden-xs action-buttons">
-                            <a class="green" href="#" id="edit{{$item->id}}" data-target="#AddModel" data-toggle="modal"
+                            <a class="editkhachhang green" href="#" id="edit{{$item->id}}" data-target="#AddModel" data-toggle="modal"
                                data-id="{{$item->id}}" data-tenkhachhang="{{$item->tenkhachhang}}" data-ngaysinh="{{$item->ngaysinh}}" data-diachi="{{$item->diachi}}"
                                data-sodienthoai="{{$item->sodienthoai}}" data-email="{{$item->email}}">
                                 <i class="ace-icon fa fa-pencil bigger-130"></i>
                             </a>
 
-                            <a class="red" id="delete" data-target="#confirm_delete"
+                            <a class="deletekhachhang red" id="delete" data-target="#confirm_delete"
                                data-toggle="modal" data-id="{{$item->id}}" href="#">
                                 <i class="ace-icon fa fa-trash-o bigger-130"></i>
                             </a>
@@ -66,7 +66,7 @@
 
                                 <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
                                     <li>
-                                        <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit" id="edit{{$item->id}}" data-target="#AddModel" data-toggle="modal"
+                                        <a href="#" class="editkhachhang tooltip-success" data-rel="tooltip" title="Edit" id="edit{{$item->id}}" data-target="#AddModel" data-toggle="modal"
                                            data-id="{{$item->id}}" data-tenkhachhang="{{$item->tenkhachhang}}" data-ngaysinh="{{$item->ngaysinh}}" data-diachi="{{$item->diachi}}"
                                            data-sodienthoai="{{$item->sodienthoai}}" data-email="{{$item->email}}">
 																				<span class="green">
@@ -76,7 +76,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete" id="delete" data-target="#confirm_delete"
+                                        <a href="#" class="deletekhachhang tooltip-error" data-rel="tooltip" title="Delete" id="delete" data-target="#confirm_delete"
                                            data-toggle="modal" data-id="{{$item->id}}">
 																				<span class="red">
 																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
@@ -187,7 +187,6 @@
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
         $( "#add" ).click(function() {
-            console.log("test");
             $(".modal-body").find("#makhachhang,#tenkhachhang,#ngaysinh,#diachi,#sodienthoai,#email").val('').end();
             $('#addSanpham').show();
             $('#editSanpham').hide();
@@ -204,7 +203,7 @@
             var sodienthoai = $('#sodienthoai').val();
             var email = $('#email').val();
 
-            var url = "{!! route('addkhachhang_api') !!}";
+            var url = 'api/addkhachhang_api';
 
 
             $.ajax({
@@ -220,7 +219,6 @@
                 'type':'POST',
                 success: function(data){
                     console.log(data);
-//                    return
                     $('#AddModel').modal('hide');
                     if(data){
 
@@ -278,6 +276,116 @@
                 }
             })
         });
+
+        $( "#add" ).click(function() {
+            $(".modal-body").find("#makhachhang,#tenkhachhang,#ngaysinh,#diachi,#sodienthoai,#email").val('').end();
+            $('#addSanpham').show();
+            $('#editSanpham').hide();
+        });
+
+        $('tbody#rowKhachHang').on('click','.editkhachhang',function(){
+            $('#editSanpham').show();
+            $('#addSanpham').hide();
+            var makhachhang = $(this).data('id');
+            var tenkhachhang = $(this).data('tenkhachhang');
+            var ngaysinh = $(this).data('ngaysinh');
+            var diachi = $(this).data('diachi');
+            var sodienthoai = $(this).data('sodienthoai');
+            var email = $(this).data('email');
+
+            var modal = $('#AddModel');
+            modal.find("#makhachhang").val(makhachhang);
+            modal.find("#tenkhachhang").val(tenkhachhang);
+            modal.find("#ngaysinh").val(ngaysinh);
+            modal.find("#diachi").val(diachi);
+            modal.find("#sodienthoai").val(sodienthoai);
+            modal.find("#email").val(email);
+        });
+
+        $('#editSanpham').click(function(e){
+            e.preventDefault();
+            var _token = $("input[name='_token']").val();
+            var makhachhang = $('#makhachhang').val();
+            var tenkhachhang = $('#tenkhachhang').val();
+            var ngaysinh = $('#ngaysinh').val();
+            var diachi = $('#diachi').val();
+            var sodienthoai = $('#sodienthoai').val();
+            var email = $('#email').val();
+
+            var url = 'api/editkhachhang_api';
+            $.ajax({
+                'url': url,
+                'data':{
+                    '_token': _token,
+                    'id': makhachhang,
+                    'tenkhachhang': tenkhachhang,
+                    'ngaysinh': ngaysinh,
+                    'diachi': diachi,
+                    'sodienthoai': sodienthoai,
+                    'email': email
+                },
+                'type':'POST',
+                success: function(data){
+                    console.log(data);
+                    $('#AddModel').modal('hide');
+                    if(data != null){
+                        $('#tkh' + makhachhang).html(tenkhachhang);
+                        $('#ns' + makhachhang).html(ngaysinh);
+                        $('#sdt' + makhachhang).html(sodienthoai);
+                        $('#dc' + makhachhang).html(diachi);
+                        $('#mail' + makhachhang).html(email);
+                        var id_edit = 'edit' + makhachhang;
+                        var temp = document.getElementById(id_edit);
+                        temp.setAttribute("data-tenkhachhang", tenkhachhang);
+                        temp.setAttribute("data-ngaysinh", ngaysinh);
+                        temp.setAttribute("data-sodienthoai", sodienthoai);
+                        temp.setAttribute("data-diachi", diachi);
+                        temp.setAttribute("data-email", email);
+                        var content = temp.outerHTML;
+                        temp.outerHTML = content;
+
+                    }
+                    else{
+
+                    }
+
+
+                }
+            })
+        });
+
+        $('tbody#rowKhachHang').on('click','.deletekhachhang',function(){
+            var makhachhang = $(this).data('id');
+            console.log(makhachhang);
+            $("#row_id_del").val( makhachhang );
+        });
+
+        $('#delete_').click(function(e){
+            var _token = $("input[name='_token']").val();
+            var makhachhang = $('#row_id_del').val();
+            console.log(makhachhang);
+            var url = 'api/deletekhachhang_api';
+            $.ajax({
+                'url':url,
+                'data':{
+                    '_token': _token,
+                    'id': makhachhang
+                },
+                'type':'POST',
+                success: function(data){
+                    $('#confirm_delete').modal('hide');
+                    if(data.result == 1){
+                        $("#" +makhachhang).remove();
+                    }
+                    else{
+
+                    }
+
+
+                }
+            })
+        });
+
 
 
 
