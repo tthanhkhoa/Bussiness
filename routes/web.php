@@ -64,6 +64,10 @@ Route::post('/deletesanpham', 'Admin\SanPhamController@deleteSanPham')->name('de
  * */
 Route::get('/danhsachnhacungcap', 'Admin\NhaCungCapController@getNhaCungCap')->name('danhsachnhacungcap');
 
+/*
+ * Admin Khach Hang
+ * */
+Route::get('/danhsachkhachhang', 'Admin\KhachHangController@getKhachHang')->name('danhsachkhachhang');
 
 
 
@@ -84,9 +88,7 @@ Route::get('/nhacungcap', function () {
     return view('admin.SanPham.nhacungcap');
 });
 
-Route::get('/danhsachkhachhang', function () {
-    return view('admin.KhachHang.khachhang');
-});
+
 
 Route::get('/hoadon', function () {
     return view('admin.KhachHang.hoadon');
