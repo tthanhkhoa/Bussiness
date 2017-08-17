@@ -25,3 +25,7 @@ Route::post('/addnhanhieu_api', 'Admin\NhaCungCapController@addNhaCungCap')->nam
 Route::post('/editnhanhieu_api', 'Admin\NhaCungCapController@editNhaCungCap')->name('editnhanhieu_api');
 Route::post('/deletenhanhieu_api', 'Admin\NhaCungCapController@deleteNhaCungCap')->name('deletenhanhieu_api');
 
+
+Route::post('/addkhachhang_api', 'Admin\KhachHangController@addKhachHang')->name('addkhachhang_api');
+
+

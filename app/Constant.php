@@ -21,7 +21,7 @@ class Constant
     //Table KhachHang
     const TBL_KHACHHANG        = "khachhang";
     const CL_MAKHACHHANG       = "makhachhang";
-    const CL_TENKHACHHANG      = "tenkhachang";
+    const CL_TENKHACHHANG      = "tenkhachhang";
     const CL_NGAYSINH          = "ngaysinh";
     const CL_DIACHI            = "diachi";
     const CL_SDT               = "sodienthoai";

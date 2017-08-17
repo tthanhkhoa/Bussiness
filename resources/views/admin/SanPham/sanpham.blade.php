@@ -233,7 +233,7 @@
 
 
         $( "#add_sanpham" ).click(function() {
-            $(".modal-body").find("#maTheLoai,#tenTheLoai").val('').end();
+            $(".modal-body").find("#masanpham,#tensanpham,#soluong,#manhanhieu,#giatien").val('').end();
             var $radios = $('input:radio[name=active]');
             $radios.filter('[value=1]').prop('checked', false);
             $radios.filter('[value=0]').prop('checked', false);
@@ -290,10 +290,13 @@
                         result += "<td id='at"+data.result.id+"'>"+at+"</td>";
                         result += "<td>";
                         result += "<div class=\"hidden-sm hidden-xs action-buttons\">";
-                        result += "<a class=\"green\" href=\"#\">";
+                        result += "<a class=\"edit_sanpham green\" href=\"#\" id=\"edit"+data.result.id+"\" data-toggle=\"modal\"" +
+                            " data-id='"+data.result.id+"' data-tensanpham='"+data.result.tensanpham+"' data-matheloai='"+data.result.matheloai+"' data-soluong='"+data.result.soluong+"'" +
+                            "data-manhanhieu='"+data.result.manhanhieu+"' data-giatien='"+data.result.giatien+"' data-active='"+data.result.active+"' data-target=\"#AddModel\">";
                         result += "<i class=\"ace-icon fa fa-pencil bigger-130\"></i>";
                         result += "</a>";
-                        result += "<a class=\"red\" href=\"#\">";
+                        result += "<a class=\"delete_sanpham red\" href=\"#\" id=\"delete\" data-target=\"#confirm_delete\"" +
+                            "data-toggle=\"modal\" data-id='"+data.result.id+"' >";
                         result += "<i class=\"ace-icon fa fa-trash-o bigger-130\"></i>";
                         result += "</a>";
                         result += "</div>";
@@ -304,14 +307,17 @@
                         result += "</button>";
                         result += "<ul class=\"dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close\">";
                         result += "<li>";
-                        result += "<a href=\"#\" class=\"tooltip-success\" data-rel=\"tooltip\" title=\"Edit\">";
+                        result += "<a href=\"#\" class=\"edit_sanpham tooltip-success\" data-rel=\"tooltip\"id=\"edit"+data.result.id+"\" data-toggle=\"modal\"" +
+                            "data-id='"+data.result.id+"' data-tensanpham='"+data.result.tensanpham+"' data-matheloai='"+data.result.matheloai+"' data-soluong='"+data.result.soluong+"'" +
+                            "data-manhanhieu='"+data.result.manhanhieu+"' data-giatien='"+data.result.giatien+"' data-active='"+data.result.active+"' data-target=\"#AddModel\" title=\"Edit\">";
                         result += "<span class=\"green\">";
                         result += "<i class=\"ace-icon fa fa-pencil-square-o bigger-120\"></i>";
                         result += "</span>";
                         result += "</a>";
                         result += "</li>";
                         result += "<li>";
-                        result += "<a href=\"#\" class=\"tooltip-error\" data-rel=\"tooltip\" title=\"Delete\">";
+                        result += "<a href=\"#\" class=\"delete_sanpham tooltip-error\" data-rel=\"tooltip\" id=\"delete\" data-target=\"#confirm_delete\"" +
+                            " data-toggle=\"modal\" data-id='"+data.result.id+"' title=\"Delete\">";
                         result += "<span class=\"red\">";
                         result += "<i class=\"ace-icon fa fa-trash-o bigger-120\"></i>";
                         result += "</span>";
@@ -345,7 +351,6 @@
             var manhanhieu = $(this).data('manhanhieu');
             var giatien = $(this).data('giatien');
             var Active = $(this).data('active');
-            console.log(" 1 " + matheloai);
             getdata();
             if(Active == 1){
                 var $radios = $('input:radio[name=active]');
@@ -356,18 +361,13 @@
                 var $radios = $('input:radio[name=active]');
                 $radios.filter('[value=0]').prop('checked', true);
             }
-//            console.log(matheloai);
             var modal = $('#AddModel');
-            console.log(" 2 " + matheloai);
             modal.find("#masanpham").val(masanpham);
             modal.find("#tensanpham").val(tensanpham);
             modal.find("#matheloai").val(matheloai);
-//            modal.find("#matheloai").val(1)
             modal.find("#soluong").val(soluong);
             modal.find("#manhanhieu").val(manhanhieu);
             modal.find("#giatien").val(giatien);
-            console.log(" 3 " + matheloai);
-            console.log($('#matheloai').val());
         });
 
         $('#editSanpham').click(function(e){
@@ -380,7 +380,6 @@
             var nhanhieu = $('#manhanhieu').val();
             var giatien = $('#giatien').val();
             var active = $('#Active:checked').val();
-
             var url = "{!! route('editsanpham_api') !!}";
             $.ajax({
                 'url': url,
@@ -401,12 +400,12 @@
                         $('#tsp' + masanpham).html(tensanpham);
                         $('#sl' + masanpham).html(soluong);
                         $('#nh' + masanpham).html(data.result.nhan_hieu.tennhanhieu);
-                        $('#gt' + masanpham).html(matheloai);
+                        $('#gt' + masanpham).html(giatien);
                         if(active == 1){
-                            $('#td_at' + masanpham).html("YES");
+                            $('#at' + masanpham).html("YES");
                         }
                         else{
-                            $('#td_at' + masanpham).html("NO");
+                            $('#at' + masanpham).html("NO");
                         }
                         var id_edit = 'edit' + masanpham;
                         var temp = document.getElementById(id_edit);

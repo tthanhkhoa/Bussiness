@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use app\khachHang;
-use app\Constant;
+use App\khachhang;
+use App\Constant;
 
 class KhachHangController extends Controller
 {
@@ -25,6 +25,7 @@ class KhachHangController extends Controller
         $add->{Constant::CL_EMAIL} = $request ->{Constant::CL_EMAIL};
         $add->{Constant::CL_ACTIVE} = $request ->{Constant::CL_ACTIVE};
         $add->save();
+        return response()->json(['result'=>$add]);
 
     }
 
@@ -38,6 +39,7 @@ class KhachHangController extends Controller
         $edit->{Constant::CL_EMAIL} = $request ->{Constant::CL_EMAIL};
         $edit->{Constant::CL_ACTIVE} = $request ->{Constant::CL_ACTIVE};
         $edit->save();
+        return response()->json(['result'=>$edit]);
 
     }
 
