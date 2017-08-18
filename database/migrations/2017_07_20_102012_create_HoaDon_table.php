@@ -16,11 +16,13 @@ class CreateHoaDonTable extends Migration
     {
         //
         Schema::create(Constant::TBL_HOADON, function (Blueprint $table) {
-            $table->increments(Constant::CL_ID);
+            $table->string(Constant::CL_ID,50)->primary();
             $table->integer(Constant::CL_MAKHACHHANG)->unsigned();
             $table->foreign(Constant::CL_MAKHACHHANG)->references(Constant::CL_ID)->on(App\Constant::TBL_KHACHHANG)->onDelete('cascade');
             $table->double(Constant::CL_TONGTIEN)->nullable();
             $table->date(Constant::CL_NGAYLAP)->nullable();
+            $table->string(Constant::CL_STATUS)->nullable();
+            $table->timestamps();
         });
     }
 

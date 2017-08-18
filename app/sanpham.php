@@ -10,6 +10,7 @@ class SanPham extends Model
     //
     protected $table = Constant::TBL_SANPHAM;
     public $timestamps = false;
+    public $incrementing = false;
 
     public function ChiTietHD(){
         return $this->belongsTo('App\ChiTietHoaDon', Constant::CL_MAHOADON, Constant::CL_ID);

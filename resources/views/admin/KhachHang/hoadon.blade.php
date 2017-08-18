@@ -20,30 +20,24 @@
 
                     <th>Mã hoá đơn </th>
                     <th>Tên khách hàng </th>
-                    <th class="hidden-480">Thời gian đặt hàng</th>
-
-                    <th>
-                        Tổng tiền
-                    </th>
-                    <th class="hidden-480">Số điện thoại</th>
-
+                    <th>Thời gian đặt hàng</th>
+                    <th>Tổng tiền</th>
+                    <th >Số điện thoại</th>
+                    <th >Tình Trạng</th>
                     <th></th>
                 </tr>
                 </thead>
 
-                <tbody>
+                <tbody id="rowHoaDon">
+                @foreach($dsHoaDon as $item)
                 <tr>
 
-                    <td>
-                        <a href="#">app.com</a>
-                    </td>
-                    <td>$45</td>
-                    <td class="hidden-480">3,330</td>
-                    <td>Feb 12</td>
-
-                    <td class="hidden-480">
-                        Expiring
-                    </td>
+                    <td id="mhd{{$item -> id}}">{{$item ->id}}</td>
+                    <td id="mkh{{$item -> id}}">{{$item->KhachHang->tenkhachhang}}</td>
+                    <td id="tg{{$item -> id}}">{{$item->ngaylap}}</td>
+                    <td id="tt{{$item -> id}}">{{$item->tongtien}}</td>
+                    <td id="sdt{{$item -> id}}">{{$item->Khachhang->sodienthoai}}</td>
+                    <td id="ttr{{$item -> id}}">{{$item->status == 1 ? "Đã duyệt" : "Chưa duyệt"}}</td>
 
                     <td>
                         <div class="hidden-sm hidden-xs action-buttons">
@@ -95,8 +89,10 @@
                         </div>
                     </td>
                 </tr>
+                @endforeach
                 </tbody>
             </table>
+            <div class="pull-right" > {!! $dsHoaDon->links() !!} </div>
         </div>
     </div>
     {{--</div>--}}

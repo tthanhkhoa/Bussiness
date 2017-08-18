@@ -194,6 +194,8 @@
 
 
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="{{asset('css/iziToast.min.css')}}">
+    <script src="{{asset('js/iziToast.min.js')}}" type="text/javascript"></script>
     <script>
         window.onload = function(){
             $("#sub_id_sanpham").empty();
@@ -255,12 +257,11 @@
             var giatien = $('#giatien').val();
             var active = $('#Active:checked').val();
             var url = "{!! route('addsanpham_api') !!}";
-            console.log(matheloai +" - "+ nhanhieu);
-//            return
             $.ajax({
                 'url':url,
                 'data':{
                     '_token': _token,
+                    'id':masanpham,
                     'tensanpham': tensanpham,
                     'matheloai': matheloai,
                     'soluong': soluong,
@@ -272,7 +273,7 @@
                 success: function(data){
                     console.log(data);
                     $('#AddModel').modal('hide');
-                    if(data){
+                    if(data.result != 1){
                         var at;
                         var price = formatNumber(data.result.giatien);
                         if(data.result.active == 1){
@@ -329,6 +330,16 @@
                         result += "</td>";
                         result += "</tr>";
                         $("#rowSanPham").prepend(result);
+                        iziToast.success({
+                            title: 'Thông Báo',
+                            message: 'Đã thêm sản phẩm thành công!',
+                        });
+                    }
+                    else{
+                        iziToast.error({
+                            title: 'Thông báo',
+                            message: 'Trong quá trình thêm sản phẩm đã xuất hiện lỗi.',
+                        });
                     }
 
 
@@ -396,7 +407,7 @@
                 'type':'POST',
                 success: function(data){
                     $('#AddModel').modal('hide');
-                    if(data != null){
+                    if(data.result != 1){
                         $('#tsp' + masanpham).html(tensanpham);
                         $('#sl' + masanpham).html(soluong);
                         $('#nh' + masanpham).html(data.result.nhan_hieu.tennhanhieu);
@@ -417,10 +428,17 @@
                         temp.setAttribute("data-active", active);
                         var content = temp.outerHTML;
                         temp.outerHTML = content;
+                        iziToast.success({
+                            title: 'Thông Báo',
+                            message: 'Đã sửa sản phẩm thành công!',
+                        });
 
                     }
                     else{
-
+                        iziToast.error({
+                            title: 'Thông báo',
+                            message: 'Trong quá trình sửa sản phẩm đã xuất hiện lỗi.',
+                        });
                     }
 
 
@@ -437,7 +455,6 @@
             var _token = $("input[name='_token']").val();
             var masanpham = $('#row_id_del').val();
             var url = "{!! route('deletesanpham') !!}";
-            console.log(masanpham);
             $.ajax({
                 'url':url,
                 'data':{
@@ -449,9 +466,16 @@
                     $('#confirm_delete').modal('hide');
                     if(data.result == 1){
                         $("#" +masanpham).remove();
+                        iziToast.success({
+                            title: 'Thông Báo',
+                            message: 'Đã xóa sản phẩm thành công!',
+                        });
                     }
                     else{
-
+                        iziToast.error({
+                            title: 'Thông báo',
+                            message: 'Trong quá trình xóa sản phẩm đã xuất hiện lỗi.',
+                        });
                     }
 
 

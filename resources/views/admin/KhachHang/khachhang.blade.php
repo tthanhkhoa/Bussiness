@@ -220,7 +220,7 @@
                 success: function(data){
                     console.log(data);
                     $('#AddModel').modal('hide');
-                    if(data){
+                    if(data.result != 0){
 
                         var result = "<tr id='" + data.result.id + "'>";
                         result += "<td id=\"mkh"+data.result.id+"\">"+data.result.id+"</td>";
@@ -272,6 +272,15 @@
                         result += "</tr>";
 
                         $("#rowKhachHang").prepend(result);
+                        iziToast.success({
+                            title: 'Thông Báo',
+                            message: 'Đã thêm thành công!',
+                        });
+                    }else{
+                        iziToast.error({
+                            title: 'Thông báo',
+                            message: 'Trong quá trình thêm đã xuất hiện lỗi.',
+                        });
                     }
                 }
             })
@@ -328,7 +337,7 @@
                 success: function(data){
                     console.log(data);
                     $('#AddModel').modal('hide');
-                    if(data != null){
+                    if(data.result != 0){
                         $('#tkh' + makhachhang).html(tenkhachhang);
                         $('#ns' + makhachhang).html(ngaysinh);
                         $('#sdt' + makhachhang).html(sodienthoai);
@@ -343,10 +352,17 @@
                         temp.setAttribute("data-email", email);
                         var content = temp.outerHTML;
                         temp.outerHTML = content;
+                        iziToast.success({
+                            title: 'Thông Báo',
+                            message: 'Đã sửa thành công!',
+                        });
 
                     }
                     else{
-
+                        iziToast.error({
+                            title: 'Thông báo',
+                            message: 'Trong quá trình sửa đã xuất hiện lỗi.',
+                        });
                     }
 
 
@@ -376,9 +392,16 @@
                     $('#confirm_delete').modal('hide');
                     if(data.result == 1){
                         $("#" +makhachhang).remove();
+                        iziToast.success({
+                            title: 'Thông Báo',
+                            message: 'Đã xoá thành công!',
+                        });
                     }
                     else{
-
+                        iziToast.error({
+                            title: 'Thông báo',
+                            message: 'Trong quá trình xóa đã xuất hiện lỗi.',
+                        });
                     }
 
 

@@ -197,7 +197,6 @@
             var $radios = $('input:radio[name=active]');
                 $radios.filter('[value=0]').prop('checked', true);
         }
-        console.log(tenTheLoai + Active);
         var modal = $('#AddModel');
         modal.find("#maTheLoai").val(maTheLoai);
         modal.find("#tenTheLoai").val(tenTheLoai);
@@ -224,9 +223,16 @@
                 $('#confirm_delete').modal('hide');
                 if(data.result == 1){
                     $("#" +matheloai).remove();
+                    iziToast.success({
+                        title: 'Thông Báo',
+                        message: 'Đã xóa thành công!',
+                    });
                 }
                 else{
-
+                    iziToast.error({
+                        title: 'Thông báo',
+                        message: 'Trong quá trình xóa đã xuất hiện lỗi.',
+                    });
                 }
 
 
@@ -254,7 +260,7 @@
             'type':'POST',
             success: function(data){
                 $('#AddModel').modal('hide');
-                if(data != null){
+                if(data.result != 0){
                     $('#td_ttl' + matheloai).html(tentheloai);
                     if(active == 1){
                         $('#td_at' + matheloai).html("YES");
@@ -269,10 +275,16 @@
                     temp.setAttribute("data-active", active);
                     var content = temp.outerHTML;
                     temp.outerHTML = content;
-
+                    iziToast.success({
+                        title: 'Thông Báo',
+                        message: 'Đã sửa thành công!',
+                    });
                 }
                 else{
-
+                    iziToast.error({
+                        title: 'Thông báo',
+                        message: 'Trong quá trình sửa đã xuất hiện lỗi.',
+                    });
                 }
 
 
@@ -298,9 +310,9 @@
             },
             'type':'POST',
             success: function(data){
+                $('#AddModel').modal('hide');
+                if(data.result != 0){
 
-                if(data != null){
-                    $('#AddModel').modal('hide');
                     var active;
                     if(data.result.active == 1)
                         active = "Yes";
@@ -352,8 +364,15 @@
 //                    $('#add_').hide();
 //                    $('#edit_').hide();
 //                    $("tbody#rowTheLoai").appendChild(result);
+                    iziToast.success({
+                        title: 'Thông Báo',
+                        message: 'Đã thêm thành công!',
+                    });
                 }else{
-                    location.reload();
+                    iziToast.error({
+                        title: 'Thông báo',
+                        message: 'Trong quá trình thêm đã xuất hiện lỗi.',
+                    });
                 }
             }
         })
