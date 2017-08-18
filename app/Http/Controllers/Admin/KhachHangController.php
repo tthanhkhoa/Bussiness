@@ -16,33 +16,48 @@ class KhachHangController extends Controller
     }
 
     function addKhachHang(Request $request){
-        $add = new khachHang;
-        $add->{Constant::CL_TENKHACHHANG} = $request ->{Constant::CL_TENKHACHHANG};
-        $add->{Constant::CL_NGAYSINH} = $request ->{Constant::CL_NGAYSINH};
-        $add->{Constant::CL_DIACHI} = $request ->{Constant::CL_DIACHI};
-        $add->{Constant::CL_SDT} = $request ->{Constant::CL_SDT};
-        $add->{Constant::CL_EMAIL} = $request ->{Constant::CL_EMAIL};
-        $add->{Constant::CL_ACTIVE} = $request ->{Constant::CL_ACTIVE};
-        $add->save();
-        return response()->json(['result'=>$add]);
+        try{
+            $add = new khachHang;
+            $add->{Constant::CL_TENKHACHHANG} = $request ->{Constant::CL_TENKHACHHANG};
+            $add->{Constant::CL_NGAYSINH} = $request ->{Constant::CL_NGAYSINH};
+            $add->{Constant::CL_DIACHI} = $request ->{Constant::CL_DIACHI};
+            $add->{Constant::CL_SDT} = $request ->{Constant::CL_SDT};
+            $add->{Constant::CL_EMAIL} = $request ->{Constant::CL_EMAIL};
+            $add->{Constant::CL_ACTIVE} = $request ->{Constant::CL_ACTIVE};
+            $add->save();
+            return response()->json(['result'=>$add]);
+        }catch (\Exception $e){
+            return response()->json(['result'=>0]);
+        }
+
 
     }
 
     function editKhachHang(Request $request){
-        $edit = khachHang::find($request->{Constant::CL_ID});
-        $edit->{Constant::CL_TENKHACHHANG} = $request ->{Constant::CL_TENKHACHHANG};
-        $edit->{Constant::CL_NGAYSINH} = $request ->{Constant::CL_NGAYSINH};
-        $edit->{Constant::CL_DIACHI} = $request ->{Constant::CL_DIACHI};
-        $edit->{Constant::CL_SDT} = $request ->{Constant::CL_SDT};
-        $edit->{Constant::CL_EMAIL} = $request ->{Constant::CL_EMAIL};
-        $edit->save();
-        return response()->json(['result'=>$edit]);
+        try{
+            $edit = khachHang::find($request->{Constant::CL_ID});
+            $edit->{Constant::CL_TENKHACHHANG} = $request ->{Constant::CL_TENKHACHHANG};
+            $edit->{Constant::CL_NGAYSINH} = $request ->{Constant::CL_NGAYSINH};
+            $edit->{Constant::CL_DIACHI} = $request ->{Constant::CL_DIACHI};
+            $edit->{Constant::CL_SDT} = $request ->{Constant::CL_SDT};
+            $edit->{Constant::CL_EMAIL} = $request ->{Constant::CL_EMAIL};
+            $edit->save();
+            return response()->json(['result'=>$edit]);
+        }catch (\Exception $e){
+            return response()->json(['result'=>0]);
+        }
+
 
     }
 
     function deleteKhachHang(Request $request){
-        $id = $request->{Constant::CL_ID};
-        $delete = khachHang::where('id', $id)->delete();
-        return response()->json(['result'=>1]);
+        try{
+            $id = $request->{Constant::CL_ID};
+            $delete = khachHang::where('id', $id)->delete();
+            return response()->json(['result'=>1]);
+        }catch (\Exception $e){
+            return response()->json(['result'=>0]);
+        }
+
     }
 }

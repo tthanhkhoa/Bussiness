@@ -209,10 +209,10 @@
             },
             'type':'POST',
             success: function(data){
-                console.log(data);
 
-                if(data != null){
-                    $('#AddModel').modal('hide');
+                $('#AddModel').modal('hide');
+                if(data.result != 1){
+
                     var active;
                     if(data.result.active == 1)
                         active = "Yes";
@@ -268,8 +268,15 @@
 //                    $('#add_').hide();
 //                    $('#edit_').hide();
 //                    $("tbody#rowTheLoai").appendChild(result);
+                    iziToast.success({
+                        title: 'Thông Báo',
+                        message: 'Đã thêm thành công!',
+                    });
                 }else{
-                    location.reload();
+                    iziToast.error({
+                        title: 'Thông báo',
+                        message: 'Trong quá trình thêm đã xuất hiện lỗi.',
+                    });
                 }
             }
         })
@@ -298,9 +305,16 @@
                 $('#confirm_delete').modal('hide');
                 if(data.result == 1){
                     $("#" +id).remove();
+                    iziToast.success({
+                        title: 'Thông Báo',
+                        message: 'Đã xoá thành công!',
+                    });
                 }
                 else{
-
+                    iziToast.error({
+                        title: 'Thông báo',
+                        message: 'Trong quá trình xóa đã xuất hiện lỗi.',
+                    });
                 }
 
 
@@ -364,7 +378,7 @@
             success: function(data){
                 console.log(data);
                 $('#AddModel').modal('hide');
-                if(data != null){
+                if(data.result != 1){
                     $('#tnh' + manhanhieu).html(data.result.tennhanhieu);
                     $('#dc' + manhanhieu).html(data.result.diachi);
                     $('#sdt' + manhanhieu).html(data.result.sodienthoai);
@@ -382,10 +396,17 @@
                     temp.setAttribute("data-active", active);
                     var content = temp.outerHTML;
                     temp.outerHTML = content;
+                    iziToast.success({
+                        title: 'Thông Báo',
+                        message: 'Đã sửa thành công!',
+                    });
 
                 }
                 else{
-
+                    iziToast.error({
+                        title: 'Thông báo',
+                        message: 'Trong quá trình sửa đã xuất hiện lỗi.',
+                    });
                 }
 
 

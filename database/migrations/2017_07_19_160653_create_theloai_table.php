@@ -16,7 +16,7 @@ class CreateTheloaiTable extends Migration
     {
         //
         Schema::create(Constant::TBL_THELOAI, function (Blueprint $table) {
-            $table->increments(Constant::CL_ID);
+            $table->string(Constant::CL_ID,50)->primary();
             $table->string(Constant::CL_TENTHELOAI)->nullable();
             $table->integer(Constant::CL_ACTIVE)->nullable();
 

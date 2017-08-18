@@ -8,8 +8,7 @@ class HoaDon extends Model
 {
     //
     protected $table = Constant::TBL_HOADON;
-//    protected $primaryKey = Constant::TBL_maHoaDon;
-
+    public $incrementing = false;
     public function KhachHang(){
         return $this->belongsTo('App\khachHang', Constant::CL_MAKHACHHANG, Constant::CL_ID);
     }

@@ -70,6 +70,13 @@ Route::get('/danhsachnhacungcap', 'Admin\NhaCungCapController@getNhaCungCap')->n
 Route::get('/danhsachkhachhang', 'Admin\KhachHangController@getKhachHang')->name('danhsachkhachhang');
 
 
+/*Admin Hoa Don*/
+Route::get('/danhsachhoadon', 'Admin\HoaDonController@getHoaDon')->name('danhsachhoadon');
+Route::get('/hoadonchuaduyet', 'Admin\HoaDonController@getHoaDonChuaDuyet')->name('hoadonchuaduyet');
+Route::get('/hoadondaduyet', 'Admin\HoaDonController@getHoaDonDaDuyet')->name('hoadondaduyet');
+
+
+
 
 
 //Route::get('/danhsachtheloai', function () {

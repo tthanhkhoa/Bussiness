@@ -29,6 +29,7 @@ class SanPhamController extends Controller
     function addSanPham(Request $request){
         try{
             $add = new SanPham;
+            $add->{Constant::CL_ID} = $request->{Constant::CL_ID};
             $add->{Constant::CL_MATHELOAI} =  $request->{Constant::CL_MATHELOAI};
             $add->{Constant::CL_TENSANPHAM} =  $request->{Constant::CL_TENSANPHAM} ;
             $add->{Constant::CL_SOLUONG} =  $request->{Constant::CL_SOLUONG};
@@ -40,30 +41,40 @@ class SanPhamController extends Controller
                 ->where([[Constant::CL_ID,'=',$add->{Constant::CL_ID}]])->first();
             return response()->json(['result'=>$result]);
         }catch (\Exception $e){
-            return response()->json(['result'=>$e]);
+            return response()->json(['result'=>1]);
         }
 
 
     }
 
     function editSanPham(Request $request){
-        $edit = sanPham::find($request->{Constant::CL_ID});
-        $edit->{Constant::CL_MATHELOAI} = $request->{Constant::CL_MATHELOAI} ;
-        $edit->{Constant::CL_TENSANPHAM} =  $request->{Constant::CL_TENSANPHAM} ;
-        $edit->{Constant::CL_SOLUONG} = $request->{Constant::CL_SOLUONG};
-        $edit->{Constant::CL_MANHANHIEU} =  $request->{Constant::CL_MANHANHIEU} ;
-        $edit->{Constant::CL_GIATIEN} = $request->{Constant::CL_GIATIEN} ;
-        $edit->{Constant::CL_ACTIVE} =  $request->{Constant::CL_ACTIVE} ;
-        $edit->save();
-        $result = SanPham::with('NhanHieu')
-            ->where([[Constant::CL_ID,'=',$edit->{Constant::CL_ID}]])->first();
-        return response()->json(['result'=>$result]);
+        try{
+            $edit = sanPham::find($request->{Constant::CL_ID});
+            $edit->{Constant::CL_MATHELOAI} = $request->{Constant::CL_MATHELOAI} ;
+            $edit->{Constant::CL_TENSANPHAM} =  $request->{Constant::CL_TENSANPHAM} ;
+            $edit->{Constant::CL_SOLUONG} = $request->{Constant::CL_SOLUONG};
+            $edit->{Constant::CL_MANHANHIEU} =  $request->{Constant::CL_MANHANHIEU} ;
+            $edit->{Constant::CL_GIATIEN} = $request->{Constant::CL_GIATIEN} ;
+            $edit->{Constant::CL_ACTIVE} =  $request->{Constant::CL_ACTIVE} ;
+            $edit->save();
+            $result = SanPham::with('NhanHieu')
+                ->where([[Constant::CL_ID,'=',$edit->{Constant::CL_ID}]])->first();
+            return response()->json(['result'=>$result]);
+        }catch (\Exception $e){
+            return response()->json(['result'=>1]);
+        }
+
 
     }
 
     function deleteSanPham(Request $request){
-        $id = $request->{Constant::CL_ID};
-        $delete = sanPham::where('id', $id)->delete();
-        return response()->json(['result'=>1]);
+        try{
+            $id = $request->{Constant::CL_ID};
+            $delete = sanPham::where('id', $id)->delete();
+            return response()->json(['result'=>1]);
+        }catch (\Exception $e){
+            return response()->json(['result'=>0]);
+        }
+
     }
 }

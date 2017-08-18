@@ -8,6 +8,7 @@ class theLoai extends Model
 {
     //
     protected $table = Constant::TBL_THELOAI;
+    public $incrementing = false;
     public $timestamps = false;
 //    protected $primaryKey = Constant::TBL_MaTheLoai;
 

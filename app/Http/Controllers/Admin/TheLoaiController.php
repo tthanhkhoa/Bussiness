@@ -17,16 +17,17 @@ class TheLoaiController extends Controller
     }
 
     function addTheLoai(Request $request){
+        try{
+            $addTheLoai = new theLoai;
+            $addTheLoai->{Constant::CL_ID} = $request->{Constant::CL_MATHELOAI};
+            $addTheLoai->{Constant::CL_TENTHELOAI} = $request->{Constant::CL_TENTHELOAI};
+            $addTheLoai->{Constant::CL_ACTIVE} = $request->{Constant::CL_ACTIVE};
+            $addTheLoai->save();
+            return response()->json(['result'=>$addTheLoai]);
+        }catch (\Exception $e){
+            return response()->json(['result'=>0]);
+        }
 
-        $addTheLoai = new theLoai;
-       // $addTheLoai->{Constant::TBL_MaTheLoai} = $request->{Constant::TBL_MaTheLoai};
-        $addTheLoai->{Constant::CL_TENTHELOAI} = $request->{Constant::CL_TENTHELOAI};
-
-        $addTheLoai->{Constant::CL_ACTIVE} = $request->{Constant::CL_ACTIVE};
-
-        $addTheLoai->save();
-//        return 1;
-        return response()->json(['result'=>$addTheLoai]);
     }
 
     function editTheLoai(Request $request){
@@ -37,7 +38,7 @@ class TheLoaiController extends Controller
             $editTheLoai->save();
             return response()->json(['result'=>$editTheLoai]);
         }catch (\Exception $e){
-            return response()->json(['result'=>$e]);
+            return response()->json(['result'=>0]);
 
         }
 //        return $request->{Constant::CL_ID};
@@ -50,7 +51,7 @@ class TheLoaiController extends Controller
             $deleteTheLoai = theLoai::where('id', $id)->delete();
             return response()->json(['result'=>1]);
         }catch (\Exception $e){
-            return response()->json(['result'=>$e]);
+            return response()->json(['result'=>0]);
 
         }
 

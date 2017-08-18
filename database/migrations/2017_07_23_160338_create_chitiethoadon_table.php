@@ -16,11 +16,11 @@ class CreateChitiethoadonTable extends Migration
     {
         //
         Schema::create(Constant::TBL_CTHOADON, function (Blueprint $table) {
-            $table->increments(Constant::CL_ID);
-            $table->integer(Constant::CL_MASANPHAM)->unsigned();
+            $table->string(Constant::CL_ID,50)->primary();
+            $table->string(Constant::CL_MASANPHAM,50);
             $table->foreign(Constant::CL_MASANPHAM)->references(Constant::CL_ID)->on(App\Constant::TBL_SANPHAM)->onDelete('cascade');
             $table->integer(Constant::CL_SOLUONG)->nullable();
-            $table->integer(Constant::CL_MAHOADON)->unsigned();
+            $table->string(Constant::CL_MAHOADON,50);
             $table->foreign(Constant::CL_MAHOADON)->references(Constant::CL_ID)->on(App\Constant::TBL_HOADON)->onDelete('cascade');
         });
     }

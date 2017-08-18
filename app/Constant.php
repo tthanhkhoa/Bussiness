@@ -6,6 +6,10 @@ class Constant
 {
     //Sumary
     const CL_ID                = "id";
+    const CL_STATUS            = "status";
+    const N_CHUADUYET          = 0;
+    const N_DADUYET            = 1;
+
     //Table The Loai
     const TBL_THELOAI          = "theloai";
     const CL_MATHELOAI         = "matheloai";

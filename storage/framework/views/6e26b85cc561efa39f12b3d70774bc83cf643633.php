@@ -25,7 +25,8 @@
 		<![endif]-->
 		<link rel="stylesheet" href="<?php echo e(asset('assets/css/ace-skins.min.css')); ?>" />
 		<link rel="stylesheet" href="<?php echo e(asset('assets/css/ace-rtl.min.css')); ?>" />
-
+		<link rel="stylesheet" href="<?php echo e(asset('css/iziToast.min.css')); ?>">
+		<script src="<?php echo e(asset('js/iziToast.min.js')); ?>" type="text/javascript"></script>
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="<?php echo e(asset('assets/css/ace-ie.min.css')); ?>" />
 		<![endif]-->
@@ -472,7 +473,7 @@
 							</li>
 
 							<li class="">
-								<a href="<?php echo e(url('hoadon')); ?>">
+								<a href="<?php echo e(url('hoadonchuaduyet')); ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Danh sách hóa đơn chưa duyệt
 								</a>
@@ -481,7 +482,7 @@
 							</li>
 
 							<li class="">
-								<a href="<?php echo e(url('hoadon')); ?>">
+								<a href="<?php echo e(url('hoadondaduyet')); ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Danh sách hóa đơn đã duyệt
 								</a>
@@ -490,7 +491,7 @@
 							</li>
 
 							<li class="">
-								<a href="<?php echo e(url('hoadon')); ?>">
+								<a href="<?php echo e(url('danhsachhoadon')); ?>">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Tất cả Hóa đơn
 								</a>

@@ -16,12 +16,12 @@ class CreateSanphamTable extends Migration
     {
         //
         Schema::create(Constant::TBL_SANPHAM, function (Blueprint $table) {
-            $table->increments(Constant::CL_ID);
-            $table->integer(Constant::CL_MATHELOAI)->unsigned();
+            $table->string(Constant::CL_ID,50)->primary();
+            $table->string(Constant::CL_MATHELOAI,50);
             $table->foreign(Constant::CL_MATHELOAI)->references(Constant::CL_ID)->on(App\Constant::TBL_THELOAI)->onDelete('cascade');
             $table->string(Constant::CL_TENSANPHAM)->nullable();
             $table->integer(Constant::CL_SOLUONG)->nullable();
-            $table->integer(Constant::CL_MANHANHIEU)->unsigned();
+            $table->string(Constant::CL_MANHANHIEU,50);
             $table->foreign(Constant::CL_MANHANHIEU)->references(Constant::CL_ID)->on(App\Constant::TBL_NHANHIEU)->onDelete('cascade');
             $table->double(Constant::CL_GIATIEN)->nullable();
             $table->integer(Constant::CL_ACTIVE)->nullable();
