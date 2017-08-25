@@ -13,6 +13,6 @@ class theLoai extends Model
 //    protected $primaryKey = Constant::TBL_MaTheLoai;
 
     public function SanPham(){
-        return $this->hasMany('App\sanPham',Constant::CL_MASANPHAM,Constant::CL_ID);
+        return $this->hasMany('App\sanpham',Constant::CL_MATHELOAI,Constant::CL_ID);
     }
 }

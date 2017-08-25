@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\HoaDon;
 use App\Constant;
+use App\khachHang;
 
 class HoaDonController extends Controller
 {
@@ -13,21 +14,24 @@ class HoaDonController extends Controller
     function getHoaDon(){
         $dsHoaDon = HoaDon::with("KhachHang")
         ->orderBy(Constant::CL_ID,'desc')->paginate(15);
-        return view('admin.KhachHang.hoadon',compact('dsHoaDon'));
+        $dsKhachHang = khachHang::all();
+        return view('admin.KhachHang.hoadon',compact('dsHoaDon'),compact('dsKhachHang'));
     }
 
     function getHoaDonChuaDuyet(){
         $dsHoaDon = HoaDon::with("KhachHang")
             ->Where([[Constant::CL_STATUS,'=',Constant::N_CHUADUYET]])
             ->orderBy(Constant::CL_ID,'desc')->paginate(15);
-        return view('admin.KhachHang.hoadon',compact('dsHoaDon'));
+        $dsKhachHang = khachHang::all();
+        return view('admin.KhachHang.hoadon',compact('dsHoaDon'),compact('dsKhachHang'));
     }
 
     function getHoaDonDaDuyet(){
         $dsHoaDon = HoaDon::with("KhachHang")
             ->Where([[Constant::CL_STATUS,'=',Constant::N_DADUYET]])
             ->orderBy(Constant::CL_ID,'desc')->paginate(15);
-        return view('admin.KhachHang.hoadon',compact('dsHoaDon'));
+        $dsKhachHang = khachHang::all();
+        return view('admin.KhachHang.hoadon',compact('dsHoaDon'),compact('dsKhachHang'));
     }
 
     function addHoaDon(Request $request){
@@ -41,6 +45,7 @@ class HoaDonController extends Controller
             $add->save();
             return response()->json(['result'=>$add]);
         }catch (\Exception $e){
+            return response()->json(['result'=>$e]);
             return response()->json(['result'=>0]);
         }
 
@@ -57,6 +62,7 @@ class HoaDonController extends Controller
             $edit->save();
             return response()->json(['result'=>$edit]);
         }catch (\Exception $e){
+            return response()->json(['result'=>$e]);
             return response()->json(['result'=>0]);
         }
 
@@ -65,12 +71,20 @@ class HoaDonController extends Controller
     function deleteHoaDon(Request $request){
         try{
             $id = $request->{Constant::CL_ID};
-            $delete = HoaDon::where('maHoaDon', $id)->delete();
-            return response()->json(['result'=>1]);
+            $delete = HoaDon::where([[Constant::CL_ID,'=', $id]])->delete();
+            return redirect()->route('danhsachhoadon');
         }catch (\Exception $e){
             return response()->json(['result'=>0]);
         }
 
+    }
+    function getChiTietHoaDon(Request $request){
+
+        $dsHoaDon = HoaDon::Where([[Constant::CL_ID,'=',$request->{Constant::CL_ID}]])->first();
+        $idKhachHang = HoaDon::Where([[Constant::CL_ID,'=',$request->{Constant::CL_ID}]])->first()->{Constant::CL_MAKHACHHANG};
+        $dsKhachHang = khachHang::Where([[Constant::CL_ID,'=',$idKhachHang]])->first();
+//        return $dsHoaDon;
+        return view('admin.KhachHang.chitiethoadon',compact('dsHoaDon'),compact('dsKhachHang'));
     }
 
 }
