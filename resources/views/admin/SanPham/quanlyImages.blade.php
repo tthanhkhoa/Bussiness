@@ -123,7 +123,7 @@
                     result +="</div>";
                     result +="</li>";
                     $( result ).insertBefore( "#add_images" );
-                    $('#images').listview('refresh');
+//                    $('#images').listview('refresh');
                 }
             })
         });

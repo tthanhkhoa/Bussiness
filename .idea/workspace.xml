@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85c50f52-2061-4a9e-a697-479e497899cf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/SanPhamController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/SanPhamController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/SanPham/quanlyImages.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/SanPham/quanlyImages.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,20 +19,43 @@
         <entry file="file://$PROJECT_DIR$/resources/views/client/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="61" lean-forward="true" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
+              <caret line="3" column="61" lean-forward="false" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SanPhamController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sanpham.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3820">
+              <caret line="9" column="114" lean-forward="true" selection-start-line="9" selection-start-column="114" selection-end-line="9" selection-end-column="114" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SanPhamController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/SanPhamController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
               <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding>
                 <element signature="e#47#75#0#PHP" expanded="true" />
+                <marker date="1503692605000" expanded="true" signature="562:825" ph="{...}" />
+                <marker date="1503692605000" expanded="true" signature="562:822" ph="..." />
+                <marker date="1503692605000" expanded="true" signature="562:746" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quanlyImages.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/quanlyImages.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="125" column="55" lean-forward="true" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,7 +121,6 @@
         <option value="$PROJECT_DIR$/public/js/detail_sp.js" />
         <option value="$PROJECT_DIR$/public/css/detail_sp.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SanPhamController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/SanPham/quanlyImages.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/SanPham/detail_sp.blade.php" />
         <option value="$PROJECT_DIR$/app/chitietsanpham.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_08_19_145717_create_Images_table.php" />
@@ -123,6 +146,7 @@
         <option value="$PROJECT_DIR$/app/Constant.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_08_25_175032_create_sliders_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Client/SanPhamController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/SanPham/quanlyImages.blade.php" />
       </list>
     </option>
   </component>
@@ -222,7 +246,26 @@
               <item name="Bussiness" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="client" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Bussiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Bussiness" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="SanPham" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Bussiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Bussiness" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Bussiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Bussiness" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="framework" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -388,7 +431,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299398000" />
+    <option name="totallyTimeSpent" value="300243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="735" extended-state="0" />
@@ -637,23 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="114" lean-forward="true" selection-start-line="9" selection-start-column="114" selection-end-line="9" selection-end-column="114" />
-          <folding>
-            <element signature="e#293#314#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/quanlyImages.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="50" column="96" lean-forward="true" selection-start-line="50" selection-start-column="96" selection-end-line="50" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/client/compoment/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -680,7 +706,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/client/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="61" lean-forward="true" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
+          <caret line="3" column="61" lean-forward="false" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
           <folding />
         </state>
       </provider>
@@ -831,7 +857,26 @@
           <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
             <element signature="e#47#75#0#PHP" expanded="true" />
+            <marker date="1503692605000" expanded="true" signature="562:825" ph="{...}" />
+            <marker date="1503692605000" expanded="true" signature="562:822" ph="..." />
+            <marker date="1503692605000" expanded="true" signature="562:746" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/sanpham.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3820">
+          <caret line="9" column="114" lean-forward="true" selection-start-line="9" selection-start-column="114" selection-end-line="9" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/quanlyImages.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="125" column="55" lean-forward="true" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
