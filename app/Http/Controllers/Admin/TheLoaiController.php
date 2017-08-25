@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\theLoai;
 use App\Constant;
-use App\nhanHieu;
+use App\nhanhieu;
 
 class TheLoaiController extends Controller
 {
@@ -64,7 +64,7 @@ class TheLoaiController extends Controller
     }
     function getNhanHieu(){
         try{
-            $ncc     = nhanHieu::orderBy(Constant::CL_ID,'desc')->get();
+            $ncc     = nhanhieu::orderBy(Constant::CL_ID,'desc')->get();
             return response()->json(['result'=>$ncc]);
         }catch (\Exception $e){
 
