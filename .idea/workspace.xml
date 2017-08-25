@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85c50f52-2061-4a9e-a697-479e497899cf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/client/compoment/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/client/compoment/header.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/client/compoment/slider.blade.php" afterPath="$PROJECT_DIR$/resources/views/client/compoment/slider.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,7 +59,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/client/compoment/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -69,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slider.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="slider.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/client/compoment/slider.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="40" column="39" lean-forward="true" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+            <state relative-caret-position="383">
+              <caret line="35" column="40" lean-forward="false" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -164,8 +164,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2017_08_25_175032_create_sliders_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Client/SanPhamController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/SanPham/quanlyImages.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/client/compoment/slider.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/client/compoment/header.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/client/compoment/slider.blade.php" />
       </list>
     </option>
   </component>
@@ -465,7 +465,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300562000" />
+    <option name="totallyTimeSpent" value="300844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="735" extended-state="0" />
@@ -891,6 +891,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/client/compoment/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="92" lean-forward="false" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/SanPham/quanlyImages.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -901,16 +909,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/client/compoment/slider.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="40" column="39" lean-forward="true" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/client/compoment/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="92" lean-forward="false" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="92" />
+        <state relative-caret-position="383">
+          <caret line="35" column="40" lean-forward="false" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
           <folding />
         </state>
       </provider>

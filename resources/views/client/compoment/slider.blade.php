@@ -33,7 +33,7 @@
                                         <h1><span>S2B</span> BEAUTY</h1>
                                         <h2>{{isset($item->gioithieu) ? $item->gioithieu : ''}}</h2>
                                         <p>{{isset($item->contact) ? $item->contact : ''}} </p>
-                                        <button type="button" class="btn btn-default get">Get it now</button>
+                                        
                                     </div>
                                     <div class="col-sm-6">
                                         <img src="{{isset($item->image_url) ? $item->image_url : ''}}" class="girl img-responsive" alt="" />
