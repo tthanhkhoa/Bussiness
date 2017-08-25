@@ -11,7 +11,9 @@ class ChiTietHoaDon extends Model
     public $incrementing = false;
     public function SanPham()
     {
-        return $this->hasMany('App\sanPham', Constant::CL_MASANPHAM, Constant::CL_ID);
+//        return $this->hasMany('App\sanpham', Constant::CL_ID, Constant::CL_MASANPHAM);
+        return $this->belongsTo('App\sanpham', Constant::CL_MASANPHAM, Constant::CL_ID);
+
     }
 
     public function HoaDon(){

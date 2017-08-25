@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/home', function () {
-    return view('client.home');
-});
+//Route::get('/home', function () {
+//    return view('client.home');
+//});
 Route::get('/', function () {
    // return 1;
     //return view('admin.dashboash');
@@ -32,9 +32,6 @@ Route::get('/cart', function () {
 
 Route::get('/product', function(){
     return view('client.product');
-});
-Route::get('/about', function(){
-    return view('client.about');
 });
 
 Route::get('/login', function () {
@@ -57,6 +54,9 @@ Route::post('/updatetheloai', 'Admin\TheLoaiController@editTheLoai')->name('upda
 Route::get('/tatcasanpham', 'Admin\SanPhamController@getSanPham')->name('tatcasanpham');
 Route::get('/sanphamid/{id}', 'Admin\SanPhamController@getSanPhamById')->name('sanphamid');
 Route::post('/deletesanpham', 'Admin\SanPhamController@deleteSanPham')->name('deletesanpham');
+Route::get('/gallery/{masanpham}', 'Admin\SanPhamController@getImageSP')->name('gallery');
+Route::get('/chitietsanpham/{id}', 'Admin\SanPhamController@chiTietSanPham')->name('chitietsanpham');
+
 
 
 /*
@@ -74,6 +74,11 @@ Route::get('/danhsachkhachhang', 'Admin\KhachHangController@getKhachHang')->name
 Route::get('/danhsachhoadon', 'Admin\HoaDonController@getHoaDon')->name('danhsachhoadon');
 Route::get('/hoadonchuaduyet', 'Admin\HoaDonController@getHoaDonChuaDuyet')->name('hoadonchuaduyet');
 Route::get('/hoadondaduyet', 'Admin\HoaDonController@getHoaDonDaDuyet')->name('hoadondaduyet');
+Route::get('/chitiethoadon/{id}', 'Admin\HoaDonController@getChiTietHoaDon')->name('chitiethoadon');
+Route::get('/deletehoadon/{id}', 'Admin\HoaDonController@deleteHoaDon')->name('deletehoadon');
+
+
+Route::get('/about', 'Admin\thongtinController@getThongTin')->name('about');
 
 
 
@@ -84,9 +89,9 @@ Route::get('/hoadondaduyet', 'Admin\HoaDonController@getHoaDonDaDuyet')->name('h
 //  //  return view('admin.SanPham.theloai');
 //});
 
-Route::get('/danhsachsanpham', function () {
-    return view('admin.SanPham.sanpham');
-});
+//Route::get('/chitietsanpham', function () {
+//    return view('admin.SanPham.detail_sp');
+//});
 
 Route::get('/profile', function () {
     return view('profile');
@@ -97,9 +102,9 @@ Route::get('/nhacungcap', function () {
 
 
 
-Route::get('/hoadon', function () {
-    return view('admin.KhachHang.hoadon');
-});
+//Route::get('/chitiethoadon', function () {
+//    return view('admin.KhachHang.chitiethoadon');
+//});
 
 Route::get('/danhsachnhaphang', function () {
     return view('admin.DoanhThu.danhsach_nhaphang');
@@ -116,3 +121,7 @@ Route::get('/danhsachhangton', function () {
 Route::get('/lichsubanhang', function () {
     return view('admin.DoanhThu.lichsu_banhang');
 });
+
+Route::get('/home', 'Client\SanPhamController@getPageHome')->name('home');
+
+

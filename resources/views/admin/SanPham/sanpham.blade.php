@@ -20,11 +20,11 @@
 
                     <th>Mã sản phẩm </th>
                     <th>Tên sản phẩm </th>
-                    <th class="hidden-480">Số lượng </th>
+                    <th >Số lượng </th>
 
                     <th>Nhãn hiệu</th>
                     <th>Giá tiền</th>
-                    <th class="hidden-480">Status</th>
+                    <th>Status</th>
 
                     <th></th>
                 </tr>
@@ -41,8 +41,6 @@
                     <td id='at{{$item->id}}'>{{$item->active == 1 ? 'Yes' : 'No'}}</td>
                     <td>
                         <div class="hidden-sm hidden-xs action-buttons">
-
-
                             <a class="edit_sanpham green" id="edit{{$item->id}}" data-target="#AddModel" data-toggle="modal"
                                data-id="{{$item->id}}" data-tensanpham="{{$item->tensanpham}}" data-matheloai="{{$item->matheloai}}" data-soluong="{{$item->soluong}}"
                                data-manhanhieu="{{$item->manhanhieu}}" data-giatien="{{$item->giatien}}" data-active="{{$item->active}}" href="#">
@@ -52,37 +50,42 @@
                             <a class="delete_sanpham red" id="delete" data-target="#confirm_delete" data-toggle="modal" data-id="{{$item->id}}" href="#">
                                 <i class="ace-icon fa fa-trash-o bigger-130"></i>
                             </a>
+                            <a href="{{url('gallery',['masanpham'=>$item->id])}}"><i class="ace-icon glyphicon glyphicon-picture"></i></a>
                         </div>
+
 
                         <div class="hidden-md hidden-lg">
                             <div class="inline pos-rel">
-                                <button class="btn btn-minier btn-yellow dropdown-toggle"   data-toggle=" dropdown" data-position="auto">
+                                <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
                                     <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
                                 </button>
 
                                 <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-
-
                                     <li>
                                         <a href="#" class="tooltip-success" id="edit{{$item->id}}" data-target="#AddModel" data-toggle="modal"
-                                           data-id="{{$item->id}}" data-tensanpham="{{$item->tensanpham}}" data-matheloai="{{$item->matheloai}}"
-                                           data-soluong="{{$item->soluong}}"
-                                           data-manhanhieu="{{$item->manhanhieu}}" data-giatien="{{$item->giatien}}" data-active="{{$item->active}}"
-                                           data-rel="tooltip" title="Edit">
-                                            <span class="green">
-                                                <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-                                            </span>
+                                        data-id="{{$item->id}}" data-tensanpham="{{$item->tensanpham}}" data-matheloai="{{$item->matheloai}}"
+                                        data-soluong="{{$item->soluong}}"
+                                        data-manhanhieu="{{$item->manhanhieu}}" data-giatien="{{$item->giatien}}" data-active="{{$item->active}}"
+                                        data-rel="tooltip" title="Edit">
+                                        <span class="green">
+                                        <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+                                        </span>
                                         </a>
                                     </li>
 
                                     <li>
                                         <a href="#" class="delete_sanpham tooltip-error" id="delete" data-target="#confirm_delete"
-                                           data-toggle="modal" data-id="{{$item->id}}"
-                                           data-rel="tooltip" title="Delete">
-																				<span class="red">
-																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																				</span>
+                                        data-toggle="modal" data-id="{{$item->id}}"
+                                        data-rel="tooltip" title="Delete">
+                                        <span class="red">
+                                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                        </span>
                                         </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('gallery',['masanpham'=>$item->id])}}"><i class="ace-icon glyphicon glyphicon-picture"></i></a>
+                                        <span class="red">
+                                        </span>
                                     </li>
                                 </ul>
                             </div>
@@ -275,12 +278,13 @@
                     $('#AddModel').modal('hide');
                     if(data.result != 1){
                         var at;
+                        var url_image = 'gallery/'+ data.result.id;
                         var price = formatNumber(data.result.giatien);
                         if(data.result.active == 1){
-                            at = "YES";
+                            at = "Yes";
                         }
                         else{
-                            at ="NO";
+                            at ="No";
                         }
                         var result = "<tr id='" + data.result.id + "'>";
                         result += "<td id='msp"+data.result.id+"'>"+data.result.id+"</td>";
@@ -300,6 +304,7 @@
                             "data-toggle=\"modal\" data-id='"+data.result.id+"' >";
                         result += "<i class=\"ace-icon fa fa-trash-o bigger-130\"></i>";
                         result += "</a>";
+                        result += "<a href='"+url_image+"' ><i class=\"ace-icon glyphicon glyphicon-picture\"></i></a>";
                         result += "</div>";
                         result += "<div class=\"hidden-md hidden-lg\">";
                         result += "<div class=\"inline pos-rel\">";
@@ -323,6 +328,9 @@
                         result += "<i class=\"ace-icon fa fa-trash-o bigger-120\"></i>";
                         result += "</span>";
                         result += "</a>";
+                        result += "</li>";
+                        result += "<li>";
+                        result += "<a href='"+url_image+"' ><i class=\"ace-icon glyphicon glyphicon-picture\"></i></a>";
                         result += "</li>";
                         result += "</ul>";
                         result += "</div>";
@@ -413,10 +421,10 @@
                         $('#nh' + masanpham).html(data.result.nhan_hieu.tennhanhieu);
                         $('#gt' + masanpham).html(giatien);
                         if(active == 1){
-                            $('#at' + masanpham).html("YES");
+                            $('#at' + masanpham).html("Yes");
                         }
                         else{
-                            $('#at' + masanpham).html("NO");
+                            $('#at' + masanpham).html("No");
                         }
                         var id_edit = 'edit' + masanpham;
                         var temp = document.getElementById(id_edit);

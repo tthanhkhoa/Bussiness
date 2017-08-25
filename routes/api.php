@@ -31,5 +31,14 @@ Route::post('/editkhachhang_api', 'Admin\KhachHangController@editKhachHang')->na
 Route::post('/deletekhachhang_api', 'Admin\KhachHangController@deleteKhachHang')->name('deletekhachhang_api');
 
 
+Route::post('/addhoadon_api', 'Admin\HoaDonController@addHoaDon')->name('addhoadon_api');
+//Route::post('/addImages_api', 'Controller@storageImage')->name('addImages_api');
+Route::post('/addImages_api', 'Controller@uploadFile')->name('addImages_api');
+Route::post('/addImages_slider_api', 'Admin\thongtinController@uploadFile')->name('addImages_slider_api');
+
+
+
+
+
 
 

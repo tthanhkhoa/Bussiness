@@ -59,8 +59,6 @@
                                 </button>
 
                                 <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-
-
                                     <li>
                                         <a href="#" class="edit_theloai tooltip-success" data-rel="tooltip" title="Edit"
                                            id="edit_theloai{{$item->id}}" data-target="#AddModel" data-toggle="modal"

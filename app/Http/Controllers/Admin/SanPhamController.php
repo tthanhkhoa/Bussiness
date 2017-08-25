@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\SanPham;
 use App\Constant;
-use App\NhanHieu;
+use App\nhanHieu;
+use App\Images;
 
 class SanPhamController extends Controller
 {
     //
-    function getSanPham(){
+    function getSanPham()
+    {
         try{
             $sanpham = sanPham::orderBy(Constant::CL_ID,'desc')->paginate(15);
             return view('admin.SanPham.sanpham',compact('sanpham'));
@@ -23,10 +25,10 @@ class SanPhamController extends Controller
 
     function getSanPhamById($id){
         $sanpham = sanPham::where(Constant::CL_MATHELOAI,'=',$id)->orderBy(Constant::CL_ID,'desc')->paginate(15);
-//        return $sanpham;
         return view('admin.SanPham.sanpham',compact('sanpham'));
     }
-    function addSanPham(Request $request){
+    function addSanPham(Request $request)
+    {
         try{
             $add = new SanPham;
             $add->{Constant::CL_ID} = $request->{Constant::CL_ID};
@@ -47,7 +49,8 @@ class SanPhamController extends Controller
 
     }
 
-    function editSanPham(Request $request){
+    function editSanPham(Request $request)
+    {
         try{
             $edit = sanPham::find($request->{Constant::CL_ID});
             $edit->{Constant::CL_MATHELOAI} = $request->{Constant::CL_MATHELOAI} ;
@@ -67,7 +70,8 @@ class SanPhamController extends Controller
 
     }
 
-    function deleteSanPham(Request $request){
+    function deleteSanPham(Request $request)
+    {
         try{
             $id = $request->{Constant::CL_ID};
             $delete = sanPham::where('id', $id)->delete();
@@ -77,4 +81,29 @@ class SanPhamController extends Controller
         }
 
     }
+
+    function getImageSP(Request $request)
+    {
+        try{
+            if($request->{Constant::CL_MASANPHAM}){
+                $getImageSP = Images::where([[Constant::CL_MASANPHAM,'=',$request->{Constant::CL_MASANPHAM}]])->get();
+                $masanpham = sanPham::find($request->{Constant::CL_MASANPHAM})->first();
+                return view('admin.SanPham.quanlyImages',compact('getImageSP'),compact('masanpham'));
+            }else{
+                return view('admin.SanPham.quanlyImages');
+            }
+
+        }catch (\Exception $e){
+            return response()->json($e->getMessage());
+        }
+    }
+
+    function chiTietSanPham(Request $request){
+        $getSanPham = sanPham::find($request->{Constant::CL_ID})->first();
+        return view('admin.SanPham.detail_sp',compact('getSanPham'));
+    }
+
+
+
+
 }

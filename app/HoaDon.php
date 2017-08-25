@@ -14,6 +14,7 @@ class HoaDon extends Model
     }
 
     public function ChiTietHD(){
-        return $this->belongsTo('App\ChiTietHoaDon',Constant::CL_MACHITIETHD,Constant::CL_ID);
+
+        return $this->hasMany('App\ChiTietHoaDon',Constant::CL_MAHOADON,Constant::CL_ID);
     }
 }
