@@ -66,6 +66,10 @@ class Constant
     const CL_GIOITHIEUSANPHAM  = "gioithieusanpham";
     //Table ThongTin
     const TBL_SLIDER           = "slider";
+    const CL_LOGO              = "logo";
+    const CL_GIOITHIEU         = "gioithieu";
+    const CL_CONTACT           = "contact";
+    const CL_TIEUDE            = "tieude";
 
 
 

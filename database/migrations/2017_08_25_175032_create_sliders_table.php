@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Constant;
 
 class CreateSlidersTable extends Migration
 {
@@ -13,8 +14,12 @@ class CreateSlidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('sliders', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create(Constant::TBL_SLIDER, function (Blueprint $table) {
+            $table->increments(Constant::CL_ID);
+            $table->string(Constant::CL_IMAGE_URL);
+            $table->string(Constant::CL_GIOITHIEU);
+            $table->string(Constant::CL_CONTACT);
+            $table->string(Constant::CL_TIEUDE);
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateSlidersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sliders');
+        Schema::dropIfExists(Constant::TBL_SLIDER);
     }
 }

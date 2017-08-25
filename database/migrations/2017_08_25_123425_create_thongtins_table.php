@@ -21,6 +21,7 @@ class CreateThongtinsTable extends Migration
             $table->string(Constant::CL_SDT);
             $table->string(Constant::CL_FACEBOOK);
             $table->string(Constant::CL_DIACHI);
+            $table->string(Constant::CL_LOGO);
             $table->timestamps();
         });
     }
