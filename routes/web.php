@@ -14,14 +14,14 @@
 //Route::get('/home', function () {
 //    return view('client.home');
 //});
-Route::get('/', function () {
-   // return 1;
-    //return view('admin.dashboash');
-   // return view('client.home');
-    return view('client.home');
+// Route::get('/', function () {
+//    // return 1;
+//     //return view('admin.dashboash');
+//    // return view('client.home');
+//     return view('client.home');
 
-    return view('client.product-details');
-});
+//     return view('client.product-details');
+// });
 
 Route::get('/admin', function () {
     return view('admin.dashboash');
@@ -122,6 +122,6 @@ Route::get('/lichsubanhang', function () {
     return view('admin.DoanhThu.lichsu_banhang');
 });
 
-Route::get('/home', 'Client\SanPhamController@getPageHome')->name('home');
+Route::get('/', 'Client\SanPhamController@getPageHome')->name('home');
 
 
