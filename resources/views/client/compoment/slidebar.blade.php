@@ -3,23 +3,23 @@
 
 
     <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-        @foreach($TheLoai as $item)
+        @foreach($TheLoai as $item )
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordian" href="#{{$item->tentheloai}}">
+                        <a data-toggle="collapse" data-parent="#accordian" href="#{{isset($item->tentheloai) ? $item->tentheloai  : ''}}">
                             {{--<span class="badge pull-right">--}}
                                 {{--<i class="fa fa-plus"></i>--}}
                             {{--</span>--}}
-                            {{$item->tentheloai}}
+                            {{ isset($item->tentheloai) ? $item->tentheloai : 'Product name' }}
                         </a>
                     </h4>
                 </div>
-                <div id="{{$item->tentheloai}}" class="panel-collapse collapse in" aria-expanded="true">
+                <div id="{{isset($item->tentheloai) ? $item->tentheloai : ''}}" class="panel-collapse collapse in" aria-expanded="true">
                     <div class="panel-body">
                         <ul>
                             @foreach($item->SanPham as $sanpham)
-                                <li><a href="#">{{$sanpham->tensanpham}} </a></li>
+                                <li><a href="#">{{isset($sanpham->tensanpham) ? $sanpham->tensanpham : ''}} </a></li>
                             @endforeach
                         </ul>
                     </div>

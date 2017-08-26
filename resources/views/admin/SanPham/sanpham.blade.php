@@ -199,44 +199,8 @@
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <link rel="stylesheet" href="{{asset('css/iziToast.min.css')}}">
     <script src="{{asset('js/iziToast.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/menu-left.js')}}" type="text/javascript"></script>
     <script>
-        window.onload = function(){
-            $("#sub_id_sanpham").empty();
-            $.ajax({
-                'url':'/api/danhsachtheloai_api',
-                'type':'GET',
-                success: function(data){
-
-                    var result = "<li class=>";
-                    result += "<a href=\"\\tatcasanpham\">";
-                    result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
-                    result += "Tất cả";
-                    result += "</a>";
-                    result += "<b class=\"arrow\"></b>";
-                    result += "</li>";
-                    var t;
-                    for(var key in data){
-                        t = data[key];
-                    }
-                    t.forEach(function(entry) {
-                        var codeTheLoai = entry.id;
-                        var temp = '\\sanphamid\\'+codeTheLoai;
-                        result += "<li class=>";
-                        result += "<a href= "+temp+" >";
-                        result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
-                        result += ""+entry.tentheloai+"";
-                        result += "</a>";
-                        result += "<b class=\"arrow\"></b>";
-                        result += "</li>";
-
-                    });
-                    $("#sub_id_sanpham").append(result);
-                    $("#flag").val(1);
-                }
-            })
-        };
-
-
         $( "#add_sanpham" ).click(function() {
             $(".modal-body").find("#masanpham,#tensanpham,#soluong,#manhanhieu,#giatien").val('').end();
             var $radios = $('input:radio[name=active]');

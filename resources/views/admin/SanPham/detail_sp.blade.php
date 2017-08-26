@@ -4,7 +4,6 @@
 {{--@endsection--}}
 @section('chitietsanpham')
 <div class="main-content">
-
     <div class="main-content-inner">
         <div class="breadcrumbs ace-save-state" id="breadcrumbs">
             <ul class="breadcrumb">
@@ -109,7 +108,7 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="{{asset('js/detail_sp.js')}}"></script>
 <link rel="stylesheet" href="{{asset('css/detail_sp.css')}}">

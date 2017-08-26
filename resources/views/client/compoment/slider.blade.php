@@ -24,7 +24,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <img width="400" height="300" src="{{isset($item->image_url) ? $item->image_url : ''}}" class="girl img-responsive" alt="200x200" />
-                                        <img src="images/home/pricing.png"  class="pricing" alt="200x200" />
+                                        {{--<img src="images/home/pricing.png"  class="pricing" alt="200x200" />--}}
                                     </div>
                                 </div>
                             @else

@@ -123,7 +123,10 @@
                     result +="</div>";
                     result +="</li>";
                     $( result ).insertBefore( "#add_images" );
-//                    $('#images').listview('refresh');
+                    iziToast.success({
+                        title: 'Thông Báo',
+                        message: 'Đã thêm thành công!',
+                    });
                 }
             })
         });

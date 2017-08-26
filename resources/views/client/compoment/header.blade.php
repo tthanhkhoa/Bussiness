@@ -162,6 +162,7 @@
                 @yield('product')
                 @yield('product-details')
                 @yield('recommended')
+                @yield('chitietsanpham')
 
                 <!--features_items-->
             </div>

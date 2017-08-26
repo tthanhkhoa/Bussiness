@@ -87,7 +87,9 @@ class SanPhamController extends Controller
         try{
             if($request->{Constant::CL_MASANPHAM}){
                 $getImageSP = Images::where([[Constant::CL_MASANPHAM,'=',$request->{Constant::CL_MASANPHAM}]])->get();
-                $masanpham = sanPham::find($request->{Constant::CL_MASANPHAM})->first();
+                $masanpham = sanPham::where([[Constant::CL_ID,'=',$request->{Constant::CL_MASANPHAM}]])->first();
+//                return $masanpham;
+//                return view('admin.SanPham.quanlyImages',compact('getImageSP'));
                 return view('admin.SanPham.quanlyImages',compact('getImageSP'),compact('masanpham'));
             }else{
                 return view('admin.SanPham.quanlyImages');

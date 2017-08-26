@@ -30,8 +30,8 @@ Route::get('/cart', function () {
     return view('client.cart');
 });
 
-Route::get('/product', function(){
-    return view('client.product');
+Route::get('/chitietsanpham', function(){
+    return view('client.chitietsanpham');
 });
 
 Route::get('/login', function () {
@@ -55,7 +55,7 @@ Route::get('/tatcasanpham', 'Admin\SanPhamController@getSanPham')->name('tatcasa
 Route::get('/sanphamid/{id}', 'Admin\SanPhamController@getSanPhamById')->name('sanphamid');
 Route::post('/deletesanpham', 'Admin\SanPhamController@deleteSanPham')->name('deletesanpham');
 Route::get('/gallery/{masanpham}', 'Admin\SanPhamController@getImageSP')->name('gallery');
-Route::get('/chitietsanpham/{id}', 'Admin\SanPhamController@chiTietSanPham')->name('chitietsanpham');
+Route::get('admin/chitietsanpham/{id}', 'Admin\SanPhamController@chiTietSanPham')->name('chitiet');
 
 
 
@@ -125,4 +125,5 @@ Route::get('/lichsubanhang', function () {
 Route::get('/', 'Client\SanPhamController@getPageHome')->name('home');
 
 Route::get('/home', 'Client\SanPhamController@getPageHome')->name('home');
+Route::get('/chitietsanpham/{id}', 'Client\SanPhamController@chiTietSanPham')->name('chitietsanpham');
 

@@ -1,5 +1,4 @@
 @extends('client.compoment.header',['thongtin' => $thongtin])
-{{--@extends('client.compoment.header')--}}
 @section('slider')
     @include('client.compoment.slider',['slider' => $slider])
 @endsection
@@ -12,7 +11,7 @@
         <div class="product-image-wrapper">
             <div class="single-products">
                 <div class="productinfo text-center">
-                    <a href="#">
+                    <a href="{{route('chitietsanpham',['id'=>$item->id])}}">
                         <img  width="80" height="180" alt="80x180"
                               src="{{isset($item->Images->first()->image_url) ? $item->Images->first()->image_url : asset('images/defaut/S2B.jpg')}}"  />
                         <h2>{{isset($item->giatien) ? number_format($item->giatien) : '0' }}</h2>
