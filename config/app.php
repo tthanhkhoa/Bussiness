@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +165,7 @@ return [
         JD\Cloudder\CloudderServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -228,7 +229,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
-        'Location' => Stevebauman\Location\Facades\Location::class,
+        'Location' => 'Stevebauman\Location\Facades\Location',
+
 
     ],
 

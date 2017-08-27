@@ -22,9 +22,11 @@ class SanPhamController extends Controller
             $sanpham = sanpham::orderBy(Constant::CL_ID,'desc')->paginate(10);
             $thongtin = thongtin::orderBy(Constant::CL_ID,'desc')->first();
             $slider = slider::all();
-            $ip= \Request::ip();
+//            $ip= Request::ip();
+            $ip = \Request::getClientIp();
             return $ip;
-            $data = \Location::get($ip);
+//            $data = \Location::get('10.152.233.4');
+            $data = \Location::get('171.249.122.108');
             dd($data);
             return view('client.home',compact('TheLoai','sanpham','thongtin','slider'));
         }catch (\Exception $e){
