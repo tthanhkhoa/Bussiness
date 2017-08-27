@@ -23,7 +23,8 @@ class SanPhamController extends Controller
             $thongtin = thongtin::orderBy(Constant::CL_ID,'desc')->first();
             $slider = slider::all();
 //            $ip= Request::ip();
-            $ip = \Request::getClientIp();
+//            $ip = \Request::getClientIp();
+            $ip = trim(shell_exec("dig +short myip.opendns.com @resolver1.opendns.com"));
             return $ip;
 //            $data = \Location::get('10.152.233.4');
             $data = \Location::get('171.249.122.108');
