@@ -16,27 +16,27 @@
                     <div class="carousel-inner">
                         @foreach($slider as $item)
                             @if($i == 0)
-                                <div class="item active">
-                                    <div class="col-sm-6">
-                                        <h1><span>S2B</span> BEAUTY</h1>
-                                        <h2>{{isset($item->gioithieu) ? $item->gioithieu : ''}}</h2>
-                                        <p>{{isset($item->contact) ? $item->contact : ''}} </p>
+                                <div class="item active" >
+                                    <div class="col-sm-6" >
+                                        <h1 class="text-center"><span>S2B</span> BEAUTY</h1>
+                                        <h2 class="text-center">{{isset($item->gioithieu) ? $item->gioithieu : ''}}</h2>
+                                        <p class="text-center">{{isset($item->contact) ? $item->contact : ''}} </p>
                                     </div>
                                     <div class="col-sm-6">
-                                        <img width="400" height="300" src="{{isset($item->image_url) ? $item->image_url : ''}}" class="girl img-responsive" alt="200x200" />
+                                        <img width="400" height="400" src="{{isset($item->image_url) ? $item->image_url : ''}}" class="girl img-responsive" alt="200x200" />
                                         {{--<img src="images/home/pricing.png"  class="pricing" alt="200x200" />--}}
                                     </div>
                                 </div>
                             @else
-                                <div class="item">
-                                    <div class="col-sm-6">
-                                        <h1><span>S2B</span> BEAUTY</h1>
-                                        <h2>{{isset($item->gioithieu) ? $item->gioithieu : ''}}</h2>
-                                        <p>{{isset($item->contact) ? $item->contact : ''}} </p>
+                                <div class="item" >
+                                    <div class="col-sm-6" >
+                                        <h1 class="text-center"><span>S2B</span> BEAUTY</h1>
+                                        <h2 class="text-center">{{isset($item->gioithieu) ? $item->gioithieu : ''}}</h2>
+                                        <p class="text-center">{{isset($item->contact) ? $item->contact : ''}} </p>
                                         
                                     </div>
                                     <div class="col-sm-6">
-                                        <img src="{{isset($item->image_url) ? $item->image_url : ''}}" class="girl img-responsive" alt="" />
+                                        <img width="400" height="400" src="{{isset($item->image_url) ? $item->image_url : ''}}" class="girl img-responsive" alt="" />
                                         {{--<img src="images/home/pricing.png"  class="pricing" alt="" />--}}
                                     </div>
                                 </div>
