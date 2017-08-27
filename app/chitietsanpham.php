@@ -12,7 +12,7 @@ class chitietsanpham extends Model
     public $timestamps = false;
 
     public function sanPham(){
-        return $this->belongsTo('App\sanpham', Constant::CL_MANHANHIEU, Constant::CL_ID);
+        return $this->belongsTo('App\sanpham', Constant::CL_MASANPHAM, Constant::CL_ID);
     }
 
 }

@@ -31,7 +31,7 @@ class SanPham extends Model
     }
 
     public function chiTietSanPham(){
-        return $this->belongsTo('App\chitietsanpham', Constant::CL_MANHANHIEU, Constant::CL_ID);
+        return $this->belongsTo('App\chitietsanpham', Constant::CL_ID, Constant::CL_MASANPHAM);
     }
 
 
