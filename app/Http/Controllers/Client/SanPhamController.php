@@ -22,13 +22,16 @@ class SanPhamController extends Controller
             $sanpham = sanpham::orderBy(Constant::CL_ID,'desc')->paginate(10);
             $thongtin = thongtin::orderBy(Constant::CL_ID,'desc')->first();
             $slider = slider::all();
-//            $ip= Request::ip();
-//            $ip = \Request::getClientIp();
-            $ip = trim(shell_exec("dig +short myip.opendns.com @resolver1.opendns.com"));
-            return $ip;
+//            $ip= \Request::ip();
+//            $data = \Location::get('171.249.122.108');
+//            dd($data);
+//            $ip = \Request::getClientIp(true);
+//            $ip = trim(shell_exec("dig +short myip.opendns.com @resolver1.opendns.com"));
+
+//            return $ip;
 //            $data = \Location::get('10.152.233.4');
-            $data = \Location::get('171.249.122.108');
-            dd($data);
+//            $data = \Location::get('171.249.122.108');
+//            dd($data);
             return view('client.home',compact('TheLoai','sanpham','thongtin','slider'));
         }catch (\Exception $e){
             return($e->getMessage());
@@ -37,15 +40,13 @@ class SanPhamController extends Controller
 
     function chiTietSanPham(Request $request){
         try{
+            $ip= \Request::ip();
+            $data = \Location::get($ip);
+            dd($data);
             $TheLoai = theLoai::all();
-//            $getSanPham = sanpham::with('chiTietSanPham')
-//            ->where([[Constant::CL_ID,'=',$request->{Constant::CL_ID}]])->first();
             $getSanPham = sanpham::where([[Constant::CL_ID,'=',$request->{Constant::CL_ID}]])->first();
             $thongtin = thongtin::orderBy(Constant::CL_ID,'desc')->first();
             $slider = slider::all();
-//            return $getSanPham;
-
-//            return $getSanPham->chiTietSanPham->gioithieusanpham;
             return view('client.chitietsanpham',compact('TheLoai','getSanPham','thongtin','slider'));
         }catch (\Exception $e){
             return($e->getMessage());
