@@ -23,6 +23,7 @@ class SanPhamController extends Controller
             $thongtin = thongtin::orderBy(Constant::CL_ID,'desc')->first();
             $slider = slider::all();
             $ip= \Request::ip();
+            return $ip;
             $data = \Location::get($ip);
             dd($data);
             return view('client.home',compact('TheLoai','sanpham','thongtin','slider'));
