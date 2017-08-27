@@ -41,9 +41,9 @@ class SanPhamController extends Controller
     function chiTietSanPham(Request $request){
         try{
 //            $ip= \Request::ip();
-            $ip      = $request->getClientIp();
-            $data = \Location::get($ip);
-            dd($data);
+//            $ip      = $request->getClientIp();
+//            $data = \Location::get($ip);
+//            dd($data);
             $TheLoai = theLoai::all();
             $getSanPham = sanpham::where([[Constant::CL_ID,'=',$request->{Constant::CL_ID}]])->first();
             $thongtin = thongtin::orderBy(Constant::CL_ID,'desc')->first();
