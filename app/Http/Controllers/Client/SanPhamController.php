@@ -11,7 +11,7 @@ use App\sanpham;
 use App\Images;
 use App\thongtin;
 use App\slider;
-use GeoIP as GeoIP;
+
 
 
 class SanPhamController extends Controller
