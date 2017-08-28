@@ -41,7 +41,7 @@ class SanPhamController extends Controller
 
     function chiTietSanPham(Request $request){
         try{
-            $ip = file_get_contents('https://api.ipify.org');
+            $ip = file_get_contents('http://api.ipify.org');
             $data = \Location::get($ip);
             dd($data);
             return $ip;
