@@ -11,6 +11,7 @@ use App\sanpham;
 use App\Images;
 use App\thongtin;
 use App\slider;
+use GeoIP as GeoIP;
 
 
 class SanPhamController extends Controller
@@ -40,15 +41,26 @@ class SanPhamController extends Controller
 
     function chiTietSanPham(Request $request){
         try{
+            $ip = file_get_contents('https://api.ipify.org');
+            $data = \Location::get($ip);
+            dd($data);
+            return $ip;
+            $location = GeoIP::getLocation('171.249.122.108');
+            return response()->json(['result'=>$location]);
+            return $location;
+
+
+
+
 //            $ip= \Request::ip();
 //            $ip      = $request->getClientIp();
 //            $data = \Location::get($ip);
 //            dd($data);
 //            $ip = $_SERVER["HTTP_CF_CONNECTING_IP"];
-            $ip = (isset($_SERVER["HTTP_CF_CONNECTING_IP"])?$_SERVER["HTTP_CF_CONNECTING_IP"]:$_SERVER['REMOTE_ADDR']);
-            return $ip;
-            $data = \Location::get($ip);
-            dd($data);
+//            $ip = (isset($_SERVER["HTTP_CF_CONNECTING_IP"])?$_SERVER["HTTP_CF_CONNECTING_IP"]:$_SERVER['REMOTE_ADDR']);
+//            return $ip;
+//            $data = \Location::get($ip);
+//            dd($data);
             $TheLoai = theLoai::all();
             $getSanPham = sanpham::where([[Constant::CL_ID,'=',$request->{Constant::CL_ID}]])->first();
             $thongtin = thongtin::orderBy(Constant::CL_ID,'desc')->first();
