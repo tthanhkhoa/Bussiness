@@ -51,8 +51,8 @@ class SanPhamController extends Controller
             }
 //            $ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
             $data = \Location::get($ip);
-//            dd($data);
-            return $ip;
+            dd($data);
+//            return $ip;
 //            $location = GeoIP::getLocation('171.249.122.108');
 //            return response()->json(['result'=>$location]);
 //            return $location;
