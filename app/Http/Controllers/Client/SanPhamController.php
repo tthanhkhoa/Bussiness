@@ -43,14 +43,14 @@ class SanPhamController extends Controller
         try{
 //            $ip = file_get_contents('http://api.ipify.org');
             if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-                $ip = trim(end(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])));
-//                return trim(end($ip));
+                $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+                $getIP = trim(end($ip));
             }
             else {
                 return $_SERVER['REMOTE_ADDR'];
             }
 //            $ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
-            $data = \Location::get($ip);
+            $data = \Location::get($getIP);
             dd($data);
 //            return $ip;
 //            $location = GeoIP::getLocation('171.249.122.108');
