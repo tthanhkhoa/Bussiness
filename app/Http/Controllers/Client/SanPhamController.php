@@ -41,7 +41,15 @@ class SanPhamController extends Controller
 
     function chiTietSanPham(Request $request){
         try{
-            $ip = file_get_contents('http://api.ipify.org');
+//            $ip = file_get_contents('http://api.ipify.org');
+            if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+                $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+                return trim(end($ip));
+            }
+            else {
+                return $_SERVER['REMOTE_ADDR'];
+            }
+//            $ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
             $data = \Location::get($ip);
 //            dd($data);
             return $ip;

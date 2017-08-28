@@ -27,8 +27,8 @@
       <file leaf-file-name="SanPhamController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/SanPhamController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="24" />
+            <state relative-caret-position="381">
+              <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
               <folding>
                 <element signature="e#47#75#0#PHP" expanded="true" />
               </folding>
@@ -484,7 +484,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308288000" />
+    <option name="totallyTimeSpent" value="309102000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="23" width="1280" height="735" extended-state="6" />
@@ -904,8 +904,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/SanPhamController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="24" />
+        <state relative-caret-position="381">
+          <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
           <folding>
             <element signature="e#47#75#0#PHP" expanded="true" />
           </folding>
