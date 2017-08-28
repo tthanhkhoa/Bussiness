@@ -24,53 +24,29 @@ class SanPhamController extends Controller
             $thongtin = thongtin::orderBy(Constant::CL_ID,'desc')->first();
             $slider = slider::all();
 //            $ip= \Request::ip();
-//            $data = \Location::get('171.249.122.108');
-//            dd($data);
-//            $ip = \Request::getClientIp(true);
-//            $ip = trim(shell_exec("dig +short myip.opendns.com @resolver1.opendns.com"));
 
-//            return $ip;
-//            $data = \Location::get('10.152.233.4');
-//            $data = \Location::get('171.249.122.108');
-//            dd($data);
             return view('client.home',compact('TheLoai','sanpham','thongtin','slider'));
         }catch (\Exception $e){
             return($e->getMessage());
         }
     }
 
+    function getLocation(){
+        //            $ip = file_get_contents('http://api.ipify.org');
+        if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+            $getIP = trim(end($ip));
+        }
+        else {
+            return response()->json(['result'=>$_SERVER['REMOTE_ADDR']]);
+        }
+        $data = \Location::get($getIP);
+        $collection = collect(['ip'=> $getIP,'Location'=>$data]);
+        return response()->json(['result'=>$collection]);
+    }
+
     function chiTietSanPham(Request $request){
         try{
-//            $ip = file_get_contents('http://api.ipify.org');
-            if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-                $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
-                $getIP = trim(end($ip));
-            }
-            else {
-                return response()->json(['result'=>$_SERVER['REMOTE_ADDR']]);
-//                return $_SERVER['REMOTE_ADDR'];
-            }
-            $data = \Location::get($getIP);
-            $collection = collect(['ip'=> $getIP,'Location'=>$data]);
-            return response()->json(['result'=>$collection]);
-//            dd($data);
-//            return $ip;
-//            $location = GeoIP::getLocation('171.249.122.108');
-//            return response()->json(['result'=>$location]);
-//            return $location;
-
-
-
-
-//            $ip= \Request::ip();
-//            $ip      = $request->getClientIp();
-//            $data = \Location::get($ip);
-//            dd($data);
-//            $ip = $_SERVER["HTTP_CF_CONNECTING_IP"];
-//            $ip = (isset($_SERVER["HTTP_CF_CONNECTING_IP"])?$_SERVER["HTTP_CF_CONNECTING_IP"]:$_SERVER['REMOTE_ADDR']);
-//            return $ip;
-//            $data = \Location::get($ip);
-//            dd($data);
             $TheLoai = theLoai::all();
             $getSanPham = sanpham::where([[Constant::CL_ID,'=',$request->{Constant::CL_ID}]])->first();
             $thongtin = thongtin::orderBy(Constant::CL_ID,'desc')->first();
