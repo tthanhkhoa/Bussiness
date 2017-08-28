@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85c50f52-2061-4a9e-a697-479e497899cf" name="Default" comment="" />
+    <list default="true" id="85c50f52-2061-4a9e-a697-479e497899cf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/SanPhamController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/SanPhamController.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SanPhamController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SanPhamController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/SanPhamController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="43" column="41" lean-forward="false" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+            <state relative-caret-position="461">
+              <caret line="46" column="25" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="46" selection-end-column="25" />
               <folding>
                 <element signature="e#47#75#0#PHP" expanded="true" />
               </folding>
@@ -56,10 +58,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1413">
+            <state relative-caret-position="268">
               <caret line="216" column="46" lean-forward="false" selection-start-line="216" selection-start-column="46" selection-end-line="216" selection-end-column="46" />
               <folding />
             </state>
@@ -474,7 +476,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306440000" />
+    <option name="totallyTimeSpent" value="306675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="29" y="23" width="1280" height="735" extended-state="0" />
@@ -879,21 +881,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/SanPhamController.php">
+    <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="43" column="41" lean-forward="false" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
-          <folding>
-            <element signature="e#47#75#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="268">
+          <caret line="216" column="46" lean-forward="false" selection-start-line="216" selection-start-column="46" selection-end-line="216" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/SanPhamController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1413">
-          <caret line="216" column="46" lean-forward="false" selection-start-line="216" selection-start-column="46" selection-end-line="216" selection-end-column="46" />
-          <folding />
+        <state relative-caret-position="461">
+          <caret line="46" column="25" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="46" selection-end-column="25" />
+          <folding>
+            <element signature="e#47#75#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
