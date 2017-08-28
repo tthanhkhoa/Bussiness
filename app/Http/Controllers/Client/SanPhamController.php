@@ -43,7 +43,7 @@ class SanPhamController extends Controller
         try{
             $ip = file_get_contents('http://api.ipify.org');
             $data = \Location::get($ip);
-            dd($data);
+//            dd($data);
             return $ip;
 //            $location = GeoIP::getLocation('171.249.122.108');
 //            return response()->json(['result'=>$location]);
