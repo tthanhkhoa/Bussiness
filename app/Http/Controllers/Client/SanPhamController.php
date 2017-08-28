@@ -47,11 +47,13 @@ class SanPhamController extends Controller
                 $getIP = trim(end($ip));
             }
             else {
-                return $_SERVER['REMOTE_ADDR'];
+                return response()->json(['result'=>$_SERVER['REMOTE_ADDR']]);
+//                return $_SERVER['REMOTE_ADDR'];
             }
-//            $ip = $_SERVER["HTTP_X_FORWARDED_FOR"];
             $data = \Location::get($getIP);
-            dd($data);
+            $collection = collect(['ip'=> $getIP,'Location'=>$data]);
+            return response()->json(['result'=>$collection]);
+//            dd($data);
 //            return $ip;
 //            $location = GeoIP::getLocation('171.249.122.108');
 //            return response()->json(['result'=>$location]);
