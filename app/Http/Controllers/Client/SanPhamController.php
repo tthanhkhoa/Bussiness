@@ -43,7 +43,7 @@ class SanPhamController extends Controller
         try{
 //            $ip = file_get_contents('http://api.ipify.org');
             if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-                $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+                $ip = trim(end(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])));
 //                return trim(end($ip));
             }
             else {
