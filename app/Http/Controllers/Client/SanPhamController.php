@@ -40,7 +40,10 @@ class SanPhamController extends Controller
 
     function chiTietSanPham(Request $request){
         try{
-            $ip= \Request::ip();
+//            $ip= \Request::ip();
+//            $ip = $_SERVER["HTTP_CF_CONNECTING_IP"];
+            $ip = (isset($_SERVER["HTTP_CF_CONNECTING_IP"])?$_SERVER["HTTP_CF_CONNECTING_IP"]:$_SERVER['REMOTE_ADDR']);
+            return $ip;
             $data = \Location::get($ip);
             dd($data);
             $TheLoai = theLoai::all();
