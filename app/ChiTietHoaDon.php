@@ -7,15 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class ChiTietHoaDon extends Model
 {
     //
-    protected $table = Constant::TBL_ChiTietHoaDon;
-    protected $primaryKey = Constant::TBL_maChiTietHD;
-
+    protected $table = Constant::TBL_CTHOADON;
+    public $incrementing = false;
     public function SanPham()
     {
-        return $this->hasMany(Constant::TBL_SanPham, Constant::TBL_maSanPham, Constant::TBL_maSanPham);
+//        return $this->hasMany('App\sanpham', Constant::CL_ID, Constant::CL_MASANPHAM);
+        return $this->belongsTo('App\sanpham', Constant::CL_MASANPHAM, Constant::CL_ID);
+
     }
 
     public function HoaDon(){
-        return $this->belongsTo(Constant::TBL_HoaDon, Constant::TBL_maHoaDon, Constant::TBL_maHoaDon);
+        return $this->belongsTo('App\HoaDon', Constant::CL_MAHOADON, Constant::CL_ID);
     }
 }

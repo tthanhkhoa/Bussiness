@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -162,6 +162,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        JD\Cloudder\CloudderServiceProvider::class,
+        Stevebauman\Location\LocationServiceProvider::class,
+        Torann\GeoIP\GeoIPServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -225,6 +229,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
+        'Location' => Stevebauman\Location\Facades\Location::class,
+        'GeoIP' => Torann\GeoIP\Facades\GeoIP::class,
+
 
     ],
 

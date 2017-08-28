@@ -4,21 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class khachhang extends Model
+class khachHang extends Model
 {
     //
-    protected $table = Constant::TBL_KhachHang;
-    protected $primaryKey = Constant::TBL_maKhachHang;
+    protected $table = Constant::TBL_KHACHHANG;
+//    protected $primaryKey = Constant::TBL_maKhachHang;
+    public $timestamps = false;
 
     public function User(){
-        return $this->belongsTo(Constant::TBL_User, Constant::TBL_idUser, Constant::TBL_idUser);
+        return $this->belongsTo('App\User', Constant::CL_USER_ID, Constant::CL_ID);
     }
 
     public function HoaDon(){
-        return $this->hasMany(Constant::TBL_HoaDon);
+        return $this->hasMany('App\HoaDon',Constant::CL_MAHOADON,Constant::CL_ID);
     }
 
     public function remenberSP(){
-        return $this->hasMany(Constant::TBL_RemenberSP);
+        return $this->hasMany('App\rememberSP',Constant::CL_REMENBER_ID,Constant::CL_ID);
     }
 }

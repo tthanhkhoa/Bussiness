@@ -11,17 +11,17 @@
 |
 */
 
-Route::get('/home', function () {
-    return view('client.home');
-});
-Route::get('/', function () {
-   // return 1;
-    //return view('admin.dashboash');
-   // return view('client.home');
-    return view('client.home');
+//Route::get('/home', function () {
+//    return view('client.home');
+//});
+// Route::get('/', function () {
+//    // return 1;
+//     //return view('admin.dashboash');
+//    // return view('client.home');
+//     return view('client.home');
 
-    return view('client.product-details');
-});
+//     return view('client.product-details');
+// });
 
 Route::get('/admin', function () {
     return view('admin.dashboash');
@@ -30,11 +30,8 @@ Route::get('/cart', function () {
     return view('client.cart');
 });
 
-Route::get('/product', function(){
-    return view('client.product');
-});
-Route::get('/about', function(){
-    return view('client.about');
+Route::get('/chitietsanpham', function(){
+    return view('client.chitietsanpham');
 });
 
 Route::get('/login', function () {
@@ -55,10 +52,33 @@ Route::post('/updatetheloai', 'Admin\TheLoaiController@editTheLoai')->name('upda
  * Admin San Pham
  * */
 Route::get('/tatcasanpham', 'Admin\SanPhamController@getSanPham')->name('tatcasanpham');
-Route::get('/getSanPhamById/{id}', 'Admin\SanPhamController@getSanPhamById')->name('getSanPhamById');
-Route::get('get_info_booking/{id}', ['as' => 'getInfoBooking', 'uses' => 'Admin\JobController@getInfoBooking']);
-Route::get('/getSanPhamById', 'Admin\SanPhamController@getSanPhamById')->name('getSanPhamById');
+Route::get('/sanphamid/{id}', 'Admin\SanPhamController@getSanPhamById')->name('sanphamid');
+Route::post('/deletesanpham', 'Admin\SanPhamController@deleteSanPham')->name('deletesanpham');
+Route::get('/gallery/{masanpham}', 'Admin\SanPhamController@getImageSP')->name('gallery');
+Route::get('admin/chitietsanpham/{id}', 'Admin\SanPhamController@chiTietSanPham')->name('chitiet');
 
+
+
+/*
+ * Admin Nha Cung Cap
+ * */
+Route::get('/danhsachnhacungcap', 'Admin\NhaCungCapController@getNhaCungCap')->name('danhsachnhacungcap');
+
+/*
+ * Admin Khach Hang
+ * */
+Route::get('/danhsachkhachhang', 'Admin\KhachHangController@getKhachHang')->name('danhsachkhachhang');
+
+
+/*Admin Hoa Don*/
+Route::get('/danhsachhoadon', 'Admin\HoaDonController@getHoaDon')->name('danhsachhoadon');
+Route::get('/hoadonchuaduyet', 'Admin\HoaDonController@getHoaDonChuaDuyet')->name('hoadonchuaduyet');
+Route::get('/hoadondaduyet', 'Admin\HoaDonController@getHoaDonDaDuyet')->name('hoadondaduyet');
+Route::get('/chitiethoadon/{id}', 'Admin\HoaDonController@getChiTietHoaDon')->name('chitiethoadon');
+Route::get('/deletehoadon/{id}', 'Admin\HoaDonController@deleteHoaDon')->name('deletehoadon');
+
+
+Route::get('/about', 'Admin\thongtinController@getThongTin')->name('about');
 
 
 
@@ -69,9 +89,9 @@ Route::get('/getSanPhamById', 'Admin\SanPhamController@getSanPhamById')->name('g
 //  //  return view('admin.SanPham.theloai');
 //});
 
-Route::get('/danhsachsanpham', function () {
-    return view('admin.SanPham.sanpham');
-});
+//Route::get('/chitietsanpham', function () {
+//    return view('admin.SanPham.detail_sp');
+//});
 
 Route::get('/profile', function () {
     return view('profile');
@@ -80,13 +100,11 @@ Route::get('/nhacungcap', function () {
     return view('admin.SanPham.nhacungcap');
 });
 
-Route::get('/danhsachkhachhang', function () {
-    return view('admin.KhachHang.khachhang');
-});
 
-Route::get('/hoadon', function () {
-    return view('admin.KhachHang.hoadon');
-});
+
+//Route::get('/chitiethoadon', function () {
+//    return view('admin.KhachHang.chitiethoadon');
+//});
 
 Route::get('/danhsachnhaphang', function () {
     return view('admin.DoanhThu.danhsach_nhaphang');
@@ -103,3 +121,11 @@ Route::get('/danhsachhangton', function () {
 Route::get('/lichsubanhang', function () {
     return view('admin.DoanhThu.lichsu_banhang');
 });
+
+Route::get('/', 'Client\SanPhamController@getPageHome')->name('home');
+
+Route::get('/home', 'Client\SanPhamController@getPageHome')->name('home');
+Route::get('/chitietsanpham/{id}', 'Client\SanPhamController@chiTietSanPham')->name('chitietsanpham');
+Route::get('/getclient', 'Client\SanPhamController@getLocation')->name('getclient');
+
+

@@ -12,6 +12,36 @@
 		<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
 		<link rel="stylesheet" href="{{asset('assets/font-awesome/4.5.0/css/font-awesome.min.css')}}" />
 
+
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
+		<link rel="stylesheet" href="{{asset('assets/font-awesome/4.5.0/css/font-awesome.min.css')}}" />
+
+		<!-- page specific plugin styles -->
+		<link rel="stylesheet" href="{{asset('assets/css/colorbox.min.css')}}" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="{{asset('assets/css/fonts.googleapis.com.css')}}" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="{{asset('assets/css/ace.min.css')}}" class="ace-main-stylesheet" id="main-ace-style" />
+
+
+		{{--<link rel="stylesheet" href="{{asset('assets/css/ace-part2.min.css')}}" class="ace-main-stylesheet" />--}}
+		{{--<![endif]-->--}}
+		<link rel="stylesheet" href="{{asset('assets/css/ace-skins.min.css')}}" />
+		<link rel="stylesheet" href="{{asset('assets/css/ace-rtl.min.css')}}" />
+
+
+		{{--<link rel="stylesheet" href="{{asset('assets/css/ace-ie.min.css')}}" />--}}
+		{{--<![endif]-->--}}
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="{{asset('assets/js/ace-extra.min.js')}}"></script>
+
 		<!-- page specific plugin styles -->
 
 		<!-- text fonts -->
@@ -20,15 +50,16 @@
 		<!-- ace styles -->
 		<link rel="stylesheet" href="{{asset('assets/css/ace.min.css')}}" class="ace-main-stylesheet" id="main-ace-style" />
 
-		<!--[if lte IE 9]>
-			<link rel="stylesheet" href="assets/css/ace-part2.min.css')}}" class="ace-main-stylesheet" />
-		<![endif]-->
+
+		{{--<link rel="stylesheet" href="{{asset('assets/css/ace-part2.min.css')}}')}}" class="ace-main-stylesheet" />--}}
+		{{--<![endif]-->--}}
 		<link rel="stylesheet" href="{{asset('assets/css/ace-skins.min.css')}}" />
 		<link rel="stylesheet" href="{{asset('assets/css/ace-rtl.min.css')}}" />
+		<link rel="stylesheet" href="{{asset('css/iziToast.min.css')}}">
+		<script src="{{asset('js/iziToast.min.js')}}" type="text/javascript"></script>
 
-		<!--[if lte IE 9]>
-		  <link rel="stylesheet" href="{{asset('assets/css/ace-ie.min.css')}}" />
-		<![endif]-->
+		  {{--<link rel="stylesheet" href="{{asset('assets/css/ace-ie.min.css')}}" />--}}
+		{{--<![endif]-->--}}
 
 		<!-- inline styles related to this page -->
 
@@ -37,9 +68,9 @@
 
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
-		<!--[if lte IE 8]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
+
+		<script src="{{asset('assets/js/html5shiv.min.js')}}"></script>
+		<script src="{{asset('assets/js/respond.min.js')}}"></script>
 		<![endif]-->
 	</head>
 
@@ -429,7 +460,7 @@
 								</a>
 
 								<b class="arrow"></b>
-
+								<input type="hidden" id="flag" value='0'>
 								<ul id="sub_id_sanpham" class="submenu">
 
 								</ul>
@@ -437,7 +468,7 @@
 
 
 							<li class="">
-								<a href="{{url('nhacungcap')}}">
+								<a href="{{url('danhsachnhacungcap')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Nhãn Hiệu & Nhà Cung Cấp
 								</a>
@@ -472,7 +503,7 @@
 							</li>
 
 							<li class="">
-								<a href="{{url('hoadon')}}">
+								<a href="{{url('hoadonchuaduyet')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Danh sách hóa đơn chưa duyệt
 								</a>
@@ -481,7 +512,7 @@
 							</li>
 
 							<li class="">
-								<a href="{{url('hoadon')}}">
+								<a href="{{url('hoadondaduyet')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Danh sách hóa đơn đã duyệt
 								</a>
@@ -490,7 +521,7 @@
 							</li>
 
 							<li class="">
-								<a href="{{url('hoadon')}}">
+								<a href="{{url('danhsachhoadon')}}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Tất cả Hóa đơn
 								</a>
@@ -597,7 +628,10 @@
 				@yield('khachhang')
 				@yield('nhacungcap')
 				@yield('hoadon')
+				@yield('chitiethoadon')
 				@yield('profile-user')
+				@yield('gallery')
+				@yield('chitietsanpham')
 
 			</div>
 
@@ -666,39 +700,44 @@
 		<script src="{{asset('assets/js/ace.min.js')}}"></script>
 		<script>
             $('#sanpham').click(function(e){
-                $('#sub_id_sanpham').empty();
-				var flag = 1;
-				console.log(flag)
+                $("#sub_id_sanpham").empty();
+                var check= $("#flag").val();
+                if(check == 0){
+                    $.ajax({
+                        'url':'/api/danhsachtheloai_api',
+                        'type':'GET',
+                        success: function(data){
+                            var result = "<li class=>";
+                            result += "<a href=\"\\tatcasanpham\">";
+                            result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
+                            result += "Tất cả";
+                            result += "</a>";
+                            result += "<b class=\"arrow\"></b>";
+                            result += "</li>";
+                            var t;
+                            for(var key in data){
+                                t = data[key];
+                            }
+                            t.forEach(function(entry) {
+                                var codeTheLoai = entry.id;
+                                var temp = '\\sanphamid\\'+codeTheLoai;
+                                result += "<li class=>";
+                                result += "<a href= "+temp+" >";
+                                result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
+                                result += ""+entry.tentheloai+"";
+                                result += "</a>";
+                                result += "<b class=\"arrow\"></b>";
+                                result += "</li>";
 
-                $.ajax({
-                    'url':'/api/danhsachtheloai_api',
-                    'type':'GET',
-                    success: function(data){
-                        var result = "<li class=>";
-                        result += "<a href=\"\\tatcasanpham\">";
-                        result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
-                        result += "Tất cả";
-                        result += "</a>";
-                        result += "<b class=\"arrow\"></b>";
-                        result += "</li>";
-                        var t;
-                        for(var key in data){
-                            t = data[key];
-						}
-                        t.forEach(function(entry) {
-							var codeTheLoai = entry.maTheLoai;
-							var temp = '\\getSanPhamById\\'+codeTheLoai;
-							result += "<li class=>";
-							result += "<a href= "+temp+" >";
-							result += "<i class=\"menu-icon fa fa-caret-right\"></i>";
-							result += ""+entry.TenTheLoai+"";
-							result += "</a>";
-							result += "<b class=\"arrow\"></b>";
-							result += "</li>";
-							$("#sub_id_sanpham").append(result);
-                        });
-                    }
-                })
+                            });
+                            $("#sub_id_sanpham").append(result);
+                            $("#flag").val(1);
+                        }
+                    })
+				}else{
+                    $("#flag").val(0);
+				}
+
             });
 		</script>
 

@@ -15,10 +15,10 @@ class CreateTheloaiTable extends Migration
     public function up()
     {
         //
-        Schema::create(Constant::TBL_TheLoai, function (Blueprint $table) {
-            $table->increments(Constant::TBL_MaTheLoai);
-            $table->string(Constant::TBL_tenTheLoai)->nullable();
-            $table->integer(Constant::TBL_Active)->nullable();
+        Schema::create(Constant::TBL_THELOAI, function (Blueprint $table) {
+            $table->string(Constant::CL_ID,50)->primary();
+            $table->string(Constant::CL_TENTHELOAI)->nullable();
+            $table->integer(Constant::CL_ACTIVE)->nullable();
 
         });
     }
@@ -31,6 +31,6 @@ class CreateTheloaiTable extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists(Constant::TBL_TheLoai);
+        Schema::dropIfExists(Constant::TBL_THELOAI);
     }
 }

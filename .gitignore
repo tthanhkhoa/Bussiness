@@ -2,6 +2,8 @@ vendor/
 node_modules/
 npm-debug.log
 
+.idea/workspace.xml
+
 # Laravel 4 specific
 bootstrap/compiled.php
 app/storage/
@@ -13,6 +15,8 @@ storage/*.key
 .env.*.php
 .env.php
 .env
+
+.idea/*
 Homestead.yaml
 Homestead.json
 

@@ -15,15 +15,12 @@ class CreateRemenberSPTable extends Migration
     public function up()
     {
         //
-        Schema::create(Constant::TBL_RemenberSP, function (Blueprint $table) {
-            $table->increments(Constant::TBL_idremenber);
-            $table->integer(Constant::TBL_maKhachHang)->unsigned();
-            $table->foreign(Constant::TBL_maKhachHang)->references(Constant::TBL_maKhachHang)->on(App\Constant::TBL_KhachHang)->onDelete('cascade');
-          //  $table->integer(Constant::TBL_maKhachHang)->nullable();
-            $table->string(Constant::TBL_maSanPham)->nullable();
-            $table->integer(Constant::TBL_soLuong)->nullable();
-//            $table->timestamps();
-            //   $table->softDeletes();
+        Schema::create(Constant::TBL_REMENBERSP, function (Blueprint $table) {
+            $table->increments(Constant::CL_ID);
+            $table->integer(Constant::CL_MAKHACHHANG)->unsigned();
+            $table->foreign(Constant::CL_MAKHACHHANG)->references(Constant::CL_ID)->on(App\Constant::TBL_KHACHHANG)->onDelete('cascade');
+            $table->string(Constant::CL_MASANPHAM)->nullable();
+            $table->integer(Constant::CL_SOLUONG)->nullable();
         });
     }
 
@@ -35,6 +32,6 @@ class CreateRemenberSPTable extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists(Constant::TBL_RemenberSP);
+        Schema::dropIfExists(Constant::TBL_REMENBERSP);
     }
 }

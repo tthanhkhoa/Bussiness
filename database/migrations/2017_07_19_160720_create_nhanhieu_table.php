@@ -15,12 +15,12 @@ class CreateNhanhieuTable extends Migration
     public function up()
     {
         //
-        Schema::create(Constant::TBL_NhanHieu, function (Blueprint $table) {
-            $table->increments(Constant::TBL_idNhanHieu);
-            $table->string(Constant::TBL_tenNhanHieu)->nullable();
-            $table->string(Constant::TBL_DiaChi)->nullable();
-            $table->string(Constant::TBL_SoDienThoai)->nullable();
-            $table->integer(Constant::TBL_Active)->nullable();
+        Schema::create(Constant::TBL_NHANHIEU, function (Blueprint $table) {
+            $table->string(Constant::CL_ID,50)->primary();
+            $table->string(Constant::CL_TENNHANHIEU)->nullable();
+            $table->string(Constant::CL_DIACHI)->nullable();
+            $table->string(Constant::CL_SDT)->nullable();
+            $table->integer(Constant::CL_ACTIVE)->nullable();
 //            $table->timestamps();
             //   $table->softDeletes();
         });
@@ -34,6 +34,6 @@ class CreateNhanhieuTable extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists(Constant::TBL_NhanHieu);
+        Schema::dropIfExists(Constant::TBL_NHANHIEU);
     }
 }
