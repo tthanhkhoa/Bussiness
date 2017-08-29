@@ -32,7 +32,7 @@ class SanPhamController extends Controller
     }
 
     function getLocation(){
-        //            $ip = file_get_contents('http://api.ipify.org');
+        //$ip = file_get_contents('http://api.ipify.org');
         if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
             $getIP = trim(end($ip));
@@ -40,10 +40,9 @@ class SanPhamController extends Controller
         else {
             return response()->json(['result'=>$_SERVER['REMOTE_ADDR']]);
         }
-//        $data = \Location::get($getIP);
-//        $data = gethostbyaddr($getIP);
+        //$data = \Location::get($getIP);
         $data= file_get_contents('http://ip-api.com/json/'.$getIP);
-        $collection = collect(['ip'=> $getIP,'Location'=>$data]);
+        $collection = collect(['ip'=> $getIP,$data]);
         return response()->json(['result'=>$collection]);
     }
 
