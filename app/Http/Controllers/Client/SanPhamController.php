@@ -12,7 +12,20 @@ use App\Images;
 use App\thongtin;
 use App\slider;
 
-
+class MyStruct {
+    public $as;
+    public $city;
+    public $country;
+    public $countryCode;
+    public $isp;
+    public $lat;
+    public $lon;
+    public $query;
+    public $region;
+    public $regionName;
+    public $timezone;
+    public $zip;
+}
 
 class SanPhamController extends Controller
 {
@@ -42,8 +55,22 @@ class SanPhamController extends Controller
         }
         //$data = \Location::get($getIP);
         $data= file_get_contents('http://ip-api.com/json/'.$getIP);
+        $result = new MyStruct();
+        $result->as = $data->as;
+        $result->city = $data->city;
+        $result->country = $data->country;
+        $result->isp = $data->isp;
+        $result->lat = $data->isp;
+        $result->lon = $data->isp;
+        $result->org = $data->isp;
+        $result->query = $data->isp;
+        $result->region = $data->isp;
+        $result->regionName = $data->isp;
+        $result->timezone = $data->isp;
+        $result->zip = $data->zip;
+
 //        $collection = collect(['ip'=> $getIP,'location'=>$data]);
-        return $data;
+        return $result;
     }
 
     function chiTietSanPham(Request $request){
