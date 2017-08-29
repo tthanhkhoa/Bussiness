@@ -71,6 +71,10 @@ class Constant
     const CL_CONTACT           = "contact";
     const CL_TIEUDE            = "tieude";
 
+    //Table location
+    const TBL_LOCATION         = "location";
+    const CL_
+
 
 
 }
