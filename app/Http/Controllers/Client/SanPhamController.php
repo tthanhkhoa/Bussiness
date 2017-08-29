@@ -56,8 +56,7 @@ class SanPhamController extends Controller
         }
         //$data = \Location::get($getIP);
         $response= file_get_contents('http://ip-api.com/json/'.$getIP);
-        $data = json_decode(json_encode($response));
-//        $data = json_encode($decode);
+        $data = json_decode($response);
         $result = new MyStruct();
         $result->as = $data->as;
         $result->city = $data->city;
@@ -72,7 +71,7 @@ class SanPhamController extends Controller
         $result->regionName = $data->regionName;
         $result->timezone = $data->timezone;
         $result->zip = $data->zip;
-        return response()->json($result);
+        return response()->json($data);
     }
 
     function chiTietSanPham(Request $request){
