@@ -47,9 +47,6 @@ class SanPhamController extends Controller
 
     function getLocation(){
         //$ip = file_get_contents('http://api.ipify.org');
-//        $result = new MyStruct();
-//        $result->as = 'Tp HCM';
-//        return response()->json($result);
         if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
             $getIP = trim(end($ip));
@@ -60,7 +57,6 @@ class SanPhamController extends Controller
         //$data = \Location::get($getIP);
         $response= file_get_contents('http://ip-api.com/json/'.$getIP);
         $data = json_decode($response);
-//        return $data->as;
         $result = new MyStruct();
         $result->as = $data->as;
         $result->city = $data->city;
@@ -74,9 +70,7 @@ class SanPhamController extends Controller
         $result->regionName = $data->isp;
         $result->timezone = $data->isp;
         $result->zip = $data->zip;
-
-//        $collection = collect(['ip'=> $getIP,'location'=>$data]);
-        return $result;
+        return response()->json($result);
     }
 
     function chiTietSanPham(Request $request){
