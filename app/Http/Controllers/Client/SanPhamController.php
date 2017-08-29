@@ -43,7 +43,7 @@ class SanPhamController extends Controller
         //$data = \Location::get($getIP);
         $data= file_get_contents('http://ip-api.com/json/'.$getIP);
 //        $collection = collect(['ip'=> $getIP,'location'=>$data]);
-        return response()->json($data);
+        return $data;
     }
 
     function chiTietSanPham(Request $request){
