@@ -42,7 +42,7 @@ class SanPhamController extends Controller
         }
 //        $data = \Location::get($getIP);
 //        $data = gethostbyaddr($getIP);
-        $data= file_get_contents('http://ip-api.com/json');
+        $data= file_get_contents('http://ip-api.com/json/'.$getIP);
         $collection = collect(['ip'=> $getIP,'Location'=>$data]);
         return response()->json(['result'=>$collection]);
     }
