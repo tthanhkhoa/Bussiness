@@ -55,7 +55,8 @@ class SanPhamController extends Controller
             return response()->json(['result'=>$_SERVER['REMOTE_ADDR']]);
         }
         //$data = \Location::get($getIP);
-        $response= file_get_contents('http://ip-api.com/json/'.$getIP);
+//        $response= file_get_contents('http://ip-api.com/json/'.$getIP);
+        $response= file_get_contents('http://ip-api.com/json/113.176.116.4');
         $data = json_decode($response);
 //        $result = new MyStruct();
 //        $result->as = $data->as;
