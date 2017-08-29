@@ -62,13 +62,13 @@ class SanPhamController extends Controller
         $result->city = $data->city;
         $result->country = $data->country;
         $result->isp = $data->isp;
-        $result->lat = $data->isp;
-        $result->lon = $data->isp;
-        $result->org = $data->isp;
-        $result->query = $data->isp;
-        $result->region = $data->isp;
-        $result->regionName = $data->isp;
-        $result->timezone = $data->isp;
+        $result->lat = $data->lat;
+        $result->lon = $data->lon;
+        $result->org = $data->org;
+        $result->query = $data->query;
+        $result->region = $data->region;
+        $result->regionName = $data->regionName;
+        $result->timezone = $data->timezone;
         $result->zip = $data->zip;
         return response()->json($result);
     }
