@@ -58,20 +58,20 @@ class SanPhamController extends Controller
 //        $response= file_get_contents('http://ip-api.com/json/'.$getIP);
         $response= file_get_contents('http://ip-api.com/json/113.176.116.4');
         $data = json_decode($response);
-//        $result = new MyStruct();
-//        $result->as = $data->as;
-//        $result->city = $data->city;
-//        $result->country = $data->country;
-//        $result->countryCode = $data->countryCode;
-//        $result->isp = $data->isp;
-//        $result->lat = $data->lat;
-//        $result->lon = $data->lon;
-//        $result->org = $data->org;
-//        $result->query = $data->query;
-//        $result->region = $data->region;
-//        $result->regionName = $data->regionName;
-//        $result->timezone = $data->timezone;
-//        $result->zip = $data->zip;
+        $result = new MyStruct();
+        $result->as = $data->as;
+        $result->city = $data->city;
+        $result->country = $data->country;
+        $result->countryCode = $data->countryCode;
+        $result->isp = $data->isp;
+        $result->lat = $data->lat;
+        $result->lon = $data->lon;
+        $result->org = $data->org;
+        $result->query = $data->query;
+        $result->region = $data->region;
+        $result->regionName = $data->regionName;
+        $result->timezone = $data->timezone;
+        $result->zip = $data->zip;
         return response()->json($data);
     }
 
