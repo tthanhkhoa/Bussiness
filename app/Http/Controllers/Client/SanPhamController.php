@@ -61,6 +61,7 @@ class SanPhamController extends Controller
         $result->as = $data->as;
         $result->city = $data->city;
         $result->country = $data->country;
+        $result->countryCode = $data->countryCode;
         $result->isp = $data->isp;
         $result->lat = $data->lat;
         $result->lon = $data->lon;
