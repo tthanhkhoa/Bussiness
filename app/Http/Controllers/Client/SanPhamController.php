@@ -56,8 +56,8 @@ class SanPhamController extends Controller
         }
         //$data = \Location::get($getIP);
         $response= file_get_contents('http://ip-api.com/json/'.$getIP);
-        $data = json_decode($response);
-        $data = json_encode($data);
+        $decode = json_decode($response);
+        $data = json_encode($decode);
         $result = new MyStruct();
         $result->as = $data->as;
         $result->city = $data->city;
