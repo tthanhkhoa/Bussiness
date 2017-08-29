@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Location;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Constant;
@@ -34,11 +35,12 @@ class SanPhamController extends Controller
     //
     function getPageHome(){
         try{
-            $TheLoai = theLoai::all();
+            $this->getLocation();
+            $theloai = theLoai::all();
             $sanpham = sanpham::orderBy(Constant::CL_ID,'desc')->paginate(10);
             $thongtin = thongtin::orderBy(Constant::CL_ID,'desc')->first();
             $slider = slider::all();
-            return view('client.home',compact('TheLoai','sanpham','thongtin','slider'));
+            return view('client.home',compact('theloai','sanpham','thongtin','slider'));
         }catch (\Exception $e){
             return($e->getMessage());
         }
@@ -57,22 +59,26 @@ class SanPhamController extends Controller
         //$data = \Location::get($getIP);
         $response= file_get_contents('http://ip-api.com/json/'.$getIP);
         $data = json_decode($response);
-        $result = new MyStruct();
+        $result = new Location;
         try{
-            $result->as = $data->as;
-            $result->city = $data->city;
-            $result->country = $data->country;
-            $result->countryCode = $data->countryCode;
-            $result->isp = $data->isp;
-            $result->lat = $data->lat;
-            $result->lon = $data->lon;
-            $result->org = $data->org;
-            $result->query = $data->query;
-            $result->region = $data->region;
-            $result->regionName = $data->regionName;
-            $result->timezone = $data->timezone;
-            $result->zip = $data->zip;
-            return response()->json($data);
+            $result->{Constant::CL_AS} = $data->{Constant::CL_AS};
+            $result->{Constant::CL_CITY} = $data->{Constant::CL_CITY};
+            $result->{Constant::CL_COUNTRY} = $data->{Constant::CL_COUNTRY};
+
+            $result->{Constant::CL_COUNTRYCODE} = $data->countryCode;
+            $result->{Constant::CL_ISP} = $data->{Constant::CL_ISP};
+
+            $result->{Constant::CL_LAT} = $data->{Constant::CL_LAT};
+
+            $result->{Constant::CL_LON} = $data->{Constant::CL_LON};
+            $result->{Constant::CL_ORG} = $data->{Constant::CL_ORG};
+            $result->{Constant::CL_QUERY} = $data->{Constant::CL_QUERY};
+            $result->{Constant::CL_REGION} = $data->{Constant::CL_REGION};
+            $result->{Constant::CL_REGIONNAME} = $data->regionName;
+            $result->{Constant::CL_TIMEZONE} = $data->{Constant::CL_TIMEZONE};
+            $result->{Constant::CL_ZIP} = $data->{Constant::CL_ZIP};
+            $result->save();
+            return response()->json($result);
         }catch (\Exception $e){
             return response()->json(['code'=>200, ' message '=>Lang::get('validation.error_location')]);
         }

@@ -73,7 +73,19 @@ class Constant
 
     //Table location
     const TBL_LOCATION         = "location";
-    const CL_
+    const CL_AS                = "as";
+    const CL_CITY              = "city";
+    const CL_COUNTRY           = "country";
+    const CL_COUNTRYCODE       = "countrycode";
+    const CL_ISP               = "isp";
+    const CL_LAT               = "lat";
+    const CL_LON               = "lon";
+    const CL_ORG               = "org";
+    const CL_QUERY             = "query";
+    const CL_REGION            = "region";
+    const CL_REGIONNAME        = "regionname";
+    const CL_TIMEZONE          = "timezone";
+    const CL_ZIP               = "zip";
 
 
 

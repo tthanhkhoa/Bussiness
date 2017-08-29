@@ -126,6 +126,5 @@ Route::get('/', 'Client\SanPhamController@getPageHome')->name('home');
 
 Route::get('/home', 'Client\SanPhamController@getPageHome')->name('home');
 Route::get('/chitietsanpham/{id}', 'Client\SanPhamController@chiTietSanPham')->name('chitietsanpham');
-Route::get('/getclient', 'Client\SanPhamController@getLocation')->name('getclient');
 
 
