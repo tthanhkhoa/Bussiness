@@ -35,7 +35,7 @@ class SanPhamController extends Controller
     //
     function getPageHome(){
         try{
-            $this->getLocation();
+//            $this->getLocation();
             $theloai = theLoai::all();
             $sanpham = sanpham::orderBy(Constant::CL_ID,'desc')->paginate(10);
             $thongtin = thongtin::orderBy(Constant::CL_ID,'desc')->first();
