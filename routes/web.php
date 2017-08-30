@@ -11,9 +11,9 @@
 |
 */
 
-//Route::get('/home', function () {
-//    return view('client.home');
-//});
+Route::get('/404', function () {
+    return view('error.404');
+})->name('404');
 // Route::get('/', function () {
 //    // return 1;
 //     //return view('admin.dashboash');
@@ -34,8 +34,9 @@ Route::get('/chitietsanpham', function(){
 
 Route::get('/login', function () {
     return view('login');
-    return view('vendor.notifications.email');
-})->name('login');;
+    return abort(404);
+//    return view('vendor.notifications.email');
+})->name('login');
 Route::middleware(['admin'])->group(function () {
 
     Route::get('/admin', function () {
@@ -80,6 +81,8 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/hoadondaduyet', 'Admin\HoaDonController@getHoaDonDaDuyet')->name('hoadondaduyet');
     Route::get('/chitiethoadon/{id}', 'Admin\HoaDonController@getChiTietHoaDon')->name('chitiethoadon');
     Route::get('/deletehoadon/{id}', 'Admin\HoaDonController@deleteHoaDon')->name('deletehoadon');
+
+
 });
 
 

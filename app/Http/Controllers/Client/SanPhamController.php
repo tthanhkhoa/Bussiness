@@ -6,7 +6,7 @@ use App\Location;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Constant;
-use App\theLoai;
+use App\theloai;
 use App\nhanHieu;
 use App\sanpham;
 use App\Images;
@@ -35,8 +35,8 @@ class SanPhamController extends Controller
     //
     function getPageHome(){
         try{
-//            $this->getLocation();
-            $theloai = theLoai::all();
+
+            $theloai = theloai::all();
             $sanpham = sanpham::orderBy(Constant::CL_ID,'desc')->paginate(10);
             $thongtin = thongtin::orderBy(Constant::CL_ID,'desc')->first();
             $slider = slider::all();
