@@ -19,13 +19,17 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+    protected  $guard='admin';
+    protected function guard(){
+        return Auth::guard($this->guard);
+    }
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
