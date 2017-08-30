@@ -3,11 +3,11 @@
     <div class="main-content-inner">
         <div class="page-content">
             <div class="row">
-                <div class="col-xs-5 item-photo">
+                <div class="col-xs-6 item-photo">
                     <img width="400" height="400" alt="400x400" style="max-width:100%;" src="{{isset($getSanPham->Images->first()->image_url) ? $getSanPham->Images->first()->image_url : asset('images/defaut/S2B.jpg')}}" />
                 </div>
 
-                <div class="col-xs-5" style="border:0px solid gray">
+                <div class="col-xs-6" style="border:0px solid gray">
                     <!-- Datos del vendedor y titulo del producto -->
                     <h3>{{isset($getSanPham) ? $getSanPham->tensanpham : 'Product Name'}}</h3>
                     <h5 style="color:#337ab7">Được bán bởi : <a href="#">{{isset($getSanPham) ? $getSanPham->NhanHieu->tennhanhieu : 'Nabie Dương'}}</a> · <small style="color:#337ab7">(5054 ventas)</small></h5>

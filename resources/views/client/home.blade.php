@@ -17,11 +17,12 @@
                         <div style="display: inline-grid" >
                             <h2 >{{isset($item->giatien) ? number_format($item->giatien) : '0' }} VNĐ</h2>
                             <p style="height:20px;" >{{isset($item->tensanpham) ? $item->tensanpham : 'S2B Beauty'}}</p>
+                            <a href="#" class="btn btn-default " ><i  class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
                         </div>
-                        <a href="#" class="btn btn-default add-to-cart" ><i style="display: inline;" class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+
 
                     </a>
-
+{{--class="btn btn-default add-to-cart"--}}
                 </div>
             </div>
             <div class="choose">

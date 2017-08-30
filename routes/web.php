@@ -134,7 +134,7 @@ Route::get('/lichsubanhang', function () {
 
 Route::get('/', 'Client\SanPhamController@getPageHome')->name('home');
 
-//Route::get('/home', 'Client\SanPhamController@getPageHome')->name('home');
+Route::get('/home', 'Client\SanPhamController@getPageHome')->name('home');
 Route::get('/chitietsanpham/{id}', 'Client\SanPhamController@chiTietSanPham')->name('chitietsanpham');
 
 
