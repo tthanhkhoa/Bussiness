@@ -4,12 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104
+class ComposerStaticInitb5c899dbdd24bb9113cee04694cdbf94
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'c15243c55ab4c20eff78d1e24be20dac' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Helpers.php',
@@ -342,11 +342,13 @@ class ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104
         'App\\Http\\Controllers\\Client\\SanPhamController' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/SanPhamController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Images' => __DIR__ . '/../..' . '/app/Images.php',
+        'App\\Location' => __DIR__ . '/../..' . '/app/Location.php',
         'App\\NhanHieu' => __DIR__ . '/../..' . '/app/nhanhieu.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -3508,10 +3510,10 @@ class ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb5c899dbdd24bb9113cee04694cdbf94::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb5c899dbdd24bb9113cee04694cdbf94::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitb5c899dbdd24bb9113cee04694cdbf94::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitb5c899dbdd24bb9113cee04694cdbf94::$classMap;
 
         }, null, ClassLoader::class);
     }

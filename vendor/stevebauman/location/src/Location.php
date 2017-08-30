@@ -84,7 +84,6 @@ class Location
     public function get($ip = '')
     {
         if (session()->has($this->key)) {
-           
             return session($this->key);
         }
 
@@ -92,7 +91,7 @@ class Location
             // We'll store the location inside of our session
             // so it isn't retrieved on the next request.
             session([$this->key => $location]);
-            
+
             return $location;
         }
 

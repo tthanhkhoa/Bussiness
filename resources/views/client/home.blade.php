@@ -18,7 +18,7 @@
                             <h2 >{{isset($item->giatien) ? number_format($item->giatien) : '0' }} VNĐ</h2>
                             <p style="height:20px;" >{{isset($item->tensanpham) ? $item->tensanpham : 'S2B Beauty'}}</p>
                         </div>
-                        <a href="#" class="btn btn-default add-to-cart" style="float:right;"><i style="display: inline;" class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                        <a href="#" class="btn btn-default add-to-cart" ><i style="display: inline;" class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
 
                     </a>
 

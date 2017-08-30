@@ -10,45 +10,66 @@
                         <li data-target="#slider-carousel" data-slide-to="1"></li>
                         <li data-target="#slider-carousel" data-slide-to="2"></li>
                     </ol>
-
+                    <?php 
+                        $i = 0;
+                     ?>
                     <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free E-Commerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />
-                                <img src="images/home/pricing.png"  class="pricing" alt="" />
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>100% Responsive Design</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="images/home/girl2.jpg" class="girl img-responsive" alt="" />
-                                <img src="images/home/pricing.png"  class="pricing" alt="" />
-                            </div>
-                        </div>
+                        <?php $__currentLoopData = $slider; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if($i == 0): ?>
+                                <div class="item active" >
+                                    <div class="col-sm-6" >
+                                        <h1 class="text-center"><span>S2B</span> BEAUTY</h1>
+                                        <h2 class="text-center"><?php echo e(isset($item->gioithieu) ? $item->gioithieu : ''); ?></h2>
+                                        <p class="text-center"><?php echo e(isset($item->contact) ? $item->contact : ''); ?> </p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <img width="400" height="400" src="<?php echo e(isset($item->image_url) ? $item->image_url : ''); ?>" class="girl img-responsive" alt="200x200" />
+                                        
+                                    </div>
+                                </div>
+                            <?php else: ?>
+                                <div class="item" >
+                                    <div class="col-sm-6" >
+                                        <h1 class="text-center"><span>S2B</span> BEAUTY</h1>
+                                        <h2 class="text-center"><?php echo e(isset($item->gioithieu) ? $item->gioithieu : ''); ?></h2>
+                                        <p class="text-center"><?php echo e(isset($item->contact) ? $item->contact : ''); ?> </p>
+                                        
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <img width="400" height="400" src="<?php echo e(isset($item->image_url) ? $item->image_url : ''); ?>" class="girl img-responsive" alt="" />
+                                        
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                                <?php 
+                                    $i++;
+                                 ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        
+                            
+                                
+                                
+                                
+                                
+                            
+                            
+                                
+                                
+                            
+                        
 
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free Ecommerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />
-                                <img src="images/home/pricing.png" class="pricing" alt="" />
-                            </div>
-                        </div>
+                        
+                            
+                                
+                                
+                                
+                                
+                            
+                            
+                                
+                                
+                            
+                        
 
                     </div>
 
