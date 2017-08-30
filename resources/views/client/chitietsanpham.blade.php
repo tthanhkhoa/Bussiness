@@ -39,7 +39,7 @@
                         <li>Bình luận</li>
                     </ul>
                     <div style="width:100%;border-top:1px solid silver">
-                        @if($getSanPham->chiTietSanPham->gioithieusanpham)
+                        @if($getSanPham->chiTietSanPham)
                             {!! $getSanPham->chiTietSanPham->gioithieusanpham !!}
                         @endif
                         {{--{{isset($getSanPham->chiTietSanPham->gioithieusanpham) ? {!! $getSanPham->chiTietSanPham->gioithieusanpham !!}: '' }}--}}

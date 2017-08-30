@@ -12,10 +12,11 @@ class ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        'c15243c55ab4c20eff78d1e24be20dac' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Helpers.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        'c15243c55ab4c20eff78d1e24be20dac' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Helpers.php',
+        '1e298922c3e2134d42dcdb03e6d5f55a' => __DIR__ . '/..' . '/torann/geoip/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -33,6 +34,7 @@ class ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104
         ),
         'T' => 
         array (
+            'Torann\\GeoIP\\' => 13,
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
         ),
@@ -119,6 +121,10 @@ class ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Torann\\GeoIP\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/torann/geoip/src',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -332,6 +338,7 @@ class ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\Client\\MyStruct' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/SanPhamController.php',
         'App\\Http\\Controllers\\Client\\SanPhamController' => __DIR__ . '/../..' . '/app/Http/Controllers/Client/SanPhamController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -379,6 +386,7 @@ class ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104
         'CreateHoaDonTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_20_102012_create_HoaDon_table.php',
         'CreateImagesTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_19_145717_create_Images_table.php',
         'CreateKhachhangTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_19_160802_create_khachhang_table.php',
+        'CreateLocationTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_29_063926_create_location_table.php',
         'CreateNhanhieuTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_19_160720_create_nhanhieu_table.php',
         'CreateRemenberSPTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_19_160819_create_remenberSP_table.php',
         'CreateSanphamTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_23_143209_create_sanpham_table.php',
@@ -3415,6 +3423,19 @@ class ComposerStaticInit61a3e396dda2d52b182b8b2d96b3f104
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'Torann\\GeoIP\\Cache' => __DIR__ . '/..' . '/torann/geoip/src/Cache.php',
+        'Torann\\GeoIP\\Console\\Clear' => __DIR__ . '/..' . '/torann/geoip/src/Console/Clear.php',
+        'Torann\\GeoIP\\Console\\Update' => __DIR__ . '/..' . '/torann/geoip/src/Console/Update.php',
+        'Torann\\GeoIP\\Contracts\\ServiceInterface' => __DIR__ . '/..' . '/torann/geoip/src/Contracts/ServiceInterface.php',
+        'Torann\\GeoIP\\Facades\\GeoIP' => __DIR__ . '/..' . '/torann/geoip/src/Facades/GeoIP.php',
+        'Torann\\GeoIP\\GeoIP' => __DIR__ . '/..' . '/torann/geoip/src/GeoIP.php',
+        'Torann\\GeoIP\\GeoIPServiceProvider' => __DIR__ . '/..' . '/torann/geoip/src/GeoIPServiceProvider.php',
+        'Torann\\GeoIP\\Location' => __DIR__ . '/..' . '/torann/geoip/src/Location.php',
+        'Torann\\GeoIP\\Services\\AbstractService' => __DIR__ . '/..' . '/torann/geoip/src/Services/AbstractService.php',
+        'Torann\\GeoIP\\Services\\IPApi' => __DIR__ . '/..' . '/torann/geoip/src/Services/IPApi.php',
+        'Torann\\GeoIP\\Services\\MaxMindDatabase' => __DIR__ . '/..' . '/torann/geoip/src/Services/MaxMindDatabase.php',
+        'Torann\\GeoIP\\Services\\MaxMindWebService' => __DIR__ . '/..' . '/torann/geoip/src/Services/MaxMindWebService.php',
+        'Torann\\GeoIP\\Support\\HttpClient' => __DIR__ . '/..' . '/torann/geoip/src/Support/HttpClient.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',

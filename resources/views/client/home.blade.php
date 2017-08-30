@@ -332,7 +332,7 @@
 
 {{--</div>--}}
 @section('slidebar')
-    @include('client.compoment.slidebar',['TheLoai' => $TheLoai])
+    @include('client.compoment.slidebar',['TheLoai' => $theloai])
 @endsection
 
 @endsection

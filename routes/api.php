@@ -35,6 +35,7 @@ Route::post('/addhoadon_api', 'Admin\HoaDonController@addHoaDon')->name('addhoad
 //Route::post('/addImages_api', 'Controller@storageImage')->name('addImages_api');
 Route::post('/addImages_api', 'Controller@uploadFile')->name('addImages_api');
 Route::post('/addImages_slider_api', 'Admin\thongtinController@uploadFile')->name('addImages_slider_api');
+Route::get('/getclient', 'Client\SanPhamController@getLocation')->name('getclient');
 
 
 

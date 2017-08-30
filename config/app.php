@@ -38,7 +38,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', true),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -164,6 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         JD\Cloudder\CloudderServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
+        Torann\GeoIP\GeoIPServiceProvider::class,
 
 
         /*
@@ -229,7 +230,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
-        'Location' => 'Stevebauman\Location\Facades\Location',
+        'Location' => Stevebauman\Location\Facades\Location::class,
+        'GeoIP' => Torann\GeoIP\Facades\GeoIP::class,
 
 
     ],
