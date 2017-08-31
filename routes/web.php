@@ -32,19 +32,23 @@ Route::get('/chitietsanpham', function(){
     return view('client.chitietsanpham');
 });
 
-Route::get('/login', function () {
-    return view('login');
-    return abort(404);
-//    return view('vendor.notifications.email');
-})->name('login');
+//Route::get('/login', function () {
+//    return view('login');
+//    return abort(404);
+////    return view('vendor.notifications.email');
+//})->name('login');
+Route::match(['get', 'post'], 'login', 'Auth\LoginController@login')->name('login');
+
 Route::middleware(['admin'])->group(function () {
 
     Route::get('/admin', function () {
         return view('admin.dashboash');
-    });
+    })->name('admin');
+
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
     /*
- * Admin The Loai
- * */
+     * Admin The Loai
+     * */
 
     Route::get('/danhsachtheloai', 'Admin\TheLoaiController@getTheLoai')->name('danhsachtheloai');
     Route::post('/addtheloai', 'Admin\TheLoaiController@addTheLoai')->name('addtheloai');

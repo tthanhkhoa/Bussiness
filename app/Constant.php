@@ -46,6 +46,7 @@ class Constant
     const CL_USER_ID           = "user_id";
     const CL_USERNAME          = "username";
     const CL_PASSWORD          = "password";
+    const CL_REMEMBER_TOKEN    = "remember_token";
     //Table RemenberSP
     const TBL_REMENBERSP       = "remenbersp";
     const CL_REMENBER_ID       = "remenber_id";

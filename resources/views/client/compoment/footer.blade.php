@@ -110,7 +110,7 @@
 
     <div class="footer-bottom">
         <div class="container">
-            <div class="row">
+            <div class="row text-center" >
                 <i class="pull-left fa">Copyright S2B Inc. All rights reserved. Write by Thanh Khoa</i>
                 {{--<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>--}}
             </div>

@@ -383,7 +383,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a href="{{route('logout')}}">
 										<i class="ace-icon fa fa-power-off"></i>
 										Logout
 									</a>

@@ -4,7 +4,7 @@
         <div class="page-content">
             <div class="row">
                 <div class="col-xs-6 item-photo">
-                    <img width="400" height="400" alt="400x400" style="max-width:100%;" src="{{isset($getSanPham->Images->first()->image_url) ? $getSanPham->Images->first()->image_url : asset('images/defaut/S2B.jpg')}}" />
+                    <img width="400"  alt="400x400" style="max-width:100%; height: auto" src="{{isset($getSanPham->Images->first()->image_url) ? $getSanPham->Images->first()->image_url : asset('images/defaut/S2B.jpg')}}" />
                 </div>
 
                 <div class="col-xs-6" style="border:0px solid gray">
