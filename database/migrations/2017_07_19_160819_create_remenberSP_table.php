@@ -19,7 +19,7 @@ class CreateRemenberSPTable extends Migration
             $table->increments(Constant::CL_ID);
             $table->integer(Constant::CL_MAKHACHHANG)->unsigned();
             $table->foreign(Constant::CL_MAKHACHHANG)->references(Constant::CL_ID)->on(App\Constant::TBL_KHACHHANG)->onDelete('cascade');
-            $table->string(Constant::CL_MASANPHAM)->nullable();
+            $table->foreign(Constant::CL_MASANPHAM)->nullable();
             $table->integer(Constant::CL_SOLUONG)->nullable();
         });
     }
