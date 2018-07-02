@@ -84,8 +84,6 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-user"></i> Tài khoản</a></li>
-                            <li><a href="#"><i class="fa fa-star"></i> Sản phẩm yêu thích</a></li>
                             <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
                             <li><a href="#"><i class="fa fa-lock"></i> Đăng nhập</a></li>
                         </ul>
@@ -110,13 +108,11 @@
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="{{ url('home') }}" class="active">Trang chủ</a></li>
-                            <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                            <li class="dropdown"><a href="#">Cửa hàng - Sản Phẩm<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="#">Sản phẩm</a></li>
+                                    <li><a href="#">Sản phẩm mới</a></li>
+                                    <li><a href="#">Sản phẩm giảm giá</a></li>
                                     <li><a href="#">Sản phẩm bán chạy</a></li>
-                                    {{--<li><a href="#">Checkout</a></li>--}}
-                                    <li><a href="{{ url('cart') }}">Giỏ hàng</a></li>
-                                    <li><a href="#">Login</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="#">Blog - Khuyên dùng<i class="fa fa-angle-down"></i></a>
@@ -125,7 +121,6 @@
                                     <li><a href="#">Dưỡng da</a></li>
                                 </ul>
                             </li>
-                            {{--<li><a href="#">404</a></li>--}}
                             <li><a href="{{ url('about') }}">Liên hệ</a></li>
                         </ul>
                     </div>
@@ -184,10 +179,6 @@
 <script src="{{asset('js/price-range.js')}}"></script>
 <script src="{{asset('js/jquery.prettyPhoto.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
-{{--<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>--}}
-{{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>--}}
-{{--<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>--}}
-
 
 <!-- jQuery Easing -->
 

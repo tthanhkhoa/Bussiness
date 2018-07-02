@@ -88,7 +88,7 @@ class Constant
     const CL_TIMEZONE          = "timezone";
     const CL_ZIP               = "zip";
 
-
-
+    const TBL_GIOHANG          = "GioHang";
+    const CL_IDTEMP            = "id_temp";
 }
 ?>

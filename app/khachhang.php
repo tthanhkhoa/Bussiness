@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class khachHang extends Model
 {
-    //
     protected $table = Constant::TBL_KHACHHANG;
-//    protected $primaryKey = Constant::TBL_maKhachHang;
     public $timestamps = false;
 
     public function User(){

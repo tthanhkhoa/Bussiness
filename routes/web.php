@@ -14,16 +14,6 @@
 Route::get('/404', function () {
     return view('error.404');
 })->name('404');
-// Route::get('/', function () {
-//    // return 1;
-//     //return view('admin.dashboash');
-//    // return view('client.home');
-//     return view('client.home');
-
-//     return view('client.product-details');
-// });
-
-
 Route::get('/cart', function () {
     return view('client.cart');
 });
@@ -31,12 +21,6 @@ Route::get('/cart', function () {
 Route::get('/chitietsanpham', function(){
     return view('client.chitietsanpham');
 });
-
-//Route::get('/login', function () {
-//    return view('login');
-//    return abort(404);
-////    return view('vendor.notifications.email');
-//})->name('login');
 Route::match(['get', 'post'], 'login', 'Auth\LoginController@login')->name('login');
 
 Route::middleware(['admin'])->group(function () {
@@ -89,23 +73,8 @@ Route::middleware(['admin'])->group(function () {
 
 });
 
-
-
-
 Route::get('/about', 'Admin\thongtinController@getThongTin')->name('about');
 
-
-
-
-
-//Route::get('/danhsachtheloai', function () {
-//
-//  //  return view('admin.SanPham.theloai');
-//});
-
-//Route::get('/chitietsanpham', function () {
-//    return view('admin.SanPham.detail_sp');
-//});
 
 Route::get('/profile', function () {
     return view('profile');
@@ -114,11 +83,6 @@ Route::get('/nhacungcap', function () {
     return view('admin.SanPham.nhacungcap');
 });
 
-
-
-//Route::get('/chitiethoadon', function () {
-//    return view('admin.KhachHang.chitiethoadon');
-//});
 
 Route::get('/danhsachnhaphang', function () {
     return view('admin.DoanhThu.danhsach_nhaphang');
@@ -140,5 +104,6 @@ Route::get('/', 'Client\SanPhamController@getPageHome')->name('home');
 
 Route::get('/home', 'Client\SanPhamController@getPageHome')->name('home');
 Route::get('/chitietsanpham/{id}', 'Client\SanPhamController@chiTietSanPham')->name('chitietsanpham');
+Route::get('/addcart', 'Client\GioHangController@addGioHang')->name('addcart');
 
 

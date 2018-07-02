@@ -5,7 +5,8 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use App\Constant;
 
-class CreateSlidersTable extends Migration
+
+class CreateGiohangTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +15,12 @@ class CreateSlidersTable extends Migration
      */
     public function up()
     {
-        Schema::create(Constant::TBL_SLIDER, function (Blueprint $table) {
+        //
+        Schema::create(Constant::TBL_GIOHANG, function (Blueprint $table) {
             $table->increments(Constant::CL_ID);
-            $table->string(Constant::CL_IMAGE_URL);
-            $table->string(Constant::CL_GIOITHIEU);
-            $table->string(Constant::CL_CONTACT);
-            $table->string(Constant::CL_TIEUDE);
+            $table->string(Constant::CL_IDTEMP,4000);
+            $table->string(Constant::CL_MASANPHAM,50);
+            $table->foreign(Constant::CL_MASANPHAM)->references(Constant::CL_ID)->on(App\Constant::TBL_SANPHAM)->onDelete('cascade');;
             $table->timestamps();
         });
     }
@@ -31,6 +32,8 @@ class CreateSlidersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(Constant::TBL_SLIDER);
+        //
+        Schema::dropIfExists(Constant::TBL_GIOHANG);
+
     }
 }

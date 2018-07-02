@@ -17,7 +17,6 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-//    protected $primaryKey = Constant::TBL_idUser;
     public $timestamps = false;
     /**
      * The attributes that should be hidden for arrays.
@@ -29,6 +28,6 @@ class User extends Authenticatable
     ];
 
     public function KhachHang(){
-        return $this->belongsTo('App\khachHang',Constant::CL_MAKHACHHANG,Constant::CL_ID);
+        return $this->hasOne('App\khachHang',Constant::CL_MAKHACHHANG,Constant::CL_ID);
     }
 }
